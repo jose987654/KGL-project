@@ -1,0 +1,28 @@
+body {
+    background-color: #ffffff;
+ background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+ url("https://picsum.photos/id/728/367/267");
+-webkit-background-size: cover;
+-moz-background-size: cover;
+-o-background-size: cover;
+background-size: cover;
+
+}
+#blog-container {
+ margin-top: 14px;
+ margin-bottom: 15px;
+}
+.card {
+ margin-top: 15px;
+ border-radius: 10px;
+ 
+}
+
+a:hover{
+ color:rgb(15, 106, 180)
+}
+
+#image-slider {
+ padding-left: 0px;
+ padding-right: 0px;
+}

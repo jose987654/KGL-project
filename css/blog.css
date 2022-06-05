@@ -1,0 +1,109 @@
+body {
+  background-color: #ffffff;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("https://picsum.photos/id/728/367/267");
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+
+   }
+#blog-container {
+    margin-top: 14px;
+    margin-bottom: 15px;
+}
+.card {
+    margin-top: 15px;
+    border-radius: 30px;
+    box-shadow: 5px 5px #888888;
+}
+.card:hover{
+    box-shadow: 7px 7px #242323;
+
+}
+a:hover{
+    color:rgb(15, 106, 180)
+}
+
+#image-slider {
+    padding-left: 0px;
+    padding-right: 0px;
+}
+.dropbtn {
+    background-color: #ffffff;
+    color: rgb(15, 106, 180);
+   
+    font-size: 16px;
+    border: none;
+  }
+  
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #666464;
+    min-width: 160px;
+    box-shadow: 0px 16px 32px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    border-radius: 20px;
+  }
+  .carousel-caption:hover{
+    color:rgb(11, 12, 12);}
+
+  .dropdown-content a {
+    color: rgb(255, 255, 255);
+    padding: 12px 104px;
+    text-decoration: none;
+    display: block;
+  }
+  .list-group-item:hover{ background-color: rgb(199, 197, 197)}
+  
+  .dropdown-content a:hover {
+    color: rgb(15, 106, 180);
+    background-color: #ddd;
+    border-radius: 20px;
+    box-shadow: 0px 100px 100px 0px rgba(0, 0, 0, 0.2);}
+  
+  .dropdown:hover .dropdown-content {display: block;}
+  
+  .dropdown:hover .dropbtn {background-color: rgb(255, 255, 255);}
+  
+footer{
+  background-color: #04041d;
+}
+.textcontent {
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  font-size: 20px;
+  
+}
+.border-left {
+  border-left: 1px solid #dee2e6 !important;
+ }
+ .d-block:hover {
+  color: rgb(0, 0, 0);
+  background-color: #ddd;
+  border-radius: 20px;
+  box-shadow: 0px 100px 100px 0px rgba(0, 0, 0, 0.2);}
+  .nav-link:hover{
+    color: rgb(0, 0, 0);
+  background-color: rgb(69, 66, 85);
+  border-radius: 3px;
+  box-shadow: 0px 100px 100px 0px rgba(0, 0, 0, 0.2);
+  }
+  .txt{
+    font-size: 45px;
+    font-family:'Times New Roman', Times, serif;
+  }
+  .txt1{
+    font-size: 40px;
+    font-family:'Times New Roman', Times, serif;
+  }
+  nav{background-color: #070720;
+
+  }
