@@ -1,7 +1,8 @@
 body {
   background-color: #3a3a5e;
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
   url(/Img/home2pic1.png);
+  /* background-image:url(/Img/home2pic1.png); */
 -webkit-background-size: cover;
 -moz-background-size: cover;
 -o-background-size: cover;
