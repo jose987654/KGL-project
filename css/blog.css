@@ -1,6 +1,6 @@
 body {
-  background-color: #3a3a5e;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+  background-color: #3c3c49;
+  /* background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
   url(/Img/home2pic1.png);
   /* background-image:url(/Img/home2pic1.png); */
 -webkit-background-size: cover;
@@ -8,13 +8,17 @@ body {
 -o-background-size: cover;
 background-size: cover; 
 margin: 1.5;
-padding: 1.5;  
+padding: 1.5;   
+
    }
 #blog-container {
     margin-top: 14px;
     margin-bottom: 15px;
 }
-
+.nav1{
+    font-size: 50px;
+		font-family: Georgia,Times,Times New Roman,serif;
+}
 
 a:hover{
     color:rgb(15, 106, 180)
@@ -37,6 +41,9 @@ a:hover{
 footer{
   background-color: #07072c;
   font-family:'Times New Roman', Times, serif;
+}
+.footerheight{
+	max-height: 100px;
 }
 .textcontent {
   color: rgb(255, 255, 255);
@@ -73,12 +80,13 @@ footer{
     font-family:'Times New Roman', Times, serif;
   }
   nav{background-color: #070720;
-
+	height: 80px;
   }
   
-.main{
+ .main{
+	
 	width: 400px;
-	height: 500px;	
+	height: 430px;	
 	overflow: hidden;
 	background: url("https://doc-08-2c-docs.googleusercontent.com/docs/securesc/68c90smiglihng9534mvqmq1946dmis5/fo0picsp1nhiucmc0l25s29respgpr4j/1631524275000/03522360960922298374/03522360960922298374/1Sx0jhdpEpnNIydS4rnN4kHSJtU1EyWka?e=view&authuser=0&nonce=gcrocepgbb17m&user=03522360960922298374&hash=tfhgbs86ka6divo3llbvp93mg4csvb38") no-repeat center/ cover;
 	border-radius: 10px;
@@ -87,7 +95,7 @@ footer{
   font-family: Arial, Helvetica, sans-serif;
   border-color: #0ada0a;
   border: 300px;
-}
+ }
 
 
 
@@ -133,6 +141,7 @@ button{
 	transition: .2s ease-in;
 	cursor: pointer;
 }
+
 button:hover{
 	background: #24163d;
 }
@@ -142,9 +151,9 @@ button:hover{
 	height: 100%;
 	
 }
-.main:hover{
-	background: rgb(30, 53, 116);
-  } 
+/* .main:hover{
+	background: rgb(255, 255, 255);
+  }  */
 
 .login{
 	height: 460px;
