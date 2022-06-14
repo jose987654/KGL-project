@@ -1,30 +1,49 @@
-body {
-    background-color: #454553;
-    /* background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url(/Img/home2pic1.png);
-    /* background-image:url(/Img/home2pic1.png); */
+html, body {
+  height: 100%;
+}
+
+footer {
+  margin-top: auto;
+}
+
+body
+{
+  background-color: #454553;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover; 
   margin: 1.5;
   padding: 1.5;   
+  display: flex;
+  flex-flow: column;
   
-     }
-  #blog-container {
-      margin-top: 14px;
-      margin-bottom: 15px;
-  }
-  .nav1{
-      font-size: 50px;
-          font-family: Georgia,Times,Times New Roman,serif;
-  }
+}
+#blog-container
+{
+margin-top: 14px;
+margin-bottom: 15px;
+}
+.nav1
+{
+font-size: 50px;
+font-family: Georgia,Times,Times New Roman,serif;
+}
   
-  a{
-      text-decoration: none;
-  }
+a
+{
+text-decoration: none;
+}
+a:hover{
+  color: rgb(255, 255, 255);
+}
 
-
+select{
+  height:40px;
+  background: #e0dede;
+  width:400px;
+  border-radius: 5px;
+}
   
   #image-slider {
       padding-left: 0px;
@@ -82,6 +101,7 @@ body {
       color: rgb(255, 255, 255);
       font-size: 20px;
       font-family:'Times New Roman', Times, serif;
+      
     }
     nav{background-color: #070720;
       height: 80px;
@@ -90,8 +110,8 @@ body {
      list-style: none;
     }
    .main{      
-      width: 1000px;
-      height: 430px;	
+      width: 1200px;
+      height: 500px;	
       overflow: hidden;
       background: url("https://doc-08-2c-docs.googleusercontent.com/docs/securesc/68c90smiglihng9534mvqmq1946dmis5/fo0picsp1nhiucmc0l25s29respgpr4j/1631524275000/03522360960922298374/03522360960922298374/1Sx0jhdpEpnNIydS4rnN4kHSJtU1EyWka?e=view&authuser=0&nonce=gcrocepgbb17m&user=03522360960922298374&hash=tfhgbs86ka6divo3llbvp93mg4csvb38") no-repeat center/ cover;
       border-radius: 10px;
@@ -108,9 +128,15 @@ body {
     background-color: #181553;
   }
   
-
+label{
+  text-align: center;
+  color:#ddd;
+  font-size: 20px;
+  float: left;
+  width: 100px;
+}
   input{
-      width: 80%;
+      width: 70%;
       height: 40px;
       background: #e0dede;
       justify-content: center;
@@ -120,6 +146,9 @@ body {
       border: none;
       outline: none;
       border-radius: 5px;
+  }
+  .align{ text-align: center;
+    
   }
   button{
       
@@ -139,6 +168,7 @@ body {
   }
   button:hover{
       background: #0ada0a;
+     
   }
  
   

@@ -25,7 +25,7 @@
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
                         <P class="nav-link active nav1" aria-current="page">Karibu Groceries Limited .</P>
-                    </li>                    
+                    </li>
                 </ul>
                 <form class="d-flex">
                     <button class="btn btn-outline-primary txt2" style="float: left; height: 50px;" type="submit">
@@ -45,53 +45,80 @@
                             <div class=" col col-md-6">
                                 <form name="registration" onsubmit="">
                                     <ul>
-                                        <li>
-                                            <input type="text" name="userid" placeholder="* First Name " required
+                                        <li class="align"><label>1st Name</label>
+                                            <input type="text" name="fname" placeholder="* First Name " required
                                                 size="22" onblur="userval(5,22)" />
                                         </li>
-                                        <li>
-                                            <input type="text" name="userid1" placeholder="* Second Name" required
+                                        <li class="align"><label>2nd Name</label>
+                                            <input type="text" name="sname" placeholder="* Second Name" required
                                                 size="22" onblur="userval1(5,22)" />
                                         </li>
-                                        <li>
+                                        <li class="align"><label>Gender</label>
+                                            <input type="text" name="gender" placeholder="*Male / Female" required
+                                                size="7" id="gndr" onblur="userval5(3,8)" />
+                                        </li>
+                                        <li class="align"><label>NIN</label>
                                             <input type="text" name="userid2" placeholder="* National Id Number (NIN)"
                                                 required size="12" id="nin" onblur="userval2(5,12)" />
                                         </li>
-                                        <li>
-                                            <input type="email" name="email" placeholder="* Email-address" required
-                                                size="12" id="nin" onblur="userval3(5,12)" />
+                                        <li class="align"><label>E-mail</label>
+                                            <input type="email"
+                                                pattern="^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$"
+                                                name="email" placeholder="* Email-address" required id="email" />
                                         </li>
+                                        <li class="align"><label>User role</label>
+                                            <select name="urole" onblur="role()">
+                                                <option value="Default">Please select a Role </option>
+                                                <option value="sa">Sales Agent</option>
+                                                <option value="ma">Manager</option>
+                                                <option value="dr">Director</option>
+
+                                            </select>
+                                        </li>
+
                                     </ul>
                                 </form>
                             </div>
                             <div class="col col-md-6">
-                                <form name="registration" onsubmit="">
+                                <form name="registration2" onsubmit="">
                                     <ul>
-                                        <li>
-                                            <input type="text" name="userid1" required="" placeholder="* User name"
-                                                size="22" onblur="userval1(5,22)" />
+
+
+                                        <li class="align"><label>Username</label>
+                                            <input type="text" name="usrname" required="" placeholder="* User name"
+                                                size="22" onblur="userval4(5,22)" />
                                         </li>
-                                        <li>
-                                            <input type="text" required="" placeholder="* Telephone no." name="zipcode"
-                                                onblur="zip()" />
+
+                                        <li class="align"><label>Tel.</label>
+                                            <input type="text" required="" placeholder="* Telephone no." name="telno"
+                                                onblur="tel()" />
                                         </li>
-                                        <li>
+                                        <li class="align"><label>Password</label>
                                             <input type="password" required="" placeholder="* Password" name="passid"
                                                 size="12" onblur="userpass(6,20)" />
                                         </li>
-                                        <li>
+                                        <li class="align"><label>Confirm Password*</label>
                                             <input type="password" required="" placeholder="* Confirm Password"
-                                                name="passid1" size="12" onblur="userpass1(6,20)" />
+                                                name="passid1" size="12" onblur="userpass1(6,20),passvali()" />
                                         </li>
+                                        <li class="align"><label>Branch</label>
+                                            <select name="branch" onblur="sbranch()" required>
+                                                <option value="Default">Please select a Branch </option>
+                                                <option value="mg">Maganjo</option>
+                                                <option value="ma">Matugga</option>
+                                                <option value="na">Not Applicable</option>
+
+                                            </select>
+                                        </li>
+
                                     </ul>
                                 </form>
                             </div>
-                            <a href="signup.html"><button style="width: 40%;height:50px;" class="custom">Sign
-                                    Up</button></a>
+                            <button style="width: 40%;height:50px;" class="custom txt2"><a href="#" class="txt2">SignUp
+                                </a></button>
                             <h5 class="txt2">* By clicking on Signup you agree to the terms and conditions *</h5>
                         </div>
                     </div>
-
                 </div>
             </div>
         </div>
@@ -138,8 +165,7 @@
         </div>
     </footer>
 
-
-
+    <script src="js/signup.js"></script>
     <script src="css/bootstrap/js/bootstrap.bundle.js"></script>
 </body>
 
