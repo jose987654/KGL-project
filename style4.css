@@ -112,7 +112,7 @@ footer {
 .textcontent {
   color: rgb(255, 255, 255);
   text-decoration: none;
-  font-size: 15px;
+  font-size: 18px;
 }
 .border-left {
   border-left: 1px solid #dee2e6 !important;
@@ -166,7 +166,7 @@ footer {
 #sidebar ul li.active > a,
 a[aria-expanded="true"] {
   color: #fff;
-  background: #181553;
+  background: #b9b9bd;
 }
 
 a[data-toggle="collapse"] {
