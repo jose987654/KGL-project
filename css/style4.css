@@ -277,7 +277,7 @@ a.article:hover {
 select {
   height: 40px;
   background: #e0dede;
-  width: 430px;
+  width: 530px;
   border-radius: 5px;
   border: 1px solid black;
 }
@@ -311,8 +311,8 @@ ul {
   list-style: none;
 }
 .main {
-  width: 1350px;
-  height: 700px;
+  width: 1000px;
+  height: 750px;
   overflow: hidden;
   background: url("https://doc-08-2c-docs.googleusercontent.com/docs/securesc/68c90smiglihng9534mvqmq1946dmis5/fo0picsp1nhiucmc0l25s29respgpr4j/1631524275000/03522360960922298374/03522360960922298374/1Sx0jhdpEpnNIydS4rnN4kHSJtU1EyWka?e=view&authuser=0&nonce=gcrocepgbb17m&user=03522360960922298374&hash=tfhgbs86ka6divo3llbvp93mg4csvb38")
     no-repeat center/ cover;
@@ -323,21 +323,21 @@ ul {
   border-color: #0ada0a;
 }
 .custom1 {
+  background-color: #838285;
+}
+.custom1:hover {
   background-color: #6d6b70;
 }
-/* .custom1:hover {
-  background-color: #5c5b5e;
-} */
 
 label {
-  text-align: center;
+  text-align:right;
   color: #ddd;
-  font-size: 20px;
+  font-size: 30px;
   float: left;
-  width: 100px;
+  width: 300px;
 }
 input {
-  width: 430px;
+  width: 530px;
   height: 40px;
   background: #e0dede;
   justify-content: center;
@@ -348,6 +348,41 @@ input {
   outline: none;
   border-radius: 5px;
 }
+textarea {
+  width: 530px;
+  height: 80px;
+  background: #e0dede;
+  justify-content: center;
+  display: flex;
+  margin: 20px auto;
+  padding: 10px;
+  border: 1px solid black;
+  outline: none;
+  border-radius: 5px;
+  resize: none;
+}
 .align {
   text-align: center;
+}
+
+button {
+  margin: 10px auto;
+  justify-content: center;
+  display: block;
+  color: #fff;
+  background: #0004ff;
+  font-size: 1em;
+  font-weight: bold;
+  margin-top: 20px;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  transition: 0.2s ease-in;
+  cursor: pointer;
+  /* box-shadow: 10px 25px 55px rgba(0, 0, 0, 0.644); */
+}
+
+.custom:hover {
+  background: #0ada0a;
+  box-shadow: 10px 25px 55px rgba(0, 0, 0, 0.644);
 }
