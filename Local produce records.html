@@ -47,21 +47,12 @@
                         <i class="fas fa-briefcase"></i>
                         About
                     </a>
-                    <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                </li>
+                <li>
+                    <a href="#pageSubmenu" aria-expanded="false" class="dropdown-toggle">
                         <i class="fas fa-copy"></i>
                         Pages
                     </a>
-                    <ul class="collapse list-unstyled" id="pageSubmenu">
-                        <li>
-                            <a href="#">Page 1</a>
-                        </li>
-                        <li>
-                            <a href="#">Page 2</a>
-                        </li>
-                        <li>
-                            <a href="#">Page 3</a>
-                        </li>
-                    </ul>
                 </li>
                 <li>
                     <a href="#">
@@ -114,6 +105,11 @@
                         <h2>Karibu Groceries limited</h2>
                     </div>
 
+                    <li class="nav-item active">
+                        <button class="btn btn-outline-primary"><a class="nav-link" href="#"
+                                style="color:#000000;font-size: 19px;">Farm Records</a></button>
+                    </li>
+
 
 
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -138,35 +134,103 @@
                 </div>
             </nav>
 
-            <h2>Collapsible Sidebar Using Bootstrap 4</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
-                deserunt mollit anim id est laborum.</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
-                deserunt mollit anim id est laborum.</p>
+            <h2 style="font-size:45px;color:rgb(51, 49, 49);">Farm Produce Records Karibu Groceries Limited. </h2>
 
-            <!-- 
-            <div class="line"></div>
+            <div class="container-fluid" id="blog-container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="main custom1">
+                            <h2 class="txt1"> Farm Produce Records</h2>
+                            <div class="signup">
+                                <div class="row ">
+                                    <div class=" col col-md-6">
+                                        <form name="registration" onsubmit="">
+                                            <ul>
+                                                <li class="align"><label>Co. Name</label>
+                                                    <input type="text" name="fname" placeholder="* Company Name "
+                                                        required size="22" onblur="userval(5,22)" />
+                                                </li>
+                                                <li class="align"><label>2nd Name</label>
+                                                    <input type="text" name="sname" placeholder="* Second Name" required
+                                                        size="22" onblur="userval1(5,22)" />
+                                                </li>
+                                                <li class="align"><label>Gender</label>
+                                                    <input type="text" name="gender" placeholder="*Male / Female"
+                                                        required size="7" id="gndr" onblur="userval5(3,8)" />
+                                                </li>
+                                                <li class="align"><label>NIN</label>
+                                                    <input type="text" name="userid2"
+                                                        placeholder="* National Id Number (NIN)" required size="12"
+                                                        id="nin" onblur="userval2(5,12)" />
+                                                </li>
+                                                <li class="align"><label>E-mail</label>
+                                                    <input type="email"
+                                                        pattern="^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$"
+                                                        name="email" placeholder="* Email-address" required
+                                                        id="email" />
+                                                </li>
+                                                <li class="align"><label>User role</label>
+                                                    <select name="urole" onblur="role()">
+                                                        <option value="Default">Please select a Produce </option>
+                                                        <option value="sa">Beans</option>
+                                                        <option value="ma">Maize</option>
+                                                        <option value="dr">Cow Peas</option>
+                                                        <option value="sa">Beans</option>
+                                                        <option value="ma">Maize</option>
+                                                        <option value="dr">Peas</option>
 
-            <h2>Lorem Ipsum Dolor</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                                                    </select>
+                                                </li>
 
-            <div class="line"></div> 
-
-            <h2>Lorem Ipsum Dolor</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-
-            <div class="line"></div>
-
-            <h3>Lorem Ipsum Dolor</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p> -->
+                                            </ul>
+                                        </form>
+                                    </div>
+                                    <div class="col col-md-6">
+                                        <form name="registration2" onsubmit="">
+                                            <ul>
 
 
+                                                <li class="align"><label>Username</label>
+                                                    <input type="text" name="usrname" required=""
+                                                        placeholder="* User name" size="22" onblur="userval4(5,22)" />
+                                                </li>
+
+                                                <li class="align"><label>Tel.</label>
+                                                    <input type="text" required="" placeholder="* Telephone no."
+                                                        name="telno" onblur="tel()" />
+                                                </li>
+                                                <li class="align"><label>Password</label>
+                                                    <input type="password" required="" placeholder="* Password"
+                                                        name="passid" size="12" onblur="userpass(6,20)" />
+                                                </li>
+                                                <li class="align"><label>Confirm Password*</label>
+                                                    <input type="password" required="" placeholder="* Confirm Password"
+                                                        name="passid1" size="12" onblur="userpass1(6,20),passvali()" />
+                                                </li>
+                                                <li class="align"><label>Branch</label>
+                                                    <select name="branch" onblur="sbranch()" required>
+                                                        <option value="Default">Please select a Branch </option>
+                                                        <option value="mg">Maganjo</option>
+                                                        <option value="ma">Matugga</option>
+                                                        <option value="na">Not Applicable</option>
+
+                                                    </select>
+                                                </li>
+
+                                            </ul>
+                                        </form>
+                                    </div>
+                                    <!-- <button style="width: 40%;height:50px;" class="custom txt2"><a href="#"
+                                            class="txt2">SignUp
+                                        </a></button> -->
+                                    <h5 class="txt2">* By clicking on Signup you agree to the terms and conditions *
+                                    </h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
     <footer class="page-footer font-small blue pt-4 ">
