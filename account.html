@@ -43,9 +43,8 @@
                     </a>
                 </li>
 
-                <li class="active">
-                    <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"
-                        style="color:#181553">
+                <li>
+                    <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
                         <i class="fas fa-copy"></i>
                         Purchases
                     </a>
@@ -84,8 +83,8 @@
                         Contact
                     </a>
                 </li>
-                <li>
-                    <a href="#">
+                <li class="active">
+                    <a href="#" style="color:#181553">
                         <i class="fas fa-user"></i>
                         Account
                     </a>
@@ -154,66 +153,68 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="main custom1">
-                            <h2 class="txt1" style="font-size:45px;text-decoration: underline;"> Local Farm Produce
-                                Form</h2>
+                            <h2 class="txt1" style="font-size:45px;text-decoration: underline;"> Personal Account
+                                Details</h2>
                             <div class="signup">
                                 <div class="row ">
-                                    <div class=" col col-md-12">
+                                    <div class=" col col-md-6">
                                         <form name="registration" onsubmit="">
                                             <ul>
-                                                <li class="align"><label>KGL Branch:</label>
-                                                    <select name="urole" onblur="role()">
-                                                        <option value="Default">Please Select KGL Branch
-                                                        </option>
-                                                        <option value="mg">MAGANJO Branch</option>
-                                                        <option value="ma">MATUGGA Branch</option>
-                                                    </select>
+                                                <li class="align"><label>First Name:</label>
+                                                    <input type="text" name="fname" placeholder="* First Name " disabled
+                                                        id="fname" />
                                                 </li>
-                                                <li class="align"><label>Company Name:</label>
-                                                    <input type="text" placeholder="* Karibu Groceries limited "
+                                                <li class="align"><label>Second Name:</label>
+                                                    <input type="text" name="sname" placeholder="* Second Name" disabled
+                                                        id="sname" />
+                                                </li>
+                                                <li class="align"><label>Gender:</label>
+                                                    <input type="text" name="gender" placeholder="*Male / Female"
                                                         disabled />
                                                 </li>
-                                                <li class="align"><label>Product:</label>
-                                                    <select name="pdct" onblur="role1()">
-                                                        <option value="Default">Please select an Agricultural Product
-                                                        </option>
-                                                        <option value="sa">Beans</option>
-                                                        <option value="ma">Maize</option>
-                                                        <option value="dr">Cow Peas</option>
-                                                        <option value="sa">Beans</option>
-                                                        <option value="ma">Maize</option>
-                                                        <option value="ot">Others</option>
+                                                <li class="align"><label>NIN:</label>
+                                                    <input type="text" name="userid2" id="nin"
+                                                        placeholder="* National Id Number (NIN)" disabled />
+                                                </li>
+                                                <li class="align"><label>E-mail:</label>
+                                                    <input type="email" name="email" placeholder="* Email-address"
+                                                        disabled />
+                                                </li>
+                                                <li class="align"><label>User role:</label>
+                                                    <input type="text" name="userole" placeholder="* User Role"
+                                                        id="usrole" disabled />
+                                                </li>
 
-                                                    </select>
-                                                </li>
-                                                <li><label for="start">Collection Date:</label>
-                                                    <input type="date" name="trip-start" value="" min="1960-01-01"
-                                                        max="2100-12-31">
-                                                </li>
-                                                <!-- <li class="align"><label>Unit price (shs):</label>
-                                                    <input type="text" name="unitprice" id="unitprice"
-                                                        placeholder="*Unit Price per kg (shs)." required size="12"
-                                                        id="nin" oninput="add_number()" />
-                                                </li> -->
-                                                <li class="align"><label>Qty, Tonnes(1000kg):</label>
-                                                    <input type="text" name="quantity" id="qty"
-                                                        placeholder="*Qty Purchased in Tonnes(1000kg)" required
-                                                        oninput="add_number()" />
-                                                </li>
-                                                <!-- <li class="align"><label>Total Amount (shs):</label>
-                                                    <input type="text" name="TextBox3" placeholder="*Amount in shs."
-                                                        disabled id="txtresult" />
-                                                </li> -->
-                                                <li class="align"><label>Comments:</label>
-                                                    <textarea type="text" name="comments"
-                                                        placeholder="*Comments on Produce" id="comments" rows="5"
-                                                        cols="33"></textarea>
-                                                </li>
                                             </ul>
                                         </form>
                                     </div>
-                                    <button style="width: 40%;
-                                    height:50px;" class="custom">Submit</button>
+                                    <!-- <button style="width: 40%;
+                                    height:50px;" class="custom">Submit</button> -->
+                                    <div class="col col-md-6">
+                                        <form name="registration2" onsubmit="">
+                                            <ul>
+                                                <li class="align"><label>Username</label>
+                                                    <input type="text" name="usrname" placeholder="* User name"
+                                                        disabled />
+                                                </li>
+
+                                                <li class="align"><label>Tel.</label>
+                                                    <input type="text" placeholder="* Telephone no." disabled
+                                                        name="telno" />
+                                                </li>
+                                                <li class="align"><label>Branch</label>
+                                                    <input type="text" required="" placeholder="*Branch name"
+                                                        name="branch" disabled />
+                                                </li>
+                                                <li class="align"><label>Password</label>
+                                                    <input type="password" placeholder="* Password" name="passid" />
+                                                </li>
+                                                <button style="width: 40%; float: center;
+                                    height:50px;" class="custom">Update details</button>
+
+                                            </ul>
+                                        </form>
+                                    </div>
                                 </div>
                             </div>
                         </div>
