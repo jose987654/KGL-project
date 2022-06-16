@@ -6,13 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <title>Karibu Groceries Ltd/purchases</title>
+    <title>Karibu Groceries Ltd/farm record</title>
 
     <!-- Bootstrap CSS CDN -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"
         integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
     <!-- Our Custom CSS -->
-    <link rel="stylesheet" href="style4.css">
+    <link rel="stylesheet" href="css/style6.css">
 
     <!-- Font Awesome JS -->
     <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js"
@@ -23,7 +23,7 @@
         crossorigin="anonymous"></script>
 </head>
 
-<body>
+<body onload="Firstfn()">
 
     <div class="wrapper">
         <!-- Sidebar  -->
@@ -35,12 +35,42 @@
                 <strong>KGL</strong>
             </div>
 
-            <ul class="list-unstyled components">
-                <li class="active">
-                    <a href="#homeSubmenu" aria-expanded="false" class="dropdown-toggle">
-                        <!-- <i class="fas fa-home"></i> -->
+            <ul class="list-unstyled components" style="font-size: 19px;">
+                <li>
+                    <a href="#" aria-expanded="false" class="dropdown-toggle">
+                        <i class="fas fa-home"></i>
                         Home
                     </a>
+                </li>
+
+                <li class="active">
+                    <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"
+                        style="color:#181553">
+                        <i class="fas fa-copy"></i>
+                        Purchases
+                    </a>
+                    <ul class="collapse list-unstyled " id="pageSubmenu">
+                        <li>
+                            <a href="Produce purchases.html">Supplier</a>
+                        </li>
+                        <li>
+                            <a href="Local produce input.html">Farms</a>
+                        </li>
+
+                    </ul>
+                </li>
+                <!-- <li>
+                    <a href="#">
+                        <i class="fas fa-image"></i>
+                        Portfolio
+                    </a>
+                </li> -->
+                <li>
+                    <a href="sales input.html">
+                        <i class="fas fa-copy"></i>
+                        Sales
+                    </a>
+
                 </li>
                 <li>
                     <a href="#">
@@ -49,39 +79,27 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#pageSubmenu" aria-expanded="false" class="dropdown-toggle">
-                        <i class="fas fa-copy"></i>
-                        Pages
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <i class="fas fa-image"></i>
-                        Portfolio
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <i class="fas fa-question"></i>
-                        FAQ
-                    </a>
-                </li>
-                <li>
                     <a href="#">
                         <i class="fas fa-paper-plane"></i>
                         Contact
                     </a>
                 </li>
+                <li>
+                    <a href="#">
+                        <i class="fas fa-user"></i>
+                        Account
+                    </a>
+                </li>
             </ul>
 
-            <ul class="list-unstyled CTAs">
+            <!-- <ul class="list-unstyled CTAs">
                 <li>
                     <a href="https://bootstrapious.com/tutorial/files/sidebar.zip" class="download">Download source</a>
                 </li>
                 <li>
                     <a href="https://bootstrapious.com/p/bootstrap-sidebar" class="article">Back to article</a>
                 </li>
-            </ul>
+            </ul> -->
 
 
         </nav>
@@ -105,18 +123,13 @@
                         <h2>Karibu Groceries limited</h2>
                     </div>
 
-                    <li class="nav-item active">
-                        <button class="btn btn-outline-primary"><a class="nav-link" href="#"
-                                style="color:#000000;font-size: 19px;">Farm Records</a></button>
-                    </li>
-
 
 
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="nav navbar-nav ml-auto">
 
                             <li class="nav-item active">
-                                <button class="btn btn-outline-primary"><a class="nav-link" href="#"
+                                <button class="btn btn-outline-primary"><a class="nav-link" href="index.html"
                                         style="color:#000000">LogOut</a></button>
                             </li>
 
@@ -134,97 +147,73 @@
                 </div>
             </nav>
 
-            <h2 style="font-size:45px;color:rgb(51, 49, 49);">Farm Produce Records Karibu Groceries Limited. </h2>
+            <!-- <h2 style="font-size:45px;color:rgb(51, 49, 49); text-decoration: underline;">Produce Procurement Karibu -->
+            <!-- Groceries Limited. </h2> -->
 
             <div class="container-fluid" id="blog-container">
                 <div class="row">
                     <div class="col-md-12">
                         <div class="main custom1">
-                            <h2 class="txt1"> Farm Produce Records</h2>
+                            <h2 class="txt1" style="font-size:45px;text-decoration: underline;"> Local Farm Produce
+                                Form</h2>
                             <div class="signup">
                                 <div class="row ">
-                                    <div class=" col col-md-6">
+                                    <div class=" col col-md-12">
                                         <form name="registration" onsubmit="">
                                             <ul>
-                                                <li class="align"><label>Co. Name</label>
-                                                    <input type="text" name="fname" placeholder="* Company Name "
-                                                        required size="22" onblur="userval(5,22)" />
-                                                </li>
-                                                <li class="align"><label>2nd Name</label>
-                                                    <input type="text" name="sname" placeholder="* Second Name" required
-                                                        size="22" onblur="userval1(5,22)" />
-                                                </li>
-                                                <li class="align"><label>Gender</label>
-                                                    <input type="text" name="gender" placeholder="*Male / Female"
-                                                        required size="7" id="gndr" onblur="userval5(3,8)" />
-                                                </li>
-                                                <li class="align"><label>NIN</label>
-                                                    <input type="text" name="userid2"
-                                                        placeholder="* National Id Number (NIN)" required size="12"
-                                                        id="nin" onblur="userval2(5,12)" />
-                                                </li>
-                                                <li class="align"><label>E-mail</label>
-                                                    <input type="email"
-                                                        pattern="^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$"
-                                                        name="email" placeholder="* Email-address" required
-                                                        id="email" />
-                                                </li>
-                                                <li class="align"><label>User role</label>
+                                                <li class="align"><label>KGL Branch:</label>
                                                     <select name="urole" onblur="role()">
-                                                        <option value="Default">Please select a Produce </option>
+                                                        <option value="Default">Please Select KGL Branch
+                                                        </option>
+                                                        <option value="mg">MAGANJO Branch</option>
+                                                        <option value="ma">MATUGGA Branch</option>
+                                                    </select>
+                                                </li>
+                                                <li class="align"><label>Company Name:</label>
+                                                    <input type="text" placeholder="* Karibu Groceries limited "
+                                                        disabled />
+                                                </li>
+                                                <li class="align"><label>Product:</label>
+                                                    <select name="pdct" onblur="role1()">
+                                                        <option value="Default">Please select an Agricultural Product
+                                                        </option>
                                                         <option value="sa">Beans</option>
                                                         <option value="ma">Maize</option>
                                                         <option value="dr">Cow Peas</option>
                                                         <option value="sa">Beans</option>
                                                         <option value="ma">Maize</option>
-                                                        <option value="dr">Peas</option>
+                                                        <option value="ot">Others</option>
 
                                                     </select>
                                                 </li>
-
+                                                <li><label for="start">Collection Date:</label>
+                                                    <input type="date" name="trip-start" value="" min="1960-01-01"
+                                                        max="2100-12-31">
+                                                </li>
+                                                <!-- <li class="align"><label>Unit price (shs):</label>
+                                                    <input type="text" name="unitprice" id="unitprice"
+                                                        placeholder="*Unit Price per kg (shs)." required size="12"
+                                                        id="nin" oninput="add_number()" />
+                                                </li> -->
+                                                <li class="align"><label>Qty, Tonnes(1000kg):</label>
+                                                    <input type="text" name="quantity" id="qty"
+                                                        placeholder="*Qty Purchased in Tonnes(1000kg)" required
+                                                        oninput="add_number()" />
+                                                </li>
+                                                <!-- <li class="align"><label>Total Amount (shs):</label>
+                                                    <input type="text" name="TextBox3" placeholder="*Amount in shs."
+                                                        disabled id="txtresult" />
+                                                </li> -->
+                                                <li class="align"><label>Comments:</label>
+                                                    <textarea type="text" name="comments"
+                                                        placeholder="*Comments on Produce" id="comments" rows="5"
+                                                        cols="33"></textarea>
+                                                </li>
                                             </ul>
                                         </form>
                                     </div>
-                                    <div class="col col-md-6">
-                                        <form name="registration2" onsubmit="">
-                                            <ul>
-
-
-                                                <li class="align"><label>Username</label>
-                                                    <input type="text" name="usrname" required=""
-                                                        placeholder="* User name" size="22" onblur="userval4(5,22)" />
-                                                </li>
-
-                                                <li class="align"><label>Tel.</label>
-                                                    <input type="text" required="" placeholder="* Telephone no."
-                                                        name="telno" onblur="tel()" />
-                                                </li>
-                                                <li class="align"><label>Password</label>
-                                                    <input type="password" required="" placeholder="* Password"
-                                                        name="passid" size="12" onblur="userpass(6,20)" />
-                                                </li>
-                                                <li class="align"><label>Confirm Password*</label>
-                                                    <input type="password" required="" placeholder="* Confirm Password"
-                                                        name="passid1" size="12" onblur="userpass1(6,20),passvali()" />
-                                                </li>
-                                                <li class="align"><label>Branch</label>
-                                                    <select name="branch" onblur="sbranch()" required>
-                                                        <option value="Default">Please select a Branch </option>
-                                                        <option value="mg">Maganjo</option>
-                                                        <option value="ma">Matugga</option>
-                                                        <option value="na">Not Applicable</option>
-
-                                                    </select>
-                                                </li>
-
-                                            </ul>
-                                        </form>
-                                    </div>
-                                    <!-- <button style="width: 40%;height:50px;" class="custom txt2"><a href="#"
-                                            class="txt2">SignUp
-                                        </a></button> -->
-                                    <h5 class="txt2">* By clicking on Signup you agree to the terms and conditions *
-                                    </h5>
+                                    <button style="width: 40%;
+                                    height:50px;" class="custom">Submit</button>
                                 </div>
                             </div>
                         </div>
@@ -275,7 +264,7 @@
     </footer>
 
 
-
+    <script src="js/purchase.js"></script>
     <!-- jQuery CDN - Slim version (=without AJAX) -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
