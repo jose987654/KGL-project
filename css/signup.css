@@ -47,6 +47,7 @@ select {
 }
 
 .customheight {
+  padding: 0%;
   max-width: 800px;
   height: 160px;
   border-radius: 3px;
