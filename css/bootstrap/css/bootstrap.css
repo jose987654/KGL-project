@@ -6018,7 +6018,7 @@ textarea.form-control-lg {
 
 /* rtl:end:ignore */
 .carousel-fade .carousel-item {
-  opacity: 0;
+  opacity: 0.8;
   transition-property: opacity;
   transform: none;
 }
@@ -6058,6 +6058,7 @@ textarea.form-control-lg {
   border: 0;
   opacity: 0.5;
   transition: opacity 0.15s ease;
+ 
 }
 @media (prefers-reduced-motion: reduce) {
   .carousel-control-prev,

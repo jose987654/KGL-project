@@ -136,7 +136,7 @@ nav {
 .casol {
   width: 400px;
   /* border-radius: 100px; */
-  box-shadow: 30px 70px 95px rgba(0, 0, 0, 0.644);
+  box-shadow: 5px 5px 30px #000;
 }
 
 #chk {
