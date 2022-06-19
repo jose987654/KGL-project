@@ -330,14 +330,14 @@ ul {
 }
 
 label {
-  text-align: right;
+  text-align: center;
   color: #ddd;
-  font-size: 30px;
+  font-size: 20px;
   float: left;
   width: 200px;
 }
 input {
-  width: 300px;
+  width: 200px;
   height: 40px;
   background: #e0dede;
   justify-content: center;
