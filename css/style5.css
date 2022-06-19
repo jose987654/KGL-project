@@ -274,13 +274,6 @@ a.article:hover {
   }
 }
 
-select {
-  height: 40px;
-  background: #e0dede;
-  width: 530px;
-  border-radius: 5px;
-  border: 1px solid black;
-}
 
 #blog-container {
   margin-top: 14px;
@@ -311,8 +304,8 @@ ul {
   list-style: none;
 }
 .main {
-  width: 1000px;
-  height: 790px;
+  width: 1050px;
+  height: 520px;
   overflow: hidden;
   background: url("https://doc-08-2c-docs.googleusercontent.com/docs/securesc/68c90smiglihng9534mvqmq1946dmis5/fo0picsp1nhiucmc0l25s29respgpr4j/1631524275000/03522360960922298374/03522360960922298374/1Sx0jhdpEpnNIydS4rnN4kHSJtU1EyWka?e=view&authuser=0&nonce=gcrocepgbb17m&user=03522360960922298374&hash=tfhgbs86ka6divo3llbvp93mg4csvb38")
     no-repeat center/ cover;
@@ -330,14 +323,14 @@ ul {
 }
 
 label {
-  text-align:right;
+  text-align: center;
   color: #ddd;
-  font-size: 30px;
+  font-size: 20px;
   float: left;
-  width: 300px;
+  width: 200px;
 }
 input {
-  width: 530px;
+  width: 200px;
   height: 40px;
   background: #e0dede;
   justify-content: center;
@@ -348,8 +341,20 @@ input {
   outline: none;
   border-radius: 5px;
 }
+select {
+  width: 200px;
+  height: 40px;
+  background: #e0dede;
+  /* justify-content: center; */
+  display: flex;
+  margin: 20px auto;
+  /* padding: 10px; */
+  border: 1px solid black;
+  outline: none;
+  border-radius: 5px;
+}
 textarea {
-  width: 530px;
+  width: 400px;
   height: 80px;
   background: #e0dede;
   justify-content: center;
@@ -361,8 +366,21 @@ textarea {
   border-radius: 5px;
   resize: none;
 }
+/* textarea {
+  width: 200px;
+  height: 80px;
+  background: #e0dede;
+  justify-content: center;
+  display: flex;
+  margin: 20px auto;
+  padding: 10px;
+  border: 1px solid black;
+  outline: none;
+  border-radius: 5px;
+  resize: none;
+} */
 .align {
-  text-align: center;
+  text-align: left;
 }
 
 button {

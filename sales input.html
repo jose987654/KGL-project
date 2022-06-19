@@ -125,13 +125,13 @@
                         <div class="main custom1">
                             <h2 class="txt1" style="font-size:45px;text-decoration: underline;"> Sales Form</h2>
                             <div class="signup">
-                                <div class="row ">
-                                    <div class=" col col-md-12">
-                                        <form name="registration" onsubmit="">
+                                <div class="row" onsubmit="">
+                                    <div class=" col col-md-6">
+                                        <form name="registration">
                                             <ul>
                                                 <li class="align"><label>KGL Branch:</label>
                                                     <select name="urole" onblur="role()">
-                                                        <option value="Default">Please Select KGL Branch
+                                                        <option value="Default"> KGL Branch
                                                         </option>
                                                         <option value="mg">MAGANJO Branch</option>
                                                         <option value="ma">MATUGGA Branch</option>
@@ -142,12 +142,12 @@
                                                         required size="32" onblur="usernam(0,20)" />
                                                 </li>
                                                 <li class="align"><label>Phone Contact:</label>
-                                                    <input type="text" name="telno" placeholder="* Telephone Number"
+                                                    <input type="text" name="telno" placeholder="* Telephone no."
                                                         required onblur="tel()" />
                                                 </li>
                                                 <li class="align"><label>Product:</label>
                                                     <select name="pdct" onblur="role1()">
-                                                        <option value="Default">Please select an Agricultural Product
+                                                        <option value="Default">Agricultural Product
                                                         </option>
                                                         <option value="sa">Beans</option>
                                                         <option value="ma">Maize</option>
@@ -162,6 +162,12 @@
                                                     <input type="date" name="trip-start" value="" min="1960-01-01"
                                                         max="2100-12-31">
                                                 </li>
+                                            </ul>
+                                        </form>
+                                    </div>
+                                    <div class=" col col-md-6">
+                                        <form name="registration">
+                                            <ul>
                                                 <li class="align"><label>Unit price (shs):</label>
                                                     <input type="text" name="unitprice" id="unitprice"
                                                         placeholder="*Unit Price per kg (shs)." required size="12"
@@ -169,16 +175,16 @@
                                                 </li>
                                                 <li class="align"><label>Qty, Tonnes(1000kg):</label>
                                                     <input type="text" name="quantity" id="qty"
-                                                        placeholder="*Qty sold in Tonnes(1000kg)" required
+                                                        placeholder="*Qty in Tonnes." required
                                                         oninput="add_number()" />
                                                 </li>
                                                 <li class="align"><label>Total Amount (shs):</label>
-                                                    <input type="text" name="TextBox3" placeholder="*Amount in (shs)."
+                                                    <input type="text" name="TextBox3" placeholder="*Amount(shs)."
                                                         disabled id="txtresult" />
                                                 </li>
-                                                <li class="align"><label>Product:</label>
+                                                <li class="align"><label> Sale Type:</label>
                                                     <select name="sale" onblur="role2()">
-                                                        <option value="Default">Please select a Sale type.
+                                                        <option value="Default"> Sale type.
                                                         </option>
                                                         <option value="ca">Cash</option>
                                                         <option value="cr">Credit</option>
@@ -192,9 +198,9 @@
                                             </ul>
                                         </form>
                                     </div>
-                                    <button style="width: 40%;
-                                    height:50px;" class="custom">Confirm Sale</button>
-                                </div>
+                                    
+                                </div><button style="width: 40%;margin-top: 0px;
+                                height:50px;" class="custom">Confirm Sale</button>
                             </div>
                         </div>
                     </div>

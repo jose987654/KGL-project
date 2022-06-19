@@ -148,29 +148,28 @@
                                 Order Form</h2>
                             <div class="signup">
                                 <div class="row ">
-                                    <div class=" col col-md-12">
+                                    <div class=" col col-md-6">
                                         <form name="registration" onsubmit="">
                                             <ul>
                                                 <li class="align"><label>KGL Branch:</label>
                                                     <select name="urole" onblur="role()">
-                                                        <option value="Default">Please Select KGL Branch
+                                                        <option value="Default">KGL Branch
                                                         </option>
                                                         <option value="mg">MAGANJO Branch</option>
                                                         <option value="ma">MATUGGA Branch</option>
                                                     </select>
                                                 </li>
                                                 <li class="align"><label>Company Name:</label>
-                                                    <input type="text" name="coname"
-                                                        placeholder="* Company / Supplier Name " required size="32"
-                                                        onblur="usernam(0,20)" />
+                                                    <input type="text" name="coname" placeholder="* Co. / Supplier  "
+                                                        required size="32" onblur="usernam(0,20)" />
                                                 </li>
                                                 <li class="align"><label>Phone Contact:</label>
-                                                    <input type="text" name="telno" placeholder="* Telephone Number"
+                                                    <input type="text" name="telno" placeholder="* Telephone no."
                                                         required onblur="tel()" />
                                                 </li>
-                                                <li class="align"><label>Product:</label>
+                                                <li class="align"><label>Agricultural Product:</label>
                                                     <select name="pdct" onblur="role1()">
-                                                        <option value="Default">Please select an Agricultural Product
+                                                        <option value="Default">Product
                                                         </option>
                                                         <option value="sa">Beans</option>
                                                         <option value="ma">Maize</option>
@@ -185,15 +184,21 @@
                                                     <input type="date" name="trip-start" value="" min="1960-01-01"
                                                         max="2100-12-31">
                                                 </li>
+
+                                            </ul>
+                                        </form>
+                                    </div>
+                                    <div class=" col col-md-6">
+                                        <form name="registration">
+                                            <ul>
                                                 <li class="align"><label>Unit price (shs):</label>
                                                     <input type="text" name="unitprice" id="unitprice"
-                                                        placeholder="*Unit Price per kg (shs)." required size="12"
-                                                        id="nin" oninput="add_number()" />
+                                                        placeholder="*Unit Price / kg ." required size="12" id="nin"
+                                                        oninput="add_number()" />
                                                 </li>
                                                 <li class="align"><label>Qty, Tonnes(1000kg):</label>
                                                     <input type="text" name="quantity" id="qty"
-                                                        placeholder="*Qty Purchased in Tonnes(1000kg)" required
-                                                        oninput="add_number()" />
+                                                        placeholder="*Qty in Tonnes." required oninput="add_number()" />
                                                 </li>
                                                 <li class="align"><label>Total Amount (shs):</label>
                                                     <input type="text" name="TextBox3" placeholder="*Amount in shs."
