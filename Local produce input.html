@@ -9,11 +9,11 @@
     <title>Karibu Groceries Ltd/farm record</title>
 
     <!-- Bootstrap CSS CDN -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"
-        integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" -->
+        <!-- integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous"> -->
     <!-- Our Custom CSS -->
     <link rel="stylesheet" href="css/style6.css">
-
+    <link href="css/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome JS -->
     <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js"
         integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ"
@@ -159,22 +159,25 @@
                             <div class="signup">
                                 <div class="row ">
                                     <div class=" col col-md-12">
-                                        <form name="registration" onsubmit="">
+                                        <form class="needs-validation" novalidate>
                                             <ul>
-                                                <li class="align"><label>KGL Branch:</label>
-                                                    <select name="urole" onblur="role()">
+                                                <li class="align"><label for="branch" class="form-label">KGL Branch:</label>
+                                                    <select name="urole" onblur="role()" class="form-control" required>
                                                         <option value="Default">Please Select KGL Branch
                                                         </option>
                                                         <option value="mg">MAGANJO Branch</option>
                                                         <option value="ma">MATUGGA Branch</option>
                                                     </select>
+                                                    <div class="invalid-feedback">
+                                                        Valid branch name is required.
+                                                    </div>
                                                 </li>
-                                                <li class="align"><label>Company Name:</label>
+                                                <li class="align"><label class="form-label">Company Name:</label>
                                                     <input type="text" placeholder="* Karibu Groceries limited "
                                                         disabled />
                                                 </li>
-                                                <li class="align"><label>Product:</label>
-                                                    <select name="pdct" onblur="role1()">
+                                                <li class="align"><label for="product" class="form-label">Product:</label>
+                                                    <select name="pdct" onblur="role1()" class="form-control" required>
                                                         <option value="Default">Please select an Agricultural Product
                                                         </option>
                                                         <option value="sa">Beans</option>
@@ -183,37 +186,55 @@
                                                         <option value="sa">Beans</option>
                                                         <option value="ma">Maize</option>
                                                         <option value="ot">Others</option>
-
                                                     </select>
+                                                    <div class="invalid-feedback">
+                                                        Valid Product name is required.
+                                                    </div>
                                                 </li>
-                                                <li><label for="start">Collection Date:</label>
+                                                
+                                                <li><label for="start" class="form-label">Collection Date:</label>
                                                     <input type="date" name="trip-start" value="" min="1960-01-01"
-                                                        max="2100-12-31">
+                                                        max="2100-12-31"  required>
+                                                    <div class="invalid-feedback">
+                                                        Valid collection date is required.
+                                                    </div>
                                                 </li>
+                                                
                                                 <!-- <li class="align"><label>Unit price (shs):</label>
                                                     <input type="text" name="unitprice" id="unitprice"
                                                         placeholder="*Unit Price per kg (shs)." required size="12"
                                                         id="nin" oninput="add_number()" />
                                                 </li> -->
-                                                <li class="align"><label>Qty, Tonnes(1000kg):</label>
-                                                    <input type="text" name="quantity" id="qty"
-                                                        placeholder="*Qty collected from Farm in Tonnes(1000kg)" required
-                                                        oninput="add_number()" />
+
+                                                <li class="align">
+                                                    <label for="quantity" class="form-label">Qty, Tonnes(1000kg):</label>
+                                                    <input type="text" name="quantity" id="qty" class="form-control"
+                                                        placeholder="*Qty collected from Farm in Tonnes(1000kg)"
+                                                        required oninput="add_number()" />
+                                                    <div class="invalid-feedback">
+                                                        Valid Quantity is required.
+                                                    </div>
                                                 </li>
+
+                                               
                                                 <!-- <li class="align"><label>Total Amount (shs):</label>
                                                     <input type="text" name="TextBox3" placeholder="*Amount in shs."
                                                         disabled id="txtresult" />
                                                 </li> -->
-                                                <li class="align"><label>Comments:</label>
+                                                <li class="align"><label for="comments"class="form-label">Comments:</label>
                                                     <textarea type="text" name="comments"
-                                                        placeholder="*Comments on Produce harvested" id="comments" rows="5"
-                                                        cols="33"></textarea>
+                                                        placeholder="*Comments on Produce harvested" id="comments"
+                                                        rows="5" cols="33" class="form-control" required></textarea>
+                                                    <div class="invalid-feedback">
+                                                        Valid comment is required.
+                                                    </div>
                                                 </li>
+                                                
                                             </ul>
                                         </form>
                                     </div>
                                     <button style="width: 40%;
-                                    height:50px;" class="custom">Submit</button>
+                                    height:50px;" class="custom" type="submit">Submit</button>
                                 </div>
                             </div>
                         </div>
@@ -239,8 +260,10 @@
         </div>
     </footer>
 
-
-    <script src="js/purchase.js"></script>
+    <script src="css/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="js/form-validation.js"></script>
+    <!-- <script src="js/form-validation.js"></script> -->
+    <!-- <script src="js/purchase.js"></script> -->
     <!-- jQuery CDN - Slim version (=without AJAX) -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
