@@ -24,7 +24,7 @@
         crossorigin="anonymous"></script>
 </head>
 
-<body onload="Firstfn()">
+<body>
 
     <div class="wrapper">
         <!-- Sidebar  -->
@@ -32,39 +32,26 @@
             <div class="sidebar-header">
                 <h3><img src="./Img/logo5.jpg"
                         style="width:160px; height:160px; border-radius: 3px; background-color: #ddd;"></h3>
-                <!-- <h3 >Karibu Groceries Limited.</h3> -->
+
                 <strong>KGL</strong>
             </div>
 
             <ul class="list-unstyled components" style="font-size: 19px;">
                 <li>
-                    <a href="#" aria-expanded="false" class="dropdown-toggle">
+                    <a href="#">
                         <i class="fas fa-home"></i>
                         Home
                     </a>
                 </li>
 
                 <li>
-                    <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                    <a href="Produce purchases.html">
                         <i class="fas fa-copy"></i>
                         Purchases
                     </a>
-                    <ul class="collapse list-unstyled " id="pageSubmenu">
-                        <li>
-                            <a href="Produce purchases.html">Supplier</a>
-                        </li>
-                        <li>
-                            <a href="#">Farm supply</a>
-                        </li>
 
-                    </ul>
                 </li>
-                <!-- <li>
-                    <a href="#">
-                        <i class="fas fa-image"></i>
-                        Portfolio
-                    </a>
-                </li> -->
+
                 <li class="active">
                     <a href="sales input.html" style="color:#181553">
                         <i class="fas fa-copy"></i>
@@ -85,7 +72,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="account.html">
                         <i class="fas fa-user"></i>
                         Account
                     </a>
@@ -97,24 +84,29 @@
         <div id="content">
 
             <nav class="navbar navbar-expand-lg navbar-light " style="background:#efeef0">
-                <div class="container-fluid">
-
-                    <button type="button" id="sidebarCollapse" class="btn btn-primary" style="background:#181553">
-                        <i class="fas fa-align-left"></i>
-                    </button>
-                    <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse"
-                        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                        <i class="fas fa-align-justify"></i>
-                    </button>
-                    <div>
-                        <h2 style="margin-left:15px;margin-top: 20px;">Karibu Groceries Ltd, PRODUCT SALES FORM</h2>
+                <div class="container-fluid row">
+                    <div class="col-md-11 row">
+                        <div class="col-md-1">
+                            <button type="button" id="sidebarCollapse" class="btn btn-primary"
+                                style="background:#181553">
+                                <i class="fas fa-align-left"></i>
+                            </button>
+                            <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button"
+                                data-toggle="collapse" data-target="#navbarSupportedContent"
+                                aria-controls="navbarSupportedContent" aria-expanded="false"
+                                aria-label="Toggle navigation">
+                                <i class="fas fa-align-justify"></i>
+                            </button>
+                        </div>
+                        <div class="col-md-10">
+                            <h2 style="margin-left:15px;margin-top: 20px;">Karibu Groceries Ltd, PRODUCT SALES FORM</h2>
+                        </div>
                     </div>
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul class="nav navbar-nav ml-auto">
+                    <div class="collapse navbar-collapse col-md-1" id="navbarSupportedContent">
+                        <ul class="nav navbar-nav ml-auto ">
                             <li class="nav-item active">
                                 <button class="btn btn-outline-primary"><a class="nav-link" href="index.html"
-                                        style="color:#000000">LogOut</a></button>
+                                        style="color:#000000; " class="custom">LogOut</a></button>
                             </li>
                         </ul>
                     </div>
@@ -127,94 +119,121 @@
                             <h2 class="txt1" style="font-size:45px;text-decoration: underline;"> Customer Sales Form
                             </h2>
                             <div class="signup">
-                                <div class="row" onsubmit="">
-                                    <div class=" col col-md-6">
-                                        <form class="needs-validation" name="registration" novalidate>
-                                            <ul>
-                                                <li class="align"><label class="form-label">KGL Branch:</label>
-                                                    <select name="urole" onblur="role()">
-                                                        <option value="Default"> KGL Branch
-                                                        </option>
-                                                        <option value="mg">MAGANJO Branch</option>
-                                                        <option value="ma">MATUGGA Branch</option>
-                                                    </select>
-                                                </li>
-                                                <li class="align"><label class="form-label">Customer Name:</label>
-                                                    <input type="text" name="coname" placeholder="*Customer Name "
-                                                        required size="32" onblur="usernam(0,20)" />
-                                                </li>
-                                                <li class="align"><label class="form-label">Phone Contact:</label>
-                                                    <input type="text" name="telno" placeholder="* Telephone no."
-                                                        required onblur="tel()" />
-                                                </li>
-                                                <li class="align"><label class="form-label">Product:</label>
-                                                    <select name="pdct" onblur="role1()">
-                                                        <option value="Default">Agricultural Product
-                                                        </option>
-                                                        <option value="sa">Beans</option>
-                                                        <option value="ma">Maize</option>
-                                                        <option value="dr">Cow Peas</option>
-                                                        <option value="sa">Beans</option>
-                                                        <option value="ma">Maize</option>
-                                                        <option value="ot">Others</option>
+                                <form class="needs-validation" name="registration" novalidate>
 
-                                                    </select>
-                                                </li>
-                                                <li><label for="start" class="form-label">Purchase Date:</label>
-                                                    <input type="date" name="trip-start" value="" min="1960-01-01"
-                                                        max="2100-12-31">
-                                                </li>
-                                            </ul>
-                                        </form>
-                                    </div>
-                                    <div class=" col col-md-6">
-                                        <form class="needs-validation" name="registration" novalidate>
-                                            <ul>
-                                                <li>
-                                                    <div class="align"><label class="form-label">Unit price
-                                                            (shs):</label>
-                                                        <input type="text" name="unitprice" id="unitprice"
-                                                            placeholder="*Unit Price /kg (shs)." required size="12"
-                                                            id="nin" oninput="add_number()" />
-                                                        <div class="invalid-feedback">
-                                                            Please enter a valid email address for shipping updates.
-                                                        </div>
+                                    <div class="row" onsubmit="">
+
+                                        <div class=" col col-md-6">
+
+                                            <div class="align"><label class="form-label">KGL Branch:</label>
+                                                <select name="brnch" onblur="branch()">
+                                                    <option value="Default"> KGL Branch
+                                                    </option>
+                                                    <option value="mg">MAGANJO Branch</option>
+                                                    <option value="ma">MATUGGA Branch</option>
+                                                </select>
+
+                                            </div>
+                                            <div class="align"><label class="form-label">Customer Name:</label>
+                                                <input type="text" name="fname" placeholder="*Customer Name " required
+                                                    size="32" onblur="cname()">
+                                                <div class="invalid-feedback">
+                                                    Enter a valid Customer name.
+                                                </div>
+                                            </div>
+                                            <div class="align"><label class="form-label">Phone Contact:</label>
+                                                <input type="text" name="telno" placeholder="* Telephone no." required
+                                                    onblur="tel()">
+                                                <div class="invalid-feedback">
+                                                    Please enter a valid telephone number.
+                                                </div>
+                                            </div>
+                                            <div class="align"><label class="form-label">Product:</label>
+                                                <select name="pdct" onblur="pdt()">
+                                                    <option value="Default">Agricultural Product
+                                                    </option>
+                                                    <option value="sa">Beans</option>
+                                                    <option value="ma">Maize</option>
+                                                    <option value="dr">Cow Peas</option>
+                                                    <option value="sa">Beans</option>
+                                                    <option value="ma">Maize</option>
+                                                    <option value="ot">Others</option>
+
+                                                </select>
+
+                                            </div>
+                                            <div><label for="start" class="form-label">Purchase Date:</label>
+                                                <input type="date" name="date" value="" min="1960-01-01"
+                                                    max="2100-12-31" onblur="dte()">
+                                                <div class="invalid-feedback">
+                                                    Please enter a valid date.
+                                                </div>
+                                            </div>
+
+
+                                        </div>
+                                        <div class=" col col-md-6">
+
+                                            <div>
+                                                <div class="align"><label class="form-label">Unit price
+                                                        (shs):</label>
+                                                    <input type="text" name="unitprice" id="unitprice"
+                                                        placeholder="*Unit Price /kg (shs)." required size="12" id="nin"
+                                                        onblur="add2()" oninput="add_number()">
+                                                    <div class="invalid-feedback">
+                                                        Please enter a valid unit price.
                                                     </div>
-                                                </li>
-                                                <li class="align"><label class="form-label">Qty, Tonnes(1000kg):</label>
-                                                    <input type="text" name="quantity" id="qty"
-                                                        placeholder="*Qty in Tonnes." required oninput="add_number()" />
-                                                </li>
-                                                <li class="align"><label class="form-label">Total Amount (shs):</label>
-                                                    <input type="text" name="TextBox3" placeholder="*Amount(shs)."
-                                                        disabled id="txtresult" />
-                                                </li>
-                                                <li class="align"><label class="form-label"> Sale Type:</label>
-                                                    <select name="sale" onblur="role2()">
-                                                        <option value="Default"> Sale type.
-                                                        </option>
-                                                        <option value="ca">Cash</option>
-                                                        <option value="cr">Credit</option>
-                                                    </select>
-                                                </li>
-                                                <li class="align"><label class="form-label">Comments:</label>
-                                                    <textarea type="text" name="comments"
-                                                        placeholder="*Comments on Sale." id="comments" rows="5"
-                                                        cols="33"></textarea>
-                                                </li>
-                                            </ul>
-                                        </form>
+                                                </div>
+                                            </div>
+                                            <div class="align"><label class="form-label">Qty,
+                                                    Tonnes(1000kg):</label>
+                                                <input type="text" name="quantity" id="qty"
+                                                    placeholder="*Qty in Tonnes." required oninput="add_number()"
+                                                    onblur="add1()">
+                                                <div class="invalid-feedback">
+                                                    Please enter a Quantity in tonnnes.
+                                                </div>
+                                            </div>
+                                            <div class="align"><label class="form-label">Total Amount (shs):</label>
+                                                <input type="text" name="TextBox3" placeholder="*Amount(shs)." disabled
+                                                    id="txtresult">
+                                            </div>
+                                            <div class="align"><label class="form-label"> Sale Type:</label>
+                                                <select name="sale" onblur="sales()">
+                                                    <option value="Default"> Sale type.
+                                                    </option>
+                                                    <option value="ca">Cash</option>
+                                                    <option value="cr">Credit</option>
+                                                </select>
+                                                <div class="invalid-feedback">
+                                                    Please enter a sale type
+                                                </div>
+                                            </div>
+                                            <div class="align"><label class="form-label">Comments:</label>
+                                                <textarea type="text" name="comments" placeholder="*Comments on Sale."
+                                                    id="comments" rows="5" cols="33"></textarea>
+                                                <div class="invalid-feedback">
+                                                    Please enter a valid comment
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="  col col-md-12"><button
+                                                style="width: 40%;margin-top: 0px;height:50px;" type="submit"
+                                                class="custom">Confirm
+                                                Sale</button>
+                                        </div>
                                     </div>
-
-                                </div><button style="width: 40%;margin-top: 0px;
-                                height:50px;" class="custom" type="submit">Confirm Sale</button>
+                                </form>
                             </div>
+
                         </div>
+
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
     <footer class="page-footer font-small blue pt-4 ">
         <div class="container-fluid text-center text-md-left ">
             <div class="row">

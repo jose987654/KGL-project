@@ -9,10 +9,11 @@
     <title>Karibu Groceries Ltd/purchases</title>
 
     <!-- Bootstrap CSS CDN -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"
+    <link href="css/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"
         integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
-    <!-- Our Custom CSS -->
-    <link rel="stylesheet" href="css/style4.css">
+    Our Custom CSS -->
+    <link rel="stylesheet" href="css/style5.css">
 
     <!-- Font Awesome JS -->
     <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js"
@@ -43,9 +44,8 @@
                     </a>
                 </li>
 
-                <li class="active">
-                    <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"
-                        style="color:#181553">
+                <li>
+                    <a href="#" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
                         <i class="fas fa-copy"></i>
                         Purchases
                     </a>
@@ -65,8 +65,8 @@
                         Portfolio
                     </a>
                 </li> -->
-                <li>
-                    <a href="#">
+                <li class="active">
+                    <a href="sales input.html" style="color:#181553">
                         <i class="fas fa-copy"></i>
                         Sales
                     </a>
@@ -91,84 +91,71 @@
                     </a>
                 </li>
             </ul>
-
-            <!-- <ul class="list-unstyled CTAs">
-                <li>
-                    <a href="https://bootstrapious.com/tutorial/files/sidebar.zip" class="download">Download source</a>
-                </li>
-                <li>
-                    <a href="https://bootstrapious.com/p/bootstrap-sidebar" class="article">Back to article</a>
-                </li>
-            </ul> -->
-
-
         </nav>
 
         <!-- Page Content  -->
         <div id="content">
 
             <nav class="navbar navbar-expand-lg navbar-light " style="background:#efeef0">
-                <div class="container-fluid row">
-                    <div class="col-md-11 row">
-                        <div class="col-md-1">
-                            <button type="button" id="sidebarCollapse" class="btn btn-primary"
-                                style="background:#181553">
-                                <i class="fas fa-align-left"></i>
-                            </button>
-                            <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button"
-                                data-toggle="collapse" data-target="#navbarSupportedContent"
-                                aria-controls="navbarSupportedContent" aria-expanded="false"
-                                aria-label="Toggle navigation">
-                                <i class="fas fa-align-justify"></i>
-                            </button>
-                        </div>
-                        <div  class="col-md-10">
-                            <h2 style="margin-left:15px;margin-top: 20px;">Karibu Groceries Ltd, PRODUCT SALES FORM</h2>
-                        </div>
+                <div class="container-fluid">
+
+                    <button type="button" id="sidebarCollapse" class="btn btn-primary" style="background:#181553">
+                        <i class="fas fa-align-left"></i>
+                    </button>
+                    <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse"
+                        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <i class="fas fa-align-justify"></i>
+                    </button>
+                    <div>
+                        <h2 style="margin-left:15px;margin-top: 20px;">Karibu Groceries Ltd, PRODUCT SALES FORM</h2>
                     </div>
-                    <div class="collapse navbar-collapse col-md-1" id="navbarSupportedContent">
-                        <ul class="nav navbar-nav ml-auto ">
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="nav navbar-nav ml-auto">
                             <li class="nav-item active">
                                 <button class="btn btn-outline-primary"><a class="nav-link" href="index.html"
-                                        style="color:#000000; " class="custom">LogOut</a></button>
+                                        style="color:#000000">LogOut</a></button>
                             </li>
                         </ul>
                     </div>
                 </div>
             </nav>
-            <!-- <h2 style="font-size:45px;color:rgb(51, 49, 49); text-decoration: underline;">Produce Procurement Karibu -->
-            <!-- Groceries Limited. </h2> -->
-
             <div class="container-fluid" id="blog-container">
                 <div class="row">
                     <div class="col-md-12">
                         <div class="main custom1">
-                            <h2 class="txt1" style="font-size:45px;text-decoration: underline;"> Produce Procurement
-                                Order Form</h2>
+                            <h2 class="txt1" style="font-size:45px;text-decoration: underline;"> Customer Sales Form
+                            </h2>
                             <div class="signup">
-                                <div class="row ">
+                                <div class="row" onsubmit="">
                                     <div class=" col col-md-6">
-                                        <form name="registration" onsubmit="">
+                                        <form class="needs-validation" name="registration1" novalidate>
                                             <ul>
-                                                <li class="align"><label>KGL Branch:</label>
+                                                <li class="align"><label class="form-label">KGL Branch:</label>
                                                     <select name="urole" onblur="role()">
-                                                        <option value="Default">KGL Branch
+                                                        <option value="Default"> KGL Branch
                                                         </option>
                                                         <option value="mg">MAGANJO Branch</option>
                                                         <option value="ma">MATUGGA Branch</option>
                                                     </select>
                                                 </li>
-                                                <li class="align"><label>Company Name:</label>
-                                                    <input type="text" name="coname" placeholder="* Co. / Supplier  "
-                                                        required size="32" onblur="usernam(0,20)" />
+                                                <li class="align"><label class="form-label">Customer Name:</label>
+                                                    <input type="text" name="coname" placeholder="*Customer Name "
+                                                        required size="32" onblur="usernam(0,20)">
+                                                    <div class="invalid-feedback">
+                                                        Please enter a valid email address for shipping updates.
+                                                    </div>
                                                 </li>
-                                                <li class="align"><label>Phone Contact:</label>
+                                                <li class="align"><label class="form-label">Phone Contact:</label>
                                                     <input type="text" name="telno" placeholder="* Telephone no."
-                                                        required onblur="tel()" />
+                                                        required onblur="tel()">
+                                                    <div class="invalid-feedback">
+                                                        Please enter a valid email address for shipping updates.
+                                                    </div>
                                                 </li>
-                                                <li class="align"><label>Agricultural Product:</label>
+                                                <li class="align"><label class="form-label">Product:</label>
                                                     <select name="pdct" onblur="role1()">
-                                                        <option value="Default">Product
+                                                        <option value="Default">Agricultural Product
                                                         </option>
                                                         <option value="sa">Beans</option>
                                                         <option value="ma">Maize</option>
@@ -179,41 +166,54 @@
 
                                                     </select>
                                                 </li>
-                                                <li><label for="start">Purchase Date:</label>
+                                                <li><label for="start" class="form-label">Purchase Date:</label>
                                                     <input type="date" name="trip-start" value="" min="1960-01-01"
                                                         max="2100-12-31">
                                                 </li>
-
                                             </ul>
                                         </form>
                                     </div>
                                     <div class=" col col-md-6">
-                                        <form name="registration">
+                                        <form class="needs-validation" name="registration" novalidate>
                                             <ul>
-                                                <li class="align"><label>Unit price (shs):</label>
-                                                    <input type="text" name="unitprice" id="unitprice"
-                                                        placeholder="*Unit Price / kg ." required size="12" id="nin"
-                                                        oninput="add_number()" />
+                                                <li>
+                                                    <div class="align"><label class="form-label">Unit price
+                                                            (shs):</label>
+                                                        <input type="text" name="unitprice" id="unitprice"
+                                                            placeholder="*Unit Price /kg (shs)." required size="12"
+                                                            id="nin" oninput="add_number()">
+                                                        <div class="invalid-feedback">
+                                                            Please enter a valid email address for shipping updates.
+                                                        </div>
+                                                    </div>
                                                 </li>
-                                                <li class="align"><label>Qty, Tonnes(1000kg):</label>
+                                                <li class="align"><label class="form-label">Qty, Tonnes(1000kg):</label>
                                                     <input type="text" name="quantity" id="qty"
-                                                        placeholder="*Qty in Tonnes." required oninput="add_number()" />
+                                                        placeholder="*Qty in Tonnes." required oninput="add_number()">
                                                 </li>
-                                                <li class="align"><label>Total Amount (shs):</label>
-                                                    <input type="text" name="TextBox3" placeholder="*Amount in shs."
-                                                        disabled id="txtresult" />
+                                                <li class="align"><label class="form-label">Total Amount (shs):</label>
+                                                    <input type="text" name="TextBox3" placeholder="*Amount(shs)."
+                                                        disabled id="txtresult">
                                                 </li>
-                                                <li class="align"><label>Comments:</label>
+                                                <li class="align"><label class="form-label"> Sale Type:</label>
+                                                    <select name="sale" onblur="role2()">
+                                                        <option value="Default"> Sale type.
+                                                        </option>
+                                                        <option value="ca">Cash</option>
+                                                        <option value="cr">Credit</option>
+                                                    </select>
+                                                </li>
+                                                <li class="align"><label class="form-label">Comments:</label>
                                                     <textarea type="text" name="comments"
-                                                        placeholder="*Comments on purchase" id="comments" rows="5"
+                                                        placeholder="*Comments on Sale." id="comments" rows="5"
                                                         cols="33"></textarea>
                                                 </li>
                                             </ul>
                                         </form>
                                     </div>
-                                    <button style="width: 40%;
-                                    height:50px;" class="custom">Confirm Purchase</button>
-                                </div>
+
+                                </div><button style="width: 40%;margin-top: 0px;
+                                height:50px;" class="custom" type="submit">Confirm Sale</button>
                             </div>
                         </div>
                     </div>
@@ -239,7 +239,7 @@
     </footer>
 
 
-    <script src="js/purchase.js"></script>
+    <script src="js/sales.js"></script>
     <!-- jQuery CDN - Slim version (=without AJAX) -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
@@ -249,10 +249,10 @@
         integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ"
         crossorigin="anonymous"></script>
     <!-- Bootstrap JS -->
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"
+    <!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"
         integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
-        crossorigin="anonymous"></script>
-
+        crossorigin="anonymous"></script> -->
+    <script src="css/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script type="text/javascript">
         $(document).ready(function () {
             $('#sidebarCollapse').on('click', function () {
