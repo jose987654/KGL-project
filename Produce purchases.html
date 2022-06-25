@@ -122,8 +122,8 @@
                                 <i class="fas fa-align-justify"></i>
                             </button>
                         </div>
-                        <div  class="col-md-10">
-                            <h2 style="margin-left:15px;margin-top: 20px;">Karibu Groceries Ltd, PRODUCT SALES FORM</h2>
+                        <div class="col-md-10">
+                            <h2 style="margin-left:15px;margin-top: 20px;">Karibu Groceries Ltd, PRODUCT PURCHASES </h2>
                         </div>
                     </div>
                     <div class="collapse navbar-collapse col-md-1" id="navbarSupportedContent">
@@ -146,9 +146,10 @@
                             <h2 class="txt1" style="font-size:45px;text-decoration: underline;"> Produce Procurement
                                 Order Form</h2>
                             <div class="signup">
-                                <div class="row ">
-                                    <div class=" col col-md-6">
-                                        <form name="registration" onsubmit="">
+                                <form name="registration" onsubmit="">
+                                    <div class="row ">
+                                        <div class=" col col-md-6">
+
                                             <ul>
                                                 <li class="align"><label>KGL Branch:</label>
                                                     <select name="urole" onblur="role()">
@@ -180,40 +181,42 @@
                                                     </select>
                                                 </li>
                                                 <li><label for="start">Purchase Date:</label>
-                                                    <input type="date" name="trip-start" value="" min="1960-01-01"
-                                                        max="2100-12-31">
+                                                    <input type="date" name="pdte" value="" min="1960-01-01"
+                                                        max="2100-12-31" onblur="dte()"/>
                                                 </li>
 
                                             </ul>
-                                        </form>
-                                    </div>
-                                    <div class=" col col-md-6">
-                                        <form name="registration">
-                                            <ul>
-                                                <li class="align"><label>Unit price (shs):</label>
-                                                    <input type="text" name="unitprice" id="unitprice"
-                                                        placeholder="*Unit Price / kg ." required size="12" id="nin"
-                                                        oninput="add_number()" />
-                                                </li>
-                                                <li class="align"><label>Qty, Tonnes(1000kg):</label>
-                                                    <input type="text" name="quantity" id="qty"
-                                                        placeholder="*Qty in Tonnes." required oninput="add_number()" />
-                                                </li>
-                                                <li class="align"><label>Total Amount (shs):</label>
-                                                    <input type="text" name="TextBox3" placeholder="*Amount in shs."
-                                                        disabled id="txtresult" />
-                                                </li>
-                                                <li class="align"><label>Comments:</label>
-                                                    <textarea type="text" name="comments"
-                                                        placeholder="*Comments on purchase" id="comments" rows="5"
-                                                        cols="33"></textarea>
-                                                </li>
-                                            </ul>
-                                        </form>
-                                    </div>
-                                    <button style="width: 40%;
+
+                                        </div>
+                                        <div class=" col col-md-6">
+                                            <form name="registration">
+                                                <ul>
+                                                    <li class="align"><label>Unit price (shs):</label>
+                                                        <input type="text" name="unitprice" id="unitprice"
+                                                            placeholder="*Unit Price / kg ." required size="12" id="nin"
+                                                            onblur="add2()" oninput="add_number()" />
+                                                    </li>
+                                                    <li class="align"><label>Qty, Tonnes(1000kg):</label>
+                                                        <input type="text" name="quantity" id="qty"
+                                                            placeholder="*Qty in Tonnes." required
+                                                            onblur="add1()"  oninput="add_number()" />
+                                                    </li>
+                                                    <li class="align"><label>Total Amount (shs):</label>
+                                                        <input type="text" name="TextBox3" placeholder="*Amount in shs."
+                                                            disabled id="txtresult" />
+                                                    </li>
+                                                    <li class="align"><label>Comments:</label>
+                                                        <textarea type="text" name="comments"
+                                                            placeholder="*Comments on purchase" id="comments" rows="5"
+                                                            cols="33"></textarea>
+                                                    </li>
+                                                </ul>
+                                            </form>
+                                        </div>
+                                        <button style="width: 40%;
                                     height:50px;" class="custom">Confirm Purchase</button>
-                                </div>
+                                    </div>
+                                </form>
                             </div>
                         </div>
                     </div>

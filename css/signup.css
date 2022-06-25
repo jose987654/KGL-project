@@ -8,7 +8,7 @@ footer {
 }
 
 body {
-  background-color: #454553;
+  background-color: #e7e6e6;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -108,7 +108,7 @@ ul {
 }
 .main {
   width: 1200px;
-  height: 500px;
+  height: 550px;
   overflow: hidden;
   background: url("https://doc-08-2c-docs.googleusercontent.com/docs/securesc/68c90smiglihng9534mvqmq1946dmis5/fo0picsp1nhiucmc0l25s29respgpr4j/1631524275000/03522360960922298374/03522360960922298374/1Sx0jhdpEpnNIydS4rnN4kHSJtU1EyWka?e=view&authuser=0&nonce=gcrocepgbb17m&user=03522360960922298374&hash=tfhgbs86ka6divo3llbvp93mg4csvb38")
     no-repeat center/ cover;
@@ -119,15 +119,15 @@ ul {
   border-color: #0ada0a;
 }
 .custom1 {
-  background-color: #838285;
+  background-color: #9a989c;
 }
-.custom1:hover {
+/* .custom1:hover {
   background-color: #6d6b70;
-}
+} */
 
 label {
   text-align: center;
-  color: #ddd;
+  color: rgb(0, 0, 0);
   font-size: 20px;
   float: left;
   width: 100px;
