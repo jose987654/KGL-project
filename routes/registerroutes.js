@@ -5,7 +5,7 @@ const router = express.Router();
 const Manager = require('../models/Manager');
 
 router.get('/register',(req,res)=>{
-    res.render('fa_m_reg',{title:"Farm register"})
+    res.render('signup')
 })
 
 

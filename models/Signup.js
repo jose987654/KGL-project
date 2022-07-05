@@ -6,20 +6,31 @@ const mongoose = require("mongoose");
 const passportLocalMongoose = require('passport-local-mongoose');
 
 const signupSchema = new mongoose.Schema({
-    username:{
-        type:String,
-        // trim aims at removing the space after the text or string 
-        trim:true
-    },
-        email:{
+    firstname:{
         type:String,
         trim:true,
-        require: 'Please enter valid email'
     },
-    password:{
-        type:String
-        
+    secondname:{
+        type:String,
+        trim:true,
     },
+    maritalstatus:{
+        type:String,
+        trim:true,
+    },
+    dob:{
+        type:Date        
+    },
+    gender:{
+        type:String,        
+    },
+    phonenumber:{
+        type:String,
+      
+    },
+    role:{
+        type:String,        
+    }
 })
 
 // Emphasizes unique identifier

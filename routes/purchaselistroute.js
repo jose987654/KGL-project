@@ -3,7 +3,7 @@ const router = express.Router();
 const mongoose = require("mongoose");
 const Purchase = require("../models/Purchase");
 
-router.get("/", async (req, res) => {
+router.get("/purchaselist", async (req, res) => {
   if(req.session.user){
     try {
       const purchase = await Purchase.find();
@@ -15,7 +15,7 @@ router.get("/", async (req, res) => {
   }  
 });
 
-router.post("/delete", async (req, res) => {
+router.post("/purchaselist/delete", async (req, res) => {
   try {
     await Purchase.deleteOne({ _id: req.body.id });
     res.redirect("back");
@@ -25,7 +25,7 @@ router.post("/delete", async (req, res) => {
 });
 
 
-router.get('/edit/:id', async (req, res)=>{
+router.get('/purchaselist/edit/:id', async (req, res)=>{
   try{
     const purchase = await Purchase.findOne({ _id:req.params.id});
     res.render('editpurchases', {user:purchase});
@@ -36,7 +36,7 @@ router.get('/edit/:id', async (req, res)=>{
  
 });
 
-router.post('/edit', async (req, res)=>{
+router.post('/purchaselist/edit', async (req, res)=>{
   try{
      await Purchase.findOneAndUpdate({ _id:req.query.id},req.body);
     res.redirect("/purchaselist");
@@ -46,5 +46,7 @@ router.post('/edit', async (req, res)=>{
   }   
  
 });
+
+
 
 module.exports = router;

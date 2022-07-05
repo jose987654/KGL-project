@@ -76,7 +76,7 @@ app.use('/', loginroutes)
 app.use('/', salesroutes)
 app.use('/', purchasesroutes)
 app.use('/', salelistroutes)
-app.use('/purchaselist', purchaselistroute)
+app.use('/', purchaselistroute)
 // handling non existing routes
 app.get('*', (req, res)=> {
   res.status(404).send('OOPS! WRONG ADDRESS')
