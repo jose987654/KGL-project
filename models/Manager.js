@@ -5,16 +5,18 @@
 const mongoose = require("mongoose");
 const passportLocalMongoose = require('passport-local-mongoose');
 
-const userloginSchema = new mongoose.Schema({
+const UserloginSchema = new mongoose.Schema({
     username:{
         type:String,
         // trim aims at removing the space after the text or string 
-        trim:true
+        trim:true,
+        unique:true,
     },
-        email:{
+    email:{
         type:String,
         trim:true,
-        require: 'Please enter valid email'
+        unique:true,
+        required:true,
     },
     password:{
         type:String
@@ -23,7 +25,7 @@ const userloginSchema = new mongoose.Schema({
 })
 
 // Emphasizes unique identifier
-userloginSchema.plugin(passportLocalMongoose, {usernameField:'email'})
+UserloginSchema.plugin(passportLocalMongoose, {usernameField:'email'})
 
 // exporting our Schema 
-module.exports = mongoose.model("Userlogin", userloginSchema);
+module.exports = mongoose.model("userlogin", UserloginSchema);

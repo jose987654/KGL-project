@@ -5,12 +5,12 @@ head
   meta(http-equiv='X-UA-Compatible' content='IE=edge')
   title Karibu Groceries Ltd/purchases
   // Bootstrap CSS CDN
-  link(href='css/bootstrap/css/bootstrap.min.css' rel='stylesheet')
+  link(href='/css/bootstrap/css/bootstrap.min.css' rel='stylesheet')
   //
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"
     integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
     Our Custom CSS
-  link(rel='stylesheet' href='css/style5.css')
+  link(rel='stylesheet' href='/css/style5.css')
   // Font Awesome JS
   script(defer='' src='https://use.fontawesome.com/releases/v5.0.13/js/solid.js' integrity='sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ' crossorigin='anonymous')
   script(defer='' src='https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js' integrity='sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY' crossorigin='anonymous')
@@ -19,19 +19,19 @@ head
   nav#sidebar
     .sidebar-header
       h3
-        img(src='./Img/logo5.jpg' style='width:160px; height:160px; border-radius: 3px; background-color: #ddd;')
+        img(src='/Img/logo5.jpg' style='width:160px; height:160px; border-radius: 3px; background-color: #ddd;')
       strong KGL
     ul.list-unstyled.components(style='font-size: 19px;')
       li
         a(href='#')
           i.fas.fa-home
           |                         Home
-      li.active
-        a(href='' style='color:#181553')
+      li
+        a(href='Produce purchases.html')
           i.fas.fa-copy
           |                         Purchases
-      li
-        a(href='')
+      li.active
+        a(href='sales input.html' style='color:#181553')
           i.fas.fa-copy
           |                         Sales
       li
@@ -59,7 +59,7 @@ head
           .col-md-10
             h2(style='margin-left:15px;margin-top: 20px; color:#181553;')
               | Karibu Groceries Ltd, PRODUCT
-              | PURCHASES FORM
+              | PURCHASES. 
         #navbarSupportedContent.collapse.navbar-collapse.col-md-1
           ul.nav.navbar-nav.ml-auto
             li.nav-item.active
@@ -70,32 +70,32 @@ head
         .col-md-12
           .main.custom1
             h2.txt1(style='font-size:45px;text-decoration: underline;')
-              | Produce Procurement Order Form
+              | Supplier Purchases Record
             .signup
-              form.needs-validation(name='registration' novalidate='' action="/purchases" method="POST")
+              form(method="POST" action="/purchaselist/edit?id="+user._id )
                 .row(onsubmit='')
                   .col.col-md-6
                     .align
                       label.form-label KGL Branch:
-                      select(name='branch' onblur='branch()')
-                        option(value='Default')
+                      select(name='branch' )
+                        option(value=user.branch)
                           | KGL Branch
                         option(value='Maganjo') MAGANJO Branch
                         option(value='Matugga') MATUGGA Branch
                     .align
                       label.form-label Supplier Name:
-                      input(type='text' name='customername' placeholder='*Supplier Name ' required='' size='32' onblur='cname()')
+                      input(type='text' name='customername' placeholder='*Customer Name ' value=user.customername)
                       .invalid-feedback
-                        | Enter a valid Supplier name.
+                        | Enter a valid Customer name.
                     .align
                       label.form-label Phone Contact:
-                      input(type='text' name='telno' placeholder='* Telephone no.' required='' onblur='tel()')
+                      input(type='text' name='telno' placeholder='* Telephone no.' value=user.telno)
                       .invalid-feedback
                         | Please enter a valid telephone number.
                     .align
                       label.form-label Product:
-                      select(name='pdct' onblur='pdt()')
-                        option(value='Default')
+                      select(name='pdct' )
+                        option(value=user.pdct)
                           | Agricultural Product
                         option(value='Beans') Beans
                         option(value='Maize') Maize
@@ -105,7 +105,7 @@ head
                         option(value='Others') Others
                     div
                       label.form-label(for='start') Purchase Date:
-                      input(type='date' name='date' value='' min='1960-01-01' max='2100-12-31' onblur='dte()')
+                      input(type='date' name='date' min='1960-01-01' max='2100-12-31' value=user.date)
                       .invalid-feedback
                         | Please enter a valid date.
                   .col.col-md-6
@@ -114,37 +114,37 @@ head
                         label.form-label
                           | Unit price
                           | (shs):
-                        input#unitprice(type='text' name='unitprice' placeholder='*Unit Price /kg (shs).' required='' size='12' onblur='add2()' oninput='add_number()')
+                        input#unitprice(type='text' name='unitprice' placeholder='*Unit Price /kg (shs).'   oninput='add_number()' value=user.unitprice)
                         .invalid-feedback
                           | Please enter a valid unit price.
                     .align
                       label.form-label
                         | Qty,
                         | Tonnes(1000kg):
-                      input#qty(type='text' name='quantity' placeholder='*Qty in Tonnes.' required='' oninput='add_number()' onblur='add1()')
+                      input#qty(type='text' name='quantity' placeholder='*Qty in Tonnes.'  oninput='add_number()' value=user.quantity)
                       .invalid-feedback
                         | Please enter a Quantity in tonnnes.
                     .align
                       label.form-label Total Amount (shs):
-                      input#txtresult(type='text' name='total' placeholder='*Amount(shs).' )
+                      input#txtresult(type='text' name='total' placeholder='*Amount(shs).' value=user.total)
                     .align
                       label.form-label  Purchase Type:
-                      select(name='sale_type' onblur='sales()')
-                        option(value='Default')
-                          | Purchase type.
+                      select(name='sale_type' )
+                        option(value=user.sale_type)
+                          | Purchase type
                         option(value='Cash') Cash
                         option(value='Credit') Credit
                       .invalid-feedback
                         | Please enter a Purchase type
                     .align
                       label.form-label Comments:
-                      textarea#comments(type='text' name='comments' placeholder='*Comments on Purchase.' rows='5' cols='33')
+                      textarea#comments(type='text' name='comments' placeholder='*Comments on Purchase.' rows='5' cols='33' value=user.comments)
                       .invalid-feedback
                         | Please enter a valid comment
                   .col.col-md-12
                     button.custom(style='width: 40%;margin-top: 0px;height:50px;margin-left:350px;' type='submit')
                       | Confirm
-                      | Purchase
+                      | Update
 footer.page-footer.font-small.blue.pt-4
   .container-fluid.text-center.text-md-left
     .row
@@ -154,7 +154,7 @@ footer.page-footer.font-small.blue.pt-4
       .col-md-10.mt-md-0.mt-3.footer-copyright.text-center.py-3.textcontent
         | &copy; 2022 Copyright:
         | Karibu Groceries LTD
-script(src='js/sales.js')
+script(src='/js/sales.js')
 // jQuery CDN - Slim version (=without AJAX)
 script(src='https://code.jquery.com/jquery-3.3.1.slim.min.js' integrity='sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo' crossorigin='anonymous')
 // Popper.JS

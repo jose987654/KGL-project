@@ -5,12 +5,12 @@ head
   meta(http-equiv='X-UA-Compatible' content='IE=edge')
   title Karibu Groceries Ltd/purchases
   // Bootstrap CSS CDN
-  link(href='css/bootstrap/css/bootstrap.min.css' rel='stylesheet')
+  link(href='/css/bootstrap/css/bootstrap.min.css' rel='stylesheet')
   //
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"
     integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
     Our Custom CSS
-  link(rel='stylesheet' href='css/style5.css')
+  link(rel='stylesheet' href='/css/style5.css')
   // Font Awesome JS
   script(defer='' src='https://use.fontawesome.com/releases/v5.0.13/js/solid.js' integrity='sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ' crossorigin='anonymous')
   script(defer='' src='https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js' integrity='sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY' crossorigin='anonymous')
@@ -19,7 +19,7 @@ head
   nav#sidebar
     .sidebar-header
       h3
-        img(src='./Img/logo5.jpg' style='width:160px; height:160px; border-radius: 3px; background-color: #ddd;')
+        img(src='/Img/logo5.jpg' style='width:160px; height:160px; border-radius: 3px; background-color: #ddd;')
       strong KGL
     ul.list-unstyled.components(style='font-size: 19px;')
       li
@@ -34,16 +34,16 @@ head
         a(href='sales input.html')
           i.fas.fa-copy
           |                         Sales
-      li
-        a(href='#')
+      li.active
+        a(href='#' style='color:#181553')
           i.fas.fa-briefcase
-          |                         About
+          |                         Records
       li
         a(href='#')
           i.fas.fa-paper-plane
           |                         Contact
-      li.active
-        a(href='account.html' style='color:#181553')
+      li
+        a(href='account.html')
           i.fas.fa-user
           |                         Account
   // Page Content
@@ -57,65 +57,51 @@ head
             button.btn.btn-dark.d-inline-block.d-lg-none.ml-auto(type='button' data-toggle='collapse' data-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation')
               i.fas.fa-align-justify
           .col-md-10
-            h2(style='margin-left:15px;margin-top: 20px; color:#181553') Karibu Groceries Ltd, EMPLOYEE FORM
+            h2(style='margin-left:15px;margin-top: 20px; color:#181553;') Karibu Groceries Ltd, Sales Records
         #navbarSupportedContent.collapse.navbar-collapse.col-md-1
           ul.nav.navbar-nav.ml-auto
             li.nav-item.active
               button.btn.btn-outline-primary
-                a.nav-link(href='index.html' style='color:#000000; ') LogOut
+                a.nav-link(href='' style='color:#181553;  ') LogOut
     #blog-container.container-fluid
       .row
         .col-md-12
           .main.custom1
             h2.txt1(style='font-size:45px;text-decoration: underline;')
-              | Personal Account
-              | Details
-            .signup
-              form(name='registration' novalidate='')
-                .row(onsubmit='')
-                  .col.col-md-6
-                    ul
-                      li.align
-                        label First Name:
-                        input#fname(type='text' name='fname' placeholder='* First Name ' disabled='')
-                      li.align
-                        label Second Name:
-                        input#sname(type='text' name='sname' placeholder='* Second Name' disabled='')
-                      li.align
-                        label Gender:
-                        input(type='text' name='gender' placeholder='*Male / Female' disabled='')
-                      li.align
-                        label National ID Number:
-                        input#nin(type='text' name='userid2' placeholder='*NIN' disabled='')
-                      li.align
-                        label E-mail:
-                        input(type='email' name='email' placeholder='* Email-address' disabled='')
-                      li.align
-                        label User role:
-                        input#usrole(type='text' name='userole' placeholder='* User Role' disabled='')
-                  .col.col-md-6
-                    ul
-                      li.align
-                        label Username
-                        input(type='text' name='usrname' placeholder='* User name' disabled='')
-                      li.align
-                        label Tel.
-                        input(type='text' placeholder='* Telephone no.' disabled='' name='telno')
-                      li.align
-                        label Branch
-                        input(type='text' required='' placeholder='*Branch name' name='branch' disabled='')
-                      li.align
-                        label Password
-                        input(type='password' placeholder='* Password' name='passid')
-                      li.align
-                        button.custom(style='width: 40%; float:center;\
-                        height:50px;') Update details
-                  //
-                    <div class="  col col-md-12"><button
-                    style="width: 40%;margin-top: 0px;height:50px;" type="submit"
-                    class="custom">Confirm
-                    Sale</button>
-                    </div>
+              | Update Customer Sales Records
+            .table-responsive(style='padding:20px;')
+              table.table.table-bordered.table-hover.table-secondary
+                thead
+                  tr
+                    th Branch
+                    th Customer                   
+                    th Product                   
+                    th Qty,tonnes
+                    th Sale
+                    th Total (shs)
+                    th Delete
+                    th Edit
+                tbody(style='overflow-y: scroll;')
+                if users.length
+                  each user in users
+                    tr
+                      td #{user.branch}
+                      td #{user.customername}                      
+                      td #{user.pdct}                                             
+                      td #{user.quantity}
+                      td #{user.sale_type}
+                      td #{user.total} 
+                      td
+                        form.delete(method="post" action='/saleslist/delete')
+                          input(type="hidden", placeholder="", name="id", value=user._id)
+                          button(type="submit") Delete 
+                      td
+                        form(action="/saleslist/edit/"+user._id)
+                          input(type="hidden")
+                          button(type="submit") Edit
+            .col.col-md-12              
+              a.btn.custom( href="/saleslist" style='width: 40%;margin-top: 0px;height:50px;margin-left:350px;' type='submit')
+                | Sales Records                                                                                                                            
 footer.page-footer.font-small.blue.pt-4
   .container-fluid.text-center.text-md-left
     .row

@@ -5,11 +5,14 @@ const config = require("./config/database");
 const homeroutes= require("./routes/houseroutes");
 const registerroutes= require("./routes/registerroutes");
 const loginroutes = require("./routes/loginroutes");
-const userroutes = require("./routes/userroutes");
+const purchasesroutes = require("./routes/purchaseroutes");
+const salesroutes = require("./routes/saleroutes");
+const salelistroutes = require("./routes/saleslistroute");
+const purchaselistroute = require("./routes/purchaselistroute");
 // instantiating server
 const app = express();
 const passport = require("passport");
-const Userlogin = require("./models/Userlogin")
+const Signup = require("./models/Signup")
 
 // setting up mongoose
 require("dotenv").config();
@@ -46,9 +49,9 @@ app.use(expressSession);
 
 app.use(passport.initialize());
 app.use(passport.session());
-passport.use(Userlogin.createStrategy());
-passport.serializeUser(Userlogin.serializeUser());
-passport.deserializeUser(Userlogin.deserializeUser());
+passport.use(Signup.createStrategy());
+passport.serializeUser(Signup.serializeUser());
+passport.deserializeUser(Signup.deserializeUser());
 
 
 // const loginchecker = function(res,req,next){
@@ -68,10 +71,12 @@ passport.deserializeUser(Userlogin.deserializeUser());
 // // routes
 
 app.use('/', homeroutes)
-app.use('/register', registerroutes)
-app.use('/login', loginroutes)
-app.use('/user', userroutes)
-
+app.use('/', registerroutes)
+app.use('/', loginroutes)
+app.use('/', salesroutes)
+app.use('/', purchasesroutes)
+app.use('/', salelistroutes)
+app.use('/purchaselist', purchaselistroute)
 // handling non existing routes
 app.get('*', (req, res)=> {
   res.status(404).send('OOPS! WRONG ADDRESS')

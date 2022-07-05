@@ -184,7 +184,7 @@ a[data-toggle="collapse"] {
 ul ul a {
   font-size: 0.9em !important;
   padding-left: 30px !important;
-  background: #181553;
+  background: #07026d;
 }
 
 ul.CTAs {
@@ -316,6 +316,8 @@ ul {
 }
 .custom1 {
   background-color: #dfdfdf;
+  overflow-y: scroll;
+
 }
 /* .custom1:hover {
   background-color: #6d6b70;
@@ -389,14 +391,14 @@ a {
   text-decoration: none;
 }
 button {
-  margin: 10px auto;
+  /* margin: 10px auto; */
   justify-content: center;
   display: block;
   color: #fff;
   background:#07026d;
   font-size: 1em;
   font-weight: bold;
-  margin-top: 20px;
+  /* margin-top: 20px; */
   outline: none;
   border: none;
   border-radius: 5px;
@@ -405,7 +407,57 @@ button {
   /* box-shadow: 10px 25px 55px rgba(0, 0, 0, 0.644); */
 }
 
+.custom{
+  justify-content: center;
+  display: block;
+  color: #fff;
+  background:#07026d;
+  font-size: 1em;
+  font-weight: bold;
+  /* margin-top: 20px; */
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  transition: 0.2s ease-in;
+  cursor: pointer;
+}
 .custom:hover {
+  color: #fff;
   background: #0ada0a;
   box-shadow: 10px 25px 55px rgba(0, 0, 0, 0.644);
+}
+
+
+
+/* table {
+  border: 3px solid #181553;
+ } */
+thead { 
+   /* display: none;  */
+   width: auto;
+  height: auto;
+  color: #181553; 
+  border: 3px solid #181553;
+  border-radius: 20px;
+  
+}
+ tbody {
+    color: #181553;  
+  /* max-height: 300px; */
+  /* display: inline-block;  */
+  width: auto;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  text-align: justify;
+  /* border-color: #181553; */
+  border: 1px solid #181553;
+}  
+th{
+  width: 70px;
+} 
+
+select{
+  
+  max-width: 200px;
+  text-align: center;
 }
