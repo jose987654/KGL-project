@@ -2,7 +2,6 @@ const express = require("express");
 const mongoose = require("mongoose");
 const path = require("path"); 
 const config = require("./config/database");
-const homeroutes= require("./routes/houseroutes");
 const registerroutes= require("./routes/registerroutes");
 const loginroutes = require("./routes/loginroutes");
 const purchasesroutes = require("./routes/purchaseroutes");
@@ -54,13 +53,7 @@ passport.serializeUser(Signup.serializeUser());
 passport.deserializeUser(Signup.deserializeUser());
 
 
-// const loginchecker = function(res,req,next){
-//   if(req.path != "/login" && req.path!= "/"  && !req.session.user){
-//     res.redirect("/");
-//   }
-// next()
-// }
-// const loginchecker = function(res, req, next){
+// const loginchecker = function(req, res, next){
 //     if(req.path != '/login' && req.path != '/' && !req.session.user){
 //       res.redirect ('/')
 //     }
@@ -70,7 +63,7 @@ passport.deserializeUser(Signup.deserializeUser());
 // app.use(loginchecker)
 // // routes
 
-app.use('/', homeroutes)
+
 app.use('/', registerroutes)
 app.use('/', loginroutes)
 app.use('/', salesroutes)

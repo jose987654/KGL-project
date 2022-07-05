@@ -15,56 +15,50 @@ head
   // Sidebar
   nav#sidebar
     .sidebar-header
-      h3
-        img(src='./Img/logo5.jpg' style='width:160px; height:160px; border-radius: 3px; background-color: #ddd;')
-      // <h3 >Karibu Groceries Limited.</h3>
+      h3 
+        img(src='/Img/logo5.jpg' style='width:160px; height:160px; border-radius: 3px; background-color: #ddd;')
       strong KGL
     ul.list-unstyled.components(style='font-size: 19px;')
       li
-        a.dropdown-toggle(href='#' aria-expanded='false')
+        a(href='/home')
           i.fas.fa-home
-          |                         Home
-      li.active
-        a.dropdown-toggle(href='#pageSubmenu' data-toggle='collapse' aria-expanded='false' style='color:#181553')
+          |                         Home 
+      li       
+        a.dropdown-toggle(href='#purchaseSubmenu' data-toggle='collapse' aria-expanded='false' )
           i.fas.fa-copy
-          |                         Purchases
-        ul#pageSubmenu.collapse.list-unstyled
+          |                           Purchases
+        ul#purchaseSubmenu.collapse.list-unstyled
           li
-            a(href='#') Supplier
-          li
-            a(href='#') Farms
-      //
-        <li>
-        <a href="#">
-        <i class="fas fa-image"></i>
-        Portfolio
-        </a>
-        </li>
-      li
-        a(href='#')
+            a(href='/purchases') Purchase Form
+          li            
+            a(href='/purchaselist') Purchase Record           
+      li     
+        a.dropdown-toggle(href='#saleSubmenu' data-toggle='collapse' aria-expanded='false' )
           i.fas.fa-copy
-          |                         Sales
+          |                           Sales
+        ul#saleSubmenu.collapse.list-unstyled
+          li
+            a(href='/sales') Sales Form
+          li
+            a(href='/saleslist') Sales Record
+      li.active        
+        a.dropdown-toggle(href='#farmSubmenu' data-toggle='collapse' aria-expanded='false' style='color:#181553')
+          i.fas.fa-copy
+          |                           Farm
+        ul#farmSubmenu.collapse.list-unstyled
+          li
+            a(href='/farm') Farm Form
+          li
+            a(href='/farmlist') Farm Record          
       li
-        a(href='#')
+        a(href='/prices')
           i.fas.fa-briefcase
-          |                         About
+          |                         Prices      
       li
-        a(href='#')
-          i.fas.fa-paper-plane
-          |                         Contact
-      li
-        a(href='#')
+        a(href='/account')
           i.fas.fa-user
           |                         Account
-    //
-      <ul class="list-unstyled CTAs">
-      <li>
-      <a href="https://bootstrapious.com/tutorial/files/sidebar.zip" class="download">Download source</a>
-      </li>
-      <li>
-      <a href="https://bootstrapious.com/p/bootstrap-sidebar" class="article">Back to article</a>
-      </li>
-      </ul>
+    ul.list-unstyled.CTAs     
   // Page Content
   #content
     nav.navbar.navbar-expand-lg.navbar-light(style='background:#efeef0')
@@ -81,7 +75,7 @@ head
           ul.nav.navbar-nav.ml-auto
             li.nav-item.active
               button.btn.btn-outline-primary
-                a.nav-link(href='index.html' style='color: #181553; ') LogOut
+                a.nav-link(href='/logout' style='color: #181553; ') LogOut
     // <h2 style="font-size:45px;color:rgb(51, 49, 49); text-decoration: underline;">Produce Procurement Karibu
     // Groceries Limited. </h2>
     #blog-container.container-fluid
@@ -134,13 +128,14 @@ footer.page-footer.font-small.blue.pt-4
       .col-md-10.mt-md-0.mt-3.footer-copyright.text-center.py-3.textcontent
         | &copy; 2022 Copyright:
         | Karibu Groceries LTD
-script(src='js/purchase.js')
+
 // jQuery CDN - Slim version (=without AJAX)
 script(src='https://code.jquery.com/jquery-3.3.1.slim.min.js' integrity='sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo' crossorigin='anonymous')
 // Popper.JS
 script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js' integrity='sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ' crossorigin='anonymous')
 // Bootstrap JS
 script(src='https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js' integrity='sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm' crossorigin='anonymous')
+script(src='/js/purchase.js')
 script(type='text/javascript').
   $(document).ready(function () {
   $('#sidebarCollapse').on('click', function () {

@@ -12,6 +12,7 @@ router.get("/saleslist", async (req, res) => {
     res.send("failed to get product data");
   }
 });
+
 router.get("/saleslist/update", async (req, res) => {
   try {
     const sale = await Sale.find();

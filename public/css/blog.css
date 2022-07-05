@@ -1,8 +1,8 @@
 body {
   background: #919092;
-  /* background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-  url(/Img/home2pic1.png);
-  /* background-image:url(/Img/home2pic1.png); */
+   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+  url(/Img/maize1.jpg);
+   background-image:url(/Img/maize1.jpg); 
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -95,15 +95,15 @@ footer {
   font-family: "Times New Roman", Times, serif;
 }
 .txt1 {
-  color: #ffffff;
+  color: #07026d;
   font-size: 32px;
   font-family: "Times New Roman", Times, serif;
 }
 .txt2 {
-  color: #ffffff;
+  color: #07026d;
   font-size: 30px;
   font-family: "Times New Roman", Times, serif;
-  text-decoration: underline;
+  
 }
 .tx2 {
   color: rgb(255, 255, 255);
@@ -132,7 +132,7 @@ nav {
   box-shadow: 10px 25px 55px rgba(0, 0, 0, 0.644);
   font-size: 20px;
   font-family: Arial, Helvetica, sans-serif;
-  border-color: #0ada0a;
+  border-color: #2a803c;
   border: 300px;
 }
 .casol {
@@ -156,7 +156,7 @@ label {
   transition: 0.5s ease-in-out;
 }
 input {
-  width: 60%;
+  width: 70%;
   height: 40px;
   background: #e0dede;
   justify-content: center;
@@ -198,6 +198,9 @@ button {
   border-radius: 60% / 10%;
   transform: translateY(-180px);
   transition: 0.8s ease-in-out;
+}
+.custom{
+  background: #1004ff;
 }
 .custom:hover {
   background: #0ada0a;

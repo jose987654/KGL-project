@@ -18,34 +18,50 @@ head
   // Sidebar
   nav#sidebar
     .sidebar-header
-      h3
+      h3 
         img(src='/Img/logo5.jpg' style='width:160px; height:160px; border-radius: 3px; background-color: #ddd;')
       strong KGL
     ul.list-unstyled.components(style='font-size: 19px;')
       li
-        a(href='#')
+        a(href='/home')
           i.fas.fa-home
-          |                         Home
-      li
-        a(href='Produce purchases.html')
+          |                         Home 
+      li.active       
+        a.dropdown-toggle(href='#purchaseSubmenu' data-toggle='collapse' aria-expanded='false' style='color:#181553' )
           i.fas.fa-copy
-          |                         Purchases
-      li.active
-        a(href='sales input.html' style='color:#181553')
+          |                           Purchases
+        ul#purchaseSubmenu.collapse.list-unstyled
+          li
+            a(href='/purchases') Purchase Form
+          li            
+            a(href='/purchaselist') Purchase Record           
+      li     
+        a.dropdown-toggle(href='#saleSubmenu' data-toggle='collapse' aria-expanded='false' )
           i.fas.fa-copy
-          |                         Sales
+          |                           Sales
+        ul#saleSubmenu.collapse.list-unstyled
+          li
+            a(href='/sales') Sales Form
+          li
+            a(href='/saleslist') Sales Record
+      li        
+        a.dropdown-toggle(href='#farmSubmenu' data-toggle='collapse' aria-expanded='false' )
+          i.fas.fa-copy
+          |                           Farm
+        ul#farmSubmenu.collapse.list-unstyled
+          li
+            a(href='/farm') Farm Form
+          li
+            a(href='/farmlist') Farm Record          
       li
-        a(href='#')
+        a(href='/prices')
           i.fas.fa-briefcase
-          |                         About
+          |                         Prices      
       li
-        a(href='#')
-          i.fas.fa-paper-plane
-          |                         Contact
-      li
-        a(href='account.html')
+        a(href='/account')
           i.fas.fa-user
           |                         Account
+    ul.list-unstyled.CTAs 
   // Page Content
   #content
     nav.navbar.navbar-expand-lg.navbar-light(style='background:#efeef0')
@@ -64,7 +80,7 @@ head
           ul.nav.navbar-nav.ml-auto
             li.nav-item.active
               button.btn.btn-outline-primary
-                a.nav-link(href='index.html' style='color:#181553;  ') LogOut
+                a.nav-link(href='/logout' style='color:#181553;  ') LogOut
     #blog-container.container-fluid
       .row
         .col-md-12

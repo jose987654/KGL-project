@@ -18,34 +18,50 @@ head
   // Sidebar
   nav#sidebar
     .sidebar-header
-      h3
-        img(src='./Img/logo5.jpg' style='width:160px; height:160px; border-radius: 3px; background-color: #ddd;')
+      h3 
+        img(src='/Img/logo5.jpg' style='width:160px; height:160px; border-radius: 3px; background-color: #ddd;')
       strong KGL
     ul.list-unstyled.components(style='font-size: 19px;')
       li
-        a(href='#')
+        a(href='/home')
           i.fas.fa-home
-          |                         Home
-      li
-        a(href='Produce purchases.html')
+          |                         Home 
+      li.active        
+        a.dropdown-toggle(href='#purchaseSubmenu' data-toggle='collapse' aria-expanded='false' style='color:#181553')
           i.fas.fa-copy
-          |                         Purchases
-      li
-        a(href='sales input.html')
+          |                           Purchases
+        ul#purchaseSubmenu.collapse.list-unstyled
+          li
+            a(href='/purchases') Purchase Form
+          li            
+            a(href='/purchaselist') Purchase Record           
+      li    
+        a.dropdown-toggle(href='#saleSubmenu' data-toggle='collapse' aria-expanded='false' )
           i.fas.fa-copy
-          |                         Sales
-      li.active
-        a(href='#' style='color:#181553')
+          |                           Sales
+        ul#saleSubmenu.collapse.list-unstyled
+          li
+            a(href='/sales') Sales Form
+          li
+            a(href='/saleslist') Sales Record
+      li        
+        a.dropdown-toggle(href='#farmSubmenu' data-toggle='collapse' aria-expanded='false' )
+          i.fas.fa-copy
+          |                           Farm
+        ul#farmSubmenu.collapse.list-unstyled
+          li
+            a(href='/farm') Farm Form
+          li
+            a(href='/farmlist') Farm Record          
+      li
+        a(href='/prices')
           i.fas.fa-briefcase
-          |                         Records
+          |                         Prices      
       li
-        a(href='#')
-          i.fas.fa-paper-plane
-          |                         Contact
-      li
-        a(href='account.html')
+        a(href='/account')
           i.fas.fa-user
           |                         Account
+    ul.list-unstyled.CTAs     
   // Page Content
   #content
     nav.navbar.navbar-expand-lg.navbar-light(style='background:#efeef0')
@@ -62,7 +78,7 @@ head
           ul.nav.navbar-nav.ml-auto
             li.nav-item.active
               button.btn.btn-outline-primary
-                a.nav-link(href='index.html' style='color:#181553;  ') LogOut
+                a.nav-link(href='/logout' style='color:#181553;  ') LogOut
     #blog-container.container-fluid
       .row
         .col-md-12
@@ -77,9 +93,7 @@ head
                     th Supplier                   
                     th Product                   
                     th Qty,tonnes                    
-                    th Total(shs)
-                    th Delete
-                    th Edit
+                    th Total(shs)                    
                 tbody(style='overflow-y: scroll;')
                 if users.length
                   each user in users
@@ -89,14 +103,10 @@ head
                       td #{user.pdct}                                             
                       td #{user.quantity}                      
                       td #{user.total} 
-                      td
-                        form.delete(method="post" action='/purchaselist/delete')
-                          input(type="hidden", placeholder="", name="id", value=user._id)
-                          button(type="submit") Delete 
-                      td
-                        form(action="/purchaselist/edit/"+user._id)
-                          input(type="hidden")
-                          button(type="submit") Edit                                                                                                                           
+              .col.col-md-12              
+                a.btn.custom( href="/purchaselist/update" style='width: 40%;margin-top: 0px;height:50px;margin-left:350px;' type='submit')
+                  | Update
+                  | Records                                                                                                                                             
 footer.page-footer.font-small.blue.pt-4
   .container-fluid.text-center.text-md-left
     .row
@@ -106,17 +116,12 @@ footer.page-footer.font-small.blue.pt-4
       .col-md-10.mt-md-0.mt-3.footer-copyright.text-center.py-3.textcontent
         | &copy; 2022 Copyright:
         | Karibu Groceries LTD
-script(src='js/sales.js')
-// jQuery CDN - Slim version (=without AJAX)
 script(src='https://code.jquery.com/jquery-3.3.1.slim.min.js' integrity='sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo' crossorigin='anonymous')
 // Popper.JS
 script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js' integrity='sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ' crossorigin='anonymous')
 // Bootstrap JS
-//
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"
-  integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
-  crossorigin="anonymous"></script>
-script(src='css/bootstrap/js/bootstrap.bundle.min.js')
+script(src='https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js' integrity='sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm' crossorigin='anonymous')
+script(src='/js/sales.js')
 script(type='text/javascript').
   $(document).ready(function () {
   $('#sidebarCollapse').on('click', function () {

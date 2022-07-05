@@ -4,15 +4,25 @@ const mongoose = require("mongoose");
 const Purchase = require("../models/Purchase");
 
 router.get("/purchaselist", async (req, res) => {
-  if(req.session.user){
+  
     try {
       const purchase = await Purchase.find();
-      res.render("purchasesrecord", { users: purchase, currentuser:req.session.user});
+      res.render("purchasesrecord", { users:purchase});
     } catch (err) {
       console.log(err);
       res.send("failed to get product data");
     }
-  }  
+   
+});
+
+router.get("/purchaselist/update", async (req, res) => {
+  try {
+    const purchase = await Purchase.find();
+    res.render("purchasesrecordupdate", { users: purchase });
+  } catch (err) {
+    console.log(err);
+    res.send("failed to get product data");
+  }
 });
 
 router.post("/purchaselist/delete", async (req, res) => {

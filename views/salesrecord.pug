@@ -17,42 +17,50 @@ head
   // Sidebar
   nav#sidebar
     .sidebar-header
-      h3
+      h3 
         img(src='/Img/logo5.jpg' style='width:160px; height:160px; border-radius: 3px; background-color: #ddd;')
       strong KGL
     ul.list-unstyled.components(style='font-size: 19px;')
       li
         a(href='/home')
           i.fas.fa-home
-          |                         Home
-      li
-        a(href='/purchases')
+          |                         Home 
+      li        
+        a.dropdown-toggle(href='#purchaseSubmenu' data-toggle='collapse' aria-expanded='false' )
           i.fas.fa-copy
-          |                         Purchases
-      li.active
-        a(href='/sales' style='color:#181553')
+          |                           Purchases
+        ul#purchaseSubmenu.collapse.list-unstyled
+          li
+            a(href='/purchases') Purchase Form
+          li            
+            a(href='/purchaselist') Purchase Record           
+      li.active     
+        a.dropdown-toggle(href='#saleSubmenu' data-toggle='collapse' aria-expanded='false' style='color:#181553')
           i.fas.fa-copy
-          |                         Sales 
-      li
-        a(href='/farm')
+          |                           Sales
+        ul#saleSubmenu.collapse.list-unstyled
+          li
+            a(href='/sales') Sales Form
+          li
+            a(href='/saleslist') Sales Record
+      li        
+        a.dropdown-toggle(href='#farmSubmenu' data-toggle='collapse' aria-expanded='false' )
           i.fas.fa-copy
-          |                         Farm     
+          |                           Farm
+        ul#farmSubmenu.collapse.list-unstyled
+          li
+            a(href='/farm') Farm Form
+          li
+            a(href='/farmlist') Farm Record          
       li
-        a.dropdown-toggle( data-toggle='collapse' aria-expanded='false')
+        a(href='/prices')
           i.fas.fa-briefcase
-          |                         Records
-        ul#homeSubmenu.collapse.list-unstyled
-          li
-            a(href='/saleslist') Sales Records
-          li
-            a(href='/purchaselist') Purchase Records
-          li
-            a(href='/farmlist') Farm Records
+          |                         Prices      
       li
         a(href='/account')
           i.fas.fa-user
-          |                         Account 
-    // Page Content
+          |                         Account
+    ul.list-unstyled.CTAs   
   #content
     nav.navbar.navbar-expand-lg.navbar-light(style='background:#efeef0')
       .container-fluid.row
@@ -68,7 +76,7 @@ head
           ul.nav.navbar-nav.ml-auto
             li.nav-item.active
               button.btn.btn-outline-primary
-                a.nav-link(href='index.html' style='color:#181553;  ') LogOut
+                a.nav-link(href='/logout' style='color:#181553;') LogOut
     #blog-container.container-fluid
       .row
         .col-md-12

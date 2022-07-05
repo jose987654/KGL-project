@@ -22,7 +22,7 @@ router.post('/purchases', async(req,res)=>{
     // }
 })
 
-router.get('/localproduce',(req,res)=>{
+router.get('/farm',(req,res)=>{
     res.render('localproduce')
 })
 

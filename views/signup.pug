@@ -2,14 +2,14 @@ doctype html
 head
   meta(charset='utf-8')
   meta(name='viewport' content='width=device-width, initial-scale=1')
-  link(href='css/bootstrap/css/bootstrap.css' rel='stylesheet')
-  link(href='css/signup.css' rel='stylesheet' type='text/css')
+  link(href='/css/bootstrap/css/bootstrap.css' rel='stylesheet')
+  link(href='/css/signup.css' rel='stylesheet' type='text/css')
   link(href='https://fonts.googleapis.com/css2?family=Jost:wght@500&display=swap' rel='stylesheet')
   title Karibu Groceries LTD.
 nav.navbar.navbar-expand-lg.navbar-dark
   .container-fluid
     li.nav-item
-      img(src='./Img/logo5.jpg' style='\
+      img(src='/Img/logo5.jpg' style='\
       width: 60px;\
       height: 60px;\
       border-radius: 3px;\
@@ -27,69 +27,79 @@ nav.navbar.navbar-expand-lg.navbar-dark
             | Karibu Groceries Limited .
       form.d-flex
         button.btn.btn-outline-primary.txt2(style='float: left; height: 50px' type='submit')
-          a(href='index.html' style='text-decoration: none; color: azure') Home
+          a(href='/login' style='text-decoration: none; color: azure') Home
 #blog-container.container
   .row
     .col-md-12
       .main.custom1
         h2.txt1 Sign up Page
         .signup
-          form.needs-validation(name='registration' novalidate='')
-            .row
+          form.needs-validation(name='registration' novalidate='' action="/register" method="POST")
+            .row(onsubmit='')
               .col.col-md-6(style='margin-right: 0px; border-right: 0px')
                 div
                   .align
                     label.form-label First Name
-                    input(type='text' name='fname' placeholder='* First Name ' required='' size='22' onblur='userval(5,22)')
-                    //
-                      <div class="invalid-feedback" style="border: 0px; padding: 0px; font-size: 15px">
-                      Valid username is required.
-                      </div>
+                    input(type='text' name='firstname' placeholder='* First Name ' required='' size='22' onblur='userval(5,22)')
+                    .invalid-feedback(style='border: 0px; padding: 0px; font-size: 15px')
+                      | Valid name is required.
                   .align
-                    label.form-label Second Name
-                    input(type='text' name='sname' placeholder='* Second Name' required='' size='22' onblur='userval1(5,22)')
+                    label.form-label Second/Name
+                    input(type='text' name='secondname' placeholder='* Second Name' required='' size='22' onblur='userval1(5,22)')
+                    .invalid-feedback(style='border: 0px; padding: 0px; font-size: 15px')
+                      | Valid name is required.
                   .align
                     label.form-label Gender
                     input#gndr(type='text' name='gender' placeholder='*Male / Female' required='' size='7' onblur='userval5(3,8)')
+                    .invalid-feedback(style='border: 0px; padding: 0px; font-size: 15px')
+                      | Valid Gender is required.
                   .align
                     label.form-label NIN
-                    input#nin(type='text' name='userid2' placeholder='* National Id Number (NIN)' required='' size='12' onblur='userval2(5,12)')
+                    input#nin(type='text' name='nin' placeholder='* National Id Number (NIN)' required='' size='12' onblur='userval2(1,17)')
+                    .invalid-feedback(style='border: 0px; padding: 0px; font-size: 15px')
+                      | Valid NIN is required.
                   .align
                     label.form-label E-mail
                     input#email(type='email' name='email' placeholder='* Email-address' required='' onblur='val_email()')
-                    //
-                      <div class="invalid-feedback" oninvalid="">
-                      Valid username is required.
-                      </div>
+                    .invalid-feedback(oninvalid='')
+                      | Valid email is required.
                   .align
                     label.form-label(style='padding-left: 10px') User role
-                    select(name='urole' onblur='role()')
-                      option(value='Default') Please select a Role
-                      option(value='sa') Sales Agent
-                      option(value='ma') Manager
-                      option(value='dr') Director
+                    select(name='userrole' onblur='rol()')
+                      option(value='Default') Please select a User Role
+                      option(value='Sales_agent') Sales Agent
+                      option(value='Manager') Manager
+                      option(value='Director') Director
               .col.col-md-6
                 div
                   .align
                     label.form-label Username
-                    input(type='text' name='usrname' required='' placeholder='* User name' size='22' onblur='userval4(5,22)')
+                    input(type='text' name='username' required='' placeholder='* User name' size='22' onblur='userval4(5,22)')
+                    .invalid-feedback(style='border: 0px; padding: 0px; font-size: 15px')
+                      | Valid username is required.
                   .align
                     label.form-label Tel:
                     input(type='text' name='telno' placeholder='* Telephone no.' required='' onblur='tel()')
+                    .invalid-feedback(style='border: 0px; padding: 0px; font-size: 15px')
+                      | Valid Telephone is required.
                   .align
                     label.form-label Branch
                     select(name='branch' onblur='sbranch()' required='')
                       option(value='Default')
                         | Please select a Branch to work from.
-                      option(value='mg') Maganjo
-                      option(value='ma') Matugga
-                      option(value='na') Not Applicable
+                      option(value='Maganjo') Maganjo
+                      option(value='Matugga') Matugga
+                      option(value='N/A') Not Applicable
                   .align
                     label.form-label Password
-                    input(type='password' required='' placeholder='* Password' name='passid' size='12' onblur='userpass(6,20)')
+                    input(type='password' required='' placeholder='* Password' name='password' size='12' onblur='userpass(6,20)')
+                    .invalid-feedback(style='border: 0px; padding: 0px; font-size: 15px')
+                      | Valid password is required.
                   .align
                     label.form-label Confirm Password*
-                    input(type='password' required='' placeholder='* Confirm Password' name='passid1' size='12' onblur='userpass1(6,20),passvalid()')
+                    input(type='password' required='' placeholder='* Confirm Password' name='password1' size='12' onblur='userpass1(6,20),passvalid()')
+                    .invalid-feedback(style='border: 0px; padding: 0px; font-size: 15px')
+                      | Valid Password is required.
             div
               button.custom.txt2(style='width: 40%; height: 50px' type='submit')
                 a.txt2(href='#') SignUp 
@@ -101,8 +111,8 @@ footer.page-footer.font-small.blue.pt-4
     .row
       .col-md-2.mt-md-0.mt-3
         div
-          img.card-img-top(src='./Img/logo5.jpg' style='width: 50px; height: 50px; border-radius: 10px' alt='Me In Class on Day on3')
+          img.card-img-top(src='/Img/logo5.jpg' style='width: 50px; height: 50px; border-radius: 10px' alt='Me In Class on Day on3')
       .col-md-10.mt-md-0.mt-3.footer-copyright.text-center.py-3.textcontent
         | &copy; 2022 Copyright: Karibu Groceries LTD
-script(src='js/signup.js')
-script(src='css/bootstrap/js/bootstrap.bundle.js')
+script(src='/js/signup.js')
+script(src='/css/bootstrap/js/bootstrap.bundle.js')

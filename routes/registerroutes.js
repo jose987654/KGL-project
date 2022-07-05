@@ -2,20 +2,21 @@ const express = require('express');
 const passport = require('passport');
 const mongoose = require('mongoose');
 const router = express.Router();
-const Manager = require('../models/Manager');
+const Signup = require('../models/Signup');
 
 router.get('/register',(req,res)=>{
     res.render('signup')
 })
-
+router.get('/account',(req,res)=>{
+    res.render('accounts')
+})
 
 router.post('/register', async(req, res) => {
-  const manager = new Manager(req.body);
-  await Manager.register(manager, req.body.password, (err) => {
+  const signup = new Signup(req.body);
+  console.log(req.body)
+  await Signup.register(signup, req.body.password, (err) => {
       if (err) {
-          res.status(400).render('fa_m_reg', {
-              title: "Farm register"
-          })
+          res.status(400).render('signup')
           console.log(err)
       } else {
           res.redirect('/login')

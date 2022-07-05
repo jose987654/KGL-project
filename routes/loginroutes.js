@@ -13,7 +13,7 @@ router.post('/login', passport.authenticate('local',
         //giving a session to the user when successfully logged in. 
         req.session.user=req.user;
         //redirect user to car registration page after logging in. 
-        res.redirect("/dashboard")
+        res.redirect("/sales")
         // res.render('new');
 })
 
