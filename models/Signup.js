@@ -14,21 +14,32 @@ const signupSchema = new mongoose.Schema({
         type:String,
         trim:true,
     },
-    maritalstatus:{
+    gender:{
         type:String,
         trim:true,
     },
-    dob:{
-        type:Date        
-    },
-    gender:{
+    nin:{
         type:String,        
     },
-    phonenumber:{
+    email:{
+        type:String,
+    },
+    userrole:{
+        type:String,
+     },
+     username:{
         type:String,
       
     },
-    role:{
+    telno:{
+        type:String,
+      
+    },
+    branch:{
+        type:String,
+      
+    },
+    password:{
         type:String,        
     }
 })

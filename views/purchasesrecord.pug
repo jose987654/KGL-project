@@ -43,7 +43,11 @@ head
           li
             a(href='/sales') Sales Form
           li
+            a(href='/creditsales') Credit Sales Form 
+          li
             a(href='/saleslist') Sales Record
+          li
+            a(href='/creditsaleslist') Credit Record
       li        
         a.dropdown-toggle(href='#farmSubmenu' data-toggle='collapse' aria-expanded='false' )
           i.fas.fa-copy
@@ -93,7 +97,8 @@ head
                     th Supplier                   
                     th Product                   
                     th Qty,tonnes                    
-                    th Total(shs)                    
+                    th Total(shs)  
+                                     
                 tbody(style='overflow-y: scroll;')
                 if users.length
                   each user in users
@@ -103,6 +108,7 @@ head
                       td #{user.pdct}                                             
                       td #{user.quantity}                      
                       td #{user.total} 
+                     
               .col.col-md-12              
                 a.btn.custom( href="/purchaselist/update" style='width: 40%;margin-top: 0px;height:50px;margin-left:350px;' type='submit')
                   | Update

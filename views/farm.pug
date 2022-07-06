@@ -3,14 +3,11 @@ head
   meta(charset='utf-8')
   meta(name='viewport' content='width=device-width, initial-scale=1.0')
   meta(http-equiv='X-UA-Compatible' content='IE=edge')
-  title Karibu Groceries Ltd/Employee Account
+  title Karibu Groceries Ltd/purchases
   // Bootstrap CSS CDN
-  link(href='css/bootstrap/css/bootstrap.min.css' rel='stylesheet')
-  //
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"
-    integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
-    Our Custom CSS
-  link(rel='stylesheet' href='css/style5.css')
+  link(rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css' integrity='sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4' crossorigin='anonymous')
+  // Our Custom CSS
+  link(rel='stylesheet' href='/css/style6.css')
   // Font Awesome JS
   script(defer='' src='https://use.fontawesome.com/releases/v5.0.13/js/solid.js' integrity='sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ' crossorigin='anonymous')
   script(defer='' src='https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js' integrity='sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY' crossorigin='anonymous')
@@ -26,7 +23,7 @@ head
         a(href='/home')
           i.fas.fa-home
           |                         Home 
-      li        
+      li       
         a.dropdown-toggle(href='#purchaseSubmenu' data-toggle='collapse' aria-expanded='false' )
           i.fas.fa-copy
           |                           Purchases
@@ -35,7 +32,7 @@ head
             a(href='/purchases') Purchase Form
           li            
             a(href='/purchaselist') Purchase Record           
-      li    
+      li     
         a.dropdown-toggle(href='#saleSubmenu' data-toggle='collapse' aria-expanded='false' )
           i.fas.fa-copy
           |                           Sales
@@ -43,13 +40,13 @@ head
           li
             a(href='/sales') Sales Form
           li
-            a(href='/creditsales') Credit Sales Form
+            a(href='/creditsales') Credit Sales Form 
           li
             a(href='/saleslist') Sales Record
           li
             a(href='/creditsaleslist') Credit Record
-      li        
-        a.dropdown-toggle(href='#farmSubmenu' data-toggle='collapse' aria-expanded='false' )
+      li.active        
+        a.dropdown-toggle(href='#farmSubmenu' data-toggle='collapse' aria-expanded='false' style='color:#181553')
           i.fas.fa-copy
           |                           Farm
         ul#farmSubmenu.collapse.list-unstyled
@@ -61,11 +58,11 @@ head
         a(href='/prices')
           i.fas.fa-briefcase
           |                         Prices      
-      li.active
-        a(href='/account' style='color:#181553')
+      li
+        a(href='/account')
           i.fas.fa-user
           |                         Account
-    ul.list-unstyled.CTAs  
+    ul.list-unstyled.CTAs     
   // Page Content
   #content
     nav.navbar.navbar-expand-lg.navbar-light(style='background:#efeef0')
@@ -77,65 +74,55 @@ head
             button.btn.btn-dark.d-inline-block.d-lg-none.ml-auto(type='button' data-toggle='collapse' data-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation')
               i.fas.fa-align-justify
           .col-md-10
-            h2(style='margin-left:15px;margin-top: 20px; color:#181553') Karibu Groceries Ltd, EMPLOYEE FORM
+            h2(style='margin-left:15px;margin-top: 20px;color: #181553;') Karibu Groceries Ltd, FARM PRODUCT. 
         #navbarSupportedContent.collapse.navbar-collapse.col-md-1
           ul.nav.navbar-nav.ml-auto
             li.nav-item.active
               button.btn.btn-outline-primary
-                a.nav-link(href='/logout' style='color:#000000; ') LogOut
+                a.nav-link(href='/logout' style='color: #181553; ') LogOut
+    // <h2 style="font-size:45px;color:rgb(51, 49, 49); text-decoration: underline;">Produce Procurement Karibu
+    // Groceries Limited. </h2>
     #blog-container.container-fluid
       .row
         .col-md-12
           .main.custom1
             h2.txt1(style='font-size:45px;text-decoration: underline;')
-              | Personal Account
-              | Details
+              | Local Farm Produce
+              | Form
             .signup
-              form(name='registration' novalidate='')
-                .row(onsubmit='')
-                  .col.col-md-6
+              form(name='registration' action="/farm" method="POST")
+                .row
+                  .col.col-md-10
                     ul
                       li.align
-                        label First Name:
-                        input#fname(type='text' name='fname' placeholder='* First Name ' disabled='')
+                        label KGL Branch:
+                        select(name='userole' onblur='rol()' required='')
+                          option(value='Default')
+                            | KGL Branch
+                          option(value='Maganjo') MAGANJO Branch
+                          option(value='Matugga') MATUGGA Branch
                       li.align
-                        label Second Name:
-                        input#sname(type='text' name='sname' placeholder='* Second Name' disabled='')
+                        label Agricultural Product:
+                        select(name='pdct' onblur='role1()' required='')
+                          option(value='Default')
+                            | Product Name
+                          option(value='Beans') Beans
+                          option(value='Maize') Maize
+                          option(value='Cow_peas') Cow Peas
+                          option(value='Beans') Beans
+                          option(value='Maize') Maize
+                          option(value='Others') Others
+                      li
+                        label(for='start') Purchase Date:
+                        input(type='date' name='date' value='' min='1960-01-01' required='' max='2100-12-31' onblur='dte()')
                       li.align
-                        label Gender:
-                        input(type='text' name='gender' placeholder='*Male / Female' disabled='')
+                        label Qty, Tonnes(1000kg):
+                        input#qty(type='text' name='quantity' placeholder='*Quantity in Tonnes.(1000kgs)' required='' onblur='add1()' oninput='add_number()')
                       li.align
-                        label National ID Number:
-                        input#nin(type='text' name='userid2' placeholder='*NIN' disabled='')
-                      li.align
-                        label E-mail:
-                        input(type='email' name='email' placeholder='* Email-address' disabled='')
-                      li.align
-                        label User role:
-                        input#usrole(type='text' name='userole' placeholder='* User Role' disabled='')
-                  .col.col-md-6
-                    ul
-                      li.align
-                        label Username
-                        input(type='text' name='usrname' placeholder='* User name' disabled='')
-                      li.align
-                        label Tel.
-                        input(type='text' placeholder='* Telephone no.' disabled='' name='telno')
-                      li.align
-                        label Branch
-                        input(type='text' required='' placeholder='*Branch name' name='branch' disabled='')
-                      li.align
-                        label Password
-                        input(type='password' placeholder='* Password' name='passid')
-                      li.align
-                        button.custom(style='width: 40%; float:center;\
-                        height:50px;') Update details
-                  //
-                    <div class="  col col-md-12"><button
-                    style="width: 40%;margin-top: 0px;height:50px;" type="submit"
-                    class="custom">Confirm
-                    Sale</button>
-                    </div>
+                        label Comments:
+                        textarea#comments(type='text' name='comments' placeholder='*Comments on Agricultural Produce.' rows='5' cols='33')
+                  button.custom(style='width: 40%;\
+                  height:50px;' type="submit") Confirm Stock
 footer.page-footer.font-small.blue.pt-4
   .container-fluid.text-center.text-md-left
     .row
@@ -151,7 +138,7 @@ script(src='https://code.jquery.com/jquery-3.3.1.slim.min.js' integrity='sha384-
 script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js' integrity='sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ' crossorigin='anonymous')
 // Bootstrap JS
 script(src='https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js' integrity='sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm' crossorigin='anonymous')
-script(src='/js/sales.js')
+script(src='/js/purchase.js')
 script(type='text/javascript').
   $(document).ready(function () {
   $('#sidebarCollapse').on('click', function () {

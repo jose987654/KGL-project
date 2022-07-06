@@ -34,7 +34,8 @@ db.on('error', function(err){
 const expressSession = require('express-session')({
   secret: 'secret',
   resave: false,
-  saveUninitialized: false
+  saveUninitialized: false,
+  //cookie:{ maxAge:60*60*1000},  
 });
 
 // views settings or configurations
@@ -53,15 +54,15 @@ passport.serializeUser(Signup.serializeUser());
 passport.deserializeUser(Signup.deserializeUser());
 
 
-// const loginchecker = function(req, res, next){
-//     if(req.path != '/login' && req.path != '/' && !req.session.user){
-//       res.redirect ('/')
-//     }
-//     next()
-//   }
+const loginchecker = function(req, res, next){
+    if(req.path != '/login' && req.path != '/' && !req.session.user){
+      res.redirect ('/')
+    }
+    next()
+  }
   
-// app.use(loginchecker)
-// // routes
+app.use(loginchecker)
+// routes
 
 
 app.use('/', registerroutes)

@@ -41,18 +41,18 @@ const Firstfn = () => {
   return true;
 };
 
-const branch = () => {
-  let usrole = document.registration.brnch;
-  if (usrole.value == "Default") {
-    usrole.style.border = "3px solid red";
+const brnch = () => {
+  let usrole1 = document.registration.branch;
+  if (usrole1.value == "Default") {
+    usrole1.style.border = "3px solid red";
   } else {
-    usrole.style.border = "";
+    usrole1.style.border = "";
     return true;
   }
 };
 
-const sales = () => {
-  let urole = document.registration.sale;
+const sals = () => {
+  let urole = document.registration.sale_type;
   if (urole.value == "Default") {
     urole.style.border = "3px solid red";
   } else {
@@ -62,7 +62,7 @@ const sales = () => {
 };
 
 const cname = () => {
-  const usr = document.registration.fname;
+  const usr = document.registration.customername;
   let letters = /^[A-Za-z]+$/;
   if (usr.value.match(letters)) {
     usr.style.border = "";
@@ -122,7 +122,7 @@ const add2 = () => {
 const add1 = () => {
   let teln = document.registration.quantity;
   // let number = /^[0-9]+$/;
-  if (telno.value == "") {
+  if (teln.value == "") {
   // if (teln.value.match(number) && teln.value.length != 0) {
     // teln.style.border = "";
     teln.style.border = "3px solid red";

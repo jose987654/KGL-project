@@ -3,6 +3,9 @@ const passport = require('passport');
 const mongoose = require('mongoose');
 const router = express.Router();
 const Sale = require('../models/Sale');
+const Signup = require('../models/Signup');
+const Creditsale = require('../models/Creditsale');
+const Price = require('../models/Price');
 
 router.get('/sales',(req,res)=>{
     res.render('salesinput',{title:"KGL SALES"})
@@ -10,18 +13,39 @@ router.get('/sales',(req,res)=>{
 
 
 router.post('/sales', async(req,res)=>{
-    //console.log(req.body)
-    
+   
+    try{
         const sale = new Sale(req.body);
         await sale.save()
         res.redirect('/sales')
         console.log(req.body)
-    
-    // catch(err){
-    //     res.render('accounts')
-    //     // res.status(400).redirect('/login', {title:"Products ", routeName:"Products"})
-    // }
+    }
+    catch(err){
+        res.render('salesinput')
+      
+    }
 })
+
+router.get('/creditsales',(req,res)=>{
+    res.render('creditsales',{title:"KGL CREDIT SALES"})
+})
+
+router.post('/creditsales', async(req,res)=>{
+   
+    try{
+        const creditsale = new Creditsale(req.body);
+        await creditsale.save()
+        res.redirect('/creditsales')
+        console.log(req.body)
+    }
+    catch(err){
+        res.render('creditsales')
+      
+    }
+})
+
+
+
 
 
 

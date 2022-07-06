@@ -18,8 +18,8 @@ function add_number() {
 //   return true;
 // };
 
-const role = () => {
-  let usrole = document.registration.urole;
+const rol = () => {
+  let usrole = document.registration.userole;
   if (usrole.value == "Default") {
     usrole.style.border = "3px solid red";
   } else {
@@ -155,7 +155,7 @@ const pdt = () => {
   }
 };
 const dte = () => {
-  let usrole = document.registration.pdte;
+  let usrole = document.registration.date;
   if (usrole.value == "") {
     usrole.style.border = "3px solid red";
   } else {

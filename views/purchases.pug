@@ -43,7 +43,11 @@ head
           li
             a(href='/sales') Sales Form
           li
+            a(href='/creditsales') Credit Sales Form 
+          li
             a(href='/saleslist') Sales Record
+          li
+            a(href='/creditsaleslist') Credit Record
       li        
         a.dropdown-toggle(href='#farmSubmenu' data-toggle='collapse' aria-expanded='false' )
           i.fas.fa-copy
@@ -93,7 +97,7 @@ head
                   .col.col-md-6
                     .align
                       label.form-label KGL Branch:
-                      select(name='branch' onblur='branch()')
+                      select(name='branch' onblur='brnch()')
                         option(value='Default')
                           | KGL Branch
                         option(value='Maganjo') MAGANJO Branch
@@ -145,7 +149,7 @@ head
                       input#txtresult(type='text' name='total' placeholder='*Amount(shs).' )
                     .align
                       label.form-label  Purchase Type:
-                      select(name='sale_type' onblur='sales()')
+                      select(name='sale_type' onblur='sals()')
                         option(value='Default')
                           | Purchase type.
                         option(value='Cash') Cash

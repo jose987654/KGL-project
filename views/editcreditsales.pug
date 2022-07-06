@@ -77,7 +77,7 @@ head
               i.fas.fa-align-justify
           .col-md-10
             h2(style='margin-left:15px;margin-top: 20px; color:#181553;')
-              | Karibu Groceries Ltd, PRODUCT
+              | Karibu Groceries Ltd, CREDIT
               | SALES FORM
         #navbarSupportedContent.collapse.navbar-collapse.col-md-1
           ul.nav.navbar-nav.ml-auto
@@ -89,9 +89,9 @@ head
         .col-md-12
           .main.custom1
             h2.txt1(style='font-size:45px;text-decoration: underline;')
-              | Update Customer Sales Form
+              | Update Credit Sales Form
             .signup
-              form(method="POST" action="/saleslist/edit?id="+user._id )
+              form(method="POST" action="/creditsaleslist/edit?id="+user._id )
                 .row(onsubmit='')
                   .col.col-md-6
                     .align
@@ -149,9 +149,8 @@ head
                     .align
                       label.form-label  Sale Type:
                       select(name='sale_type' )
-                        option(value=user.sale_type)
-                          | Sale type.
-                        option(value='Cash') Cash
+                        option(value='Credit')
+                          | Sale type.                        
                         option(value='Credit') Credit
                       .invalid-feedback
                         | Please enter a sale type

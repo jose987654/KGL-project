@@ -3,9 +3,10 @@ const passport = require('passport');
 const mongoose = require('mongoose');
 const router = express.Router();
 const Purchase = require('../models/Purchase');
+const Farm = require('../models/Farm');
 
 router.get('/purchases',(req,res)=>{
-    res.render('producepurchases')
+    res.render('purchases')
 })
 
 
@@ -23,14 +24,14 @@ router.post('/purchases', async(req,res)=>{
 })
 
 router.get('/farm',(req,res)=>{
-    res.render('localproduce')
+    res.render('farm')
 })
 
-router.post('/localproduce', async(req,res)=>{
+router.post('/farm', async(req,res)=>{
     //console.log(req.body)    
-        const purchase = new Purchase(req.body);
-        await purchase.save()
-        res.redirect('/localproduce')
+        const farm = new Farm(req.body);
+        await farm.save()
+        res.redirect('/farm')
         console.log(req.body)
     
     // catch(err){

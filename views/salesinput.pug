@@ -3,7 +3,7 @@ head
   meta(charset='utf-8')
   meta(name='viewport' content='width=device-width, initial-scale=1.0')
   meta(http-equiv='X-UA-Compatible' content='IE=edge')
-  title Collapsible sidebar using Bootstrap 4
+  title Karibu Groceries Ltd.
   // Bootstrap CSS CDN
   //link(rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css' integrity='sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4' crossorigin='anonymous')
   link(href='/css/bootstrap/css/bootstrap.min.css' rel='stylesheet')
@@ -41,7 +41,11 @@ head
           li
             a(href='/sales') Sales Form
           li
+            a(href='/creditsales') Credit Sales Form 
+          li
             a(href='/saleslist') Sales Record
+          li
+            a(href='/creditsaleslist') Credit Record
       li        
         a.dropdown-toggle(href='#farmSubmenu' data-toggle='collapse' aria-expanded='false' )
           i.fas.fa-copy
@@ -144,10 +148,8 @@ head
                     .align
                       label.form-label  Sale Type:
                       select(name='sale_type' onblur='sales()')
-                        option(value='Default')
-                          | Sale type.
-                        option(value='Cash') Cash
-                        option(value='Credit') Credit
+                        option(value='Cash')
+                          | Cash                                     
                       .invalid-feedback
                         | Please enter a sale type
                     .align
