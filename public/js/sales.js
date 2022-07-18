@@ -35,8 +35,8 @@ function add_number() {
   var second_number = parseFloat(str2.replace(/,/g, ""));
   if (isNaN(second_number)) second_number = 0;
   var result = first_number * second_number*1000;
-  var Result = result.toLocaleString();
-  document.getElementById("txtresult").value = Result;
+ // var Result = result.toLocaleString();
+  document.getElementById("txtresult").value = result;
   return result;
 }
 
