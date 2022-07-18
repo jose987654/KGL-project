@@ -5,9 +5,9 @@ const router = express.Router();
 const Signup = require('../models/Signup');
 
 router.get('/register',(req,res)=>{
-    req.session.user = req.user;
-    let user = req.session.user;
-    res.locals.user = user;
+    // req.session.user = req.user;
+    // let user = req.session.user;
+    // res.locals.user = user;
     res.render('signupnew')
 })
 router.get('/account',(req,res)=>{

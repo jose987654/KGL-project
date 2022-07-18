@@ -152,12 +152,12 @@ head
                       label.form-label
                         | Qty,
                         | Tonnes(1000kg):
-                      input#qty(type='Number' name='quantity' placeholder='*Qty in Tonnes.' required='' oninput='add_number()' onblur='add1()')
+                      input#qty(type='Float' name='quantity' placeholder='*Qty in Tonnes.' required='' oninput='add_number()' onblur='add1()')
                       .invalid-feedback
                         | Please enter a Quantity in tonnnes.
                     .align
                       label.form-label Total Amount (shs):
-                      input#txtresult(type='Number' name='total' placeholder='*Amount(shs).' )
+                      input#txtresult(type='Float' name='total' placeholder='*Amount(shs).' )
                     .align
                       label.form-label  Sale Type:
                       select(name='sale_type' onblur='sales()')

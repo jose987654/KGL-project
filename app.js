@@ -54,15 +54,17 @@ passport.serializeUser(Signup.serializeUser());
 passport.deserializeUser(Signup.deserializeUser());
 
 
-const loginchecker = function(req, res, next){
-    if(req.path != '/login' && req.path != '/' && !req.session.user){
-      res.redirect ('/')
-    }
-    next()
-  }
+// const loginchecker = function(req, res, next){
+//     if(req.path != '/login' && req.path != '/' && !req.session.user){
+//       res.redirect ('/')
+//     }
+//     next()
+//   }
   
-app.use(loginchecker)
-// routes
+// app.use(loginchecker)
+// // routes
+
+
 
 
 app.use('/', registerroutes)
@@ -75,6 +77,7 @@ app.use('/', purchaselistroute)
 app.get('*', (req, res)=> {
   res.status(404).send('OOPS! WRONG ADDRESS')
 })
+
 
 // server
 app.listen(3002, ()=> console.log("Listening on Port 3002"));
