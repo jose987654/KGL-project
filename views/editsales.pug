@@ -147,19 +147,19 @@ head
                         label.form-label
                           | Unit price
                           | (shs):
-                        input#unitprice(type='text' name='unitprice' placeholder='*Unit Price /kg (shs).'   oninput='add_number()' value=user.unitprice)
+                        input#unitprice(type='Number' name='unitprice' placeholder='*Unit Price /kg (shs).'   oninput='add_number()' value=user.unitprice)
                         .invalid-feedback
                           | Please enter a valid unit price.
                     .align
                       label.form-label
                         | Qty,
                         | Tonnes(1000kg):
-                      input#qty(type='text' name='quantity' placeholder='*Qty in Tonnes.'  oninput='add_number()' value=user.quantity)
+                      input#qty(type='Number' name='quantity' placeholder='*Qty in Tonnes.'  oninput='add_number()' value=user.quantity)
                       .invalid-feedback
                         | Please enter a Quantity in tonnnes.
                     .align
                       label.form-label Total Amount (shs):
-                      input#txtresult(type='text' name='total' placeholder='*Amount(shs).' value=user.total)
+                      input#txtresult(type='Number' name='total' placeholder='*Amount(shs).' value=user.total)
                     .align
                       label.form-label  Sale Type:
                       select(name='sale_type' )

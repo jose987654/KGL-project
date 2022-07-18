@@ -12,7 +12,7 @@ const farmSchema =new mongoose.Schema ({
         type:Date,        
     },
     quantity:{
-        type:String,        
+        type:Number,        
     },
     comments:{
         type:String,

@@ -9,7 +9,7 @@ const priceSchema =new mongoose.Schema ({
         trim:true,
     },   
     quantity:{
-        type:String,        
+        type:Number,        
     },
     comments:{
         type:String,

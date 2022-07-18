@@ -131,7 +131,7 @@ head
                         input(type='date' name='date' value='' min='1960-01-01' required='' max='2100-12-31' onblur='dte()')
                       li.align
                         label Qty, Tonnes(1000kg):
-                        input#qty(type='text' name='quantity' placeholder='*Quantity in Tonnes.(1000kgs)' required='' onblur='add1()' oninput='add_number()')
+                        input#qty(type='Number' name='quantity' placeholder='*Quantity in Tonnes.(1000kgs)' required='' onblur='add1()' oninput='add_number()')
                       li.align
                         label Comments:
                         textarea#comments(type='text' name='comments' placeholder='*Comments on Agricultural Produce.' rows='5' cols='33')

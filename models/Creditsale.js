@@ -19,13 +19,13 @@ const creditsaleSchema =new mongoose.Schema ({
         type:Date,        
     },
     unitprice:{
-        type:String,      
+        type:Number,      
     },
     quantity:{
-        type:String,        
+        type:Number,        
     },
     total:{
-        type:String,      
+        type:Number,      
     },
     sale_type:{
         type:String,        
