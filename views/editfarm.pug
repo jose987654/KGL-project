@@ -23,7 +23,8 @@ head
         a(href='/home')
           i.fas.fa-home
           |                         Home 
-      li       
+      li
+        //if user.userrole == "Manager" || user.userrole == "Director"     
         a.dropdown-toggle(href='#purchaseSubmenu' data-toggle='collapse' aria-expanded='false' )
           i.fas.fa-copy
           |                           Purchases
@@ -32,21 +33,24 @@ head
             a(href='/purchases') Purchase Form
           li            
             a(href='/purchaselist') Purchase Record           
-      li     
+      li    
         a.dropdown-toggle(href='#saleSubmenu' data-toggle='collapse' aria-expanded='false' )
           i.fas.fa-copy
           |                           Sales
         ul#saleSubmenu.collapse.list-unstyled
           li
             a(href='/sales') Sales Form
-          li
+          li               
             a(href='/creditsales') Credit Sales Form 
           li
+            //if user.userrole == "Manager" || user.userrole == "Director" 
             a(href='/saleslist') Sales Record
           li
+            //if user.userrole == "Manager" || user.userrole == "Director"
             a(href='/creditsaleslist') Credit Record
-      li.active        
-        a.dropdown-toggle(href='#farmSubmenu' data-toggle='collapse' aria-expanded='false' style='color:#181553')
+      li.active
+        //if user.userrole == "Manager" || user.userrole == "Director"
+        a.dropdown-toggle(href='#farmSubmenu' data-toggle='collapse' aria-expanded='false' style='color:#181553' )
           i.fas.fa-copy
           |                           Farm
         ul#farmSubmenu.collapse.list-unstyled
@@ -58,11 +62,21 @@ head
         a(href='/prices')
           i.fas.fa-briefcase
           |                         Prices      
-      li
-        a(href='/account')
+      li     
+        a.dropdown-toggle(href='#accountSubmenu' data-toggle='collapse' aria-expanded='false' )
           i.fas.fa-user
-          |                         Account
-    ul.list-unstyled.CTAs     
+          |                           Account
+        ul#accountSubmenu.collapse.list-unstyled
+          li
+            a(href='/account') Account
+          li
+            //if user.userrole == "Manager" || user.userrole == "Director" 
+            a(href='/register') Register
+          li
+            //if user.userrole == "Manager" || user.userrole == "Director"
+            a(href='/employeelist') Employees
+    ul.list-unstyled.CTAs      
+  
   // Page Content
   #content
     nav.navbar.navbar-expand-lg.navbar-light(style='background:#efeef0')
@@ -120,7 +134,7 @@ head
                         input#qty(type='text' name='quantity' placeholder='*Quantity in Tonnes.(1000kgs)' value=user.quantity)
                       li.align
                         label Comments:
-                        textarea#comments(type='text' name='comments' placeholder='*Comments on Agricultural Produce.' rows='5' cols='33' value=user.comments)
+                        input#comments(type='text' name='comments' placeholder='*Comments on Agricultural Produce.' rows='5' cols='33' value=user.comments)
                   button.custom(style='width: 40%;\
                   height:50px;' type="submit") Confirm Stock
 footer.page-footer.font-small.blue.pt-4

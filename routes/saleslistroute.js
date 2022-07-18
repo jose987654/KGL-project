@@ -5,15 +5,28 @@ const Sale = require("../models/Sale");
 const Signup = require('../models/Signup');
 const Creditsale = require('../models/Creditsale');
 const Price = require('../models/Price');
+
+const config = require("../config/database");
+require("dotenv").config();
+mongoose.connect(config.database,{ useNewUrlParser: true });
+const db = mongoose.connection;
+
+
+
 router.get("/saleslist", async (req, res) => {
+  req.session.user = req.user;
+    let user = req.session.user;
+    res.locals.user = user;
 
   try {
     if(req.session.user.userrole === "Manager" ||
     req.session.user.userrole === "Director"){
     const sale = await Sale.find();
-    res.render("salesrecord", { users: sale });}
+    res.render("salesrecord", { users: sale });
+    //db.Sale.aggregate([{$group:{_id:null,salesum:{$sum:$total}}}]);
+   }
     else{
-      res.redirect("/sales")
+      res.redirect("/home")
     }
   } catch (err) {
     console.log(err);
@@ -22,6 +35,9 @@ router.get("/saleslist", async (req, res) => {
 });
 
 router.get("/saleslist/update", async (req, res) => {
+  req.session.user = req.user;
+    let user = req.session.user;
+    res.locals.user = user;
   try {
     const sale = await Sale.find();
     res.render("salesrecordupdate", { users: sale });
@@ -32,6 +48,9 @@ router.get("/saleslist/update", async (req, res) => {
 });
 
 router.post("/saleslist/delete", async (req, res) => {
+  req.session.user = req.user;
+    let user = req.session.user;
+    res.locals.user = user;
   try {
     await Sale.deleteOne({ _id: req.body.id });
     res.redirect("back");
@@ -42,6 +61,9 @@ router.post("/saleslist/delete", async (req, res) => {
 
 
 router.get('/saleslist/edit/:id', async (req, res)=>{
+  req.session.user = req.user;
+    let user = req.session.user;
+    res.locals.user = user;
   try{
     const sale = await Sale.findOne({ _id:req.params.id});
     res.render('editsales', {user:sale});
@@ -66,14 +88,16 @@ router.post('/saleslist/edit', async (req, res)=>{
 
 // credit sales information
 router.get("/creditsaleslist", async (req, res) => {
-
+  req.session.user = req.user;
+  let user = req.session.user;
+  res.locals.user = user;
   try {
     if(req.session.user.userrole === "Manager" ||
     req.session.user.userrole === "Director"){
     const creditsale = await Creditsale.find();
     res.render("creditrecord", { users: creditsale });}
     else{
-      res.redirect("/creditsales")
+      res.redirect("/home")
     }
   } catch (err) {
     console.log(err);
@@ -82,6 +106,9 @@ router.get("/creditsaleslist", async (req, res) => {
 });
 
 router.get("/creditsaleslist/update", async (req, res) => {
+  req.session.user = req.user;
+    let user = req.session.user;
+    res.locals.user = user;
   try {
     const creditsale = await Creditsale.find();
     res.render("creditrecordupdate", { users: creditsale });
@@ -102,6 +129,9 @@ router.post("/creditsaleslist/delete", async (req, res) => {
 
 
 router.get('/creditsaleslist/edit/:id', async (req, res)=>{
+  req.session.user = req.user;
+    let user = req.session.user;
+    res.locals.user = user;
   try{
     const creditsale = await Creditsale.findOne({ _id:req.params.id});
     res.render('editcreditsales', {user:creditsale});
@@ -127,6 +157,9 @@ router.post('/creditsaleslist/edit', async (req, res)=>{
 //price information
 
 router.get('/pricelist',(req,res)=>{
+  req.session.user = req.user;
+    let user = req.session.user;
+    res.locals.user = user;
   if(req.session.user.userrole === "Manager" ||
     req.session.user.userrole === "Director"){
   res.render('prices',{title:"KGL Prices"});}
@@ -152,7 +185,9 @@ router.post('/pricelist', async(req,res)=>{
 
 
 router.get("/prices", async (req, res) => {
-
+  req.session.user = req.user;
+  let user = req.session.user;
+  res.locals.user = user;
   try {
     
     const price = await Price.find();
@@ -164,6 +199,9 @@ router.get("/prices", async (req, res) => {
 });
 
 router.get("/prices/update", async (req, res) => {
+  req.session.user = req.user;
+    let user = req.session.user;
+    res.locals.user = user;
   try {
     if(req.session.user.userrole === "Manager" ||
     req.session.user.userrole === "Director"){
@@ -191,6 +229,9 @@ router.post("/prices/delete", async (req, res) => {
 
 
 router.get('/prices/edit/:id', async (req, res)=>{
+  req.session.user = req.user;
+    let user = req.session.user;
+    res.locals.user = user;
   try{
     if(req.session.user.userrole === "Manager" ||
     req.session.user.userrole === "Director"){

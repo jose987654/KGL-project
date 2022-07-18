@@ -417,7 +417,7 @@ button {
   background:#07026d;
   font-size: 1em;
   font-weight: bold;
-  /* margin-top: 20px; */
+  margin-top: 20px;
   outline: none;
   border: none;
   border-radius: 5px;
@@ -425,7 +425,7 @@ button {
   cursor: pointer;
 }
 .custom:hover {
-  color: #fff;
+  color: #ffffff;
   background: #0ada0a;
   box-shadow: 10px 25px 55px rgba(0, 0, 0, 0.644);
 }

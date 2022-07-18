@@ -2,6 +2,10 @@
 (() => {
   "use strict";
 
+
+
+  
+
   // Fetch all the forms we want to apply custom Bootstrap validation styles to
   const forms = document.querySelectorAll(".needs-validation");
 
@@ -61,18 +65,33 @@ const sals = () => {
   }
 };
 
-const cname = () => {
-  const usr = document.registration.customername;
-  let letters = /^[A-Za-z]+$/;
-  if (usr.value.match(letters)) {
-    usr.style.border = "";
+// const cname = () => {
+//   const usr = document.registration.customername;
+//   let letters = /^[A-Za-z]+$/;
+//   if (usr.value.match(letters)) {
+//     usr.style.border = "";
+//     return true;
+//   } else {
+//     usr.style.border = "3px solid red";
+//     //alert("username must have alphabet only");
+//     // usr.focus();
+//   }
+// };
+
+const cname = (min, max) => {
+  const USD = document.registration.customername;
+  const usd = USD.value.length;
+  if (usd == 0 || usd < min || usd >= max) {
+    // UID.focus();
+    UID.style.border = "3px solid red";
     return true;
   } else {
-    usr.style.border = "3px solid red";
-    //alert("username must have alphabet only");
-    // usr.focus();
+    UID.style.border = "";
   }
 };
+
+
+
 
 const tel = () => {
   let telno = document.registration.telno;

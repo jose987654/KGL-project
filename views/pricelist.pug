@@ -25,46 +25,61 @@ head
         a(href='/home')
           i.fas.fa-home
           |                         Home 
-      li        
-        a.dropdown-toggle(href='#purchaseSubmenu' data-toggle='collapse' aria-expanded='false' )
-          i.fas.fa-copy
-          |                           Purchases
-        ul#purchaseSubmenu.collapse.list-unstyled
-          li
-            a(href='/purchases') Purchase Form
-          li            
-            a(href='/purchaselist') Purchase Record           
-      li     
+      li
+        if user.userrole == "Manager" || user.userrole == "Director"     
+          a.dropdown-toggle(href='#purchaseSubmenu' data-toggle='collapse' aria-expanded='false' )
+            i.fas.fa-copy
+            |                           Purchases
+          ul#purchaseSubmenu.collapse.list-unstyled
+            li
+              a(href='/purchases') Purchase Form
+            li            
+              a(href='/purchaselist') Purchase Record           
+      li    
         a.dropdown-toggle(href='#saleSubmenu' data-toggle='collapse' aria-expanded='false' )
           i.fas.fa-copy
           |                           Sales
         ul#saleSubmenu.collapse.list-unstyled
           li
             a(href='/sales') Sales Form
-          li
+          li               
             a(href='/creditsales') Credit Sales Form 
           li
-            a(href='/saleslist') Sales Record
+            if user.userrole == "Manager" || user.userrole == "Director" 
+              a(href='/saleslist') Sales Record
           li
-            a(href='/creditsaleslist') Credit Record
-      li        
-        a.dropdown-toggle(href='#farmSubmenu' data-toggle='collapse' aria-expanded='false' )
-          i.fas.fa-copy
-          |                           Farm
-        ul#farmSubmenu.collapse.list-unstyled
-          li
-            a(href='/farm') Farm Form
-          li
-            a(href='/farmlist') Farm Record          
+            if user.userrole == "Manager" || user.userrole == "Director"
+              a(href='/creditsaleslist') Credit Record
+      li
+        if user.userrole == "Manager" || user.userrole == "Director"
+          a.dropdown-toggle(href='#farmSubmenu' data-toggle='collapse' aria-expanded='false' )
+            i.fas.fa-copy
+            |                           Farm
+          ul#farmSubmenu.collapse.list-unstyled
+            li
+              a(href='/farm') Farm Form
+            li
+              a(href='/farmlist') Farm Record          
       li.active
         a(href='/prices' style='color:#181553')
           i.fas.fa-briefcase
           |                         Prices      
-      li
-        a(href='/account')
+      li     
+        a.dropdown-toggle(href='#accountSubmenu' data-toggle='collapse' aria-expanded='false' )
           i.fas.fa-user
-          |                         Account
-    ul.list-unstyled.CTAs   
+          |                           Account
+        ul#accountSubmenu.collapse.list-unstyled
+          li
+            a(href='/account') Account
+          li
+            if user.userrole == "Manager" || user.userrole == "Director" 
+              a(href='/register') Register
+          li
+            if user.userrole == "Manager" || user.userrole == "Director"
+              a(href='/employeelist') Employees
+    ul.list-unstyled.CTAs      
+  
+  //content
   #content
     nav.navbar.navbar-expand-lg.navbar-light(style='background:#efeef0')
       .container-fluid.row
@@ -103,16 +118,17 @@ head
                       td #{user.pdct}                                             
                       td #{user.quantity}
                       td #{user.comments}
-            .col.col-md-12  
-              .row
-                .col-md-6
-                  a.btn.custom( href="/pricelist" style='width: 50%;margin-top: 0px;height:50px;margin-left:100px' type='submit')
-                    | Add 
-                    | Prices
-                .col-md-6
-                  a.btn.custom( href="/prices/update" style='width: 50%;margin-top: 0px;height:50px;' type='submit')
-                    | Update
-                    | Records                                                                                                                                                                        
+            if user.userrole == "Manager" || user.userrole == "Director"
+              .col.col-md-12  
+                .row
+                  .col-md-6
+                    a.btn.custom( href="/pricelist" style='width: 50%;margin-top: 0px;height:50px;margin-left:100px' type='submit')
+                      | Add 
+                      | Prices
+                  .col-md-6
+                    a.btn.custom( href="/prices/update" style='width: 50%;margin-top: 0px;height:50px;' type='submit')
+                      | Update
+                      | Records                                                                                                                                                                        
 footer.page-footer.font-small.blue.pt-4
   .container-fluid.text-center.text-md-left
     .row

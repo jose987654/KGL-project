@@ -1,0 +1,119 @@
+doctype html
+head
+  meta(charset='utf-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  meta(http-equiv='X-UA-Compatible' content='IE=edge')
+  title Karibu Groceries Ltd/purchases
+  // Bootstrap CSS CDN
+  link(href='/css/bootstrap/css/bootstrap.min.css' rel='stylesheet')
+  //
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"
+    integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    Our Custom CSS
+  link(rel='stylesheet' href='/css/style11.css')
+  // Font Awesome JS
+  script(defer='' src='https://use.fontawesome.com/releases/v5.0.13/js/solid.js' integrity='sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ' crossorigin='anonymous')
+  script(defer='' src='https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js' integrity='sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY' crossorigin='anonymous')
+.wrapper
+  // Sidebar
+  nav#sidebar
+    .sidebar-header
+      h3
+        img(src='/Img/logo5.jpg' style='width:160px; height:160px; border-radius: 3px; background-color: #ddd;')
+      strong KGL
+    ul.list-unstyled.components(style='font-size: 19px;')
+      li.active
+        a(href='/home' style='color:#181553')
+          i.fas.fa-home
+          |             Home
+      li
+        a(href='/account')
+          i.fas.fa-user
+          |             Account
+      li
+        a(href='#')
+          i.fas.fa-paper-plane
+          |             Contact
+  // Page Content
+  #content
+    nav.navbar.navbar-expand-lg.navbar-dark
+      .container-fluid
+        #navbarSupportedContent.collapse.navbar-collapse(style='height:60px')
+          ul.navbar-nav.me-auto.mb-2.mb-lg-0
+            li.nav-item
+              p.nav-link.active.nav1(aria-current='page' style='color:#181553;font-size:40px')
+                | Karibu
+                | Groceries Limited .
+          button.btn.btn-outline-primary
+            a.nav-link(href='/logout' style='color:#181553;  ') LogOut
+    #blog-container.container-fluid
+      .row
+        .col-md-12
+          .main.custom1
+            h2.txt1(style='font-size:45px;text-decoration: underline;')
+              | Welcome: #{user.firstname} #{user.secondname} , #{user.userrole} , #{user.branch} Branch
+            h2.txt1(style='font-size:45px;text-decoration: underline;') Please Select Task .
+            .row
+              .col-md-4(style='margin:auto;padding:auto;')
+                .card
+                  .card-header(style='border-radius: 30px;')
+                    | PURCHASES
+                  ul.list-group.list-group-flush
+                    li.list-group-item
+                      a(href='/purchases' style=' text-decoration: none; color:#07026d;') Purchase forms
+                    li.list-group-item
+                      a(href='/purchaselist' style=' text-decoration: none; color:#07026d;')  Purchase Records
+                    li.list-group-item
+                      a(href='/farmlist' style=' text-decoration: none; color:#07026d;')  Farm Records
+              .col-md-4(style='margin:auto;padding:auto;')
+                .card
+                  .card-header(style='border-radius: 30px;')
+                    | SALES
+                  ul.list-group.list-group-flush
+                    li.list-group-item
+                      a(href='/sales' style=' text-decoration: none; color:#07026d;')
+                        | Sales
+                        | Form
+                    li.list-group-item
+                      a(href='/creditsales' style=' text-decoration: none; color:#07026d;')
+                        | Credit
+                        | Sales Form
+                    li.list-group-item
+                      a(href='/saleslist' style=' text-decoration: none; color:#07026d;')
+                        | Sales Record
+                    li.list-group-item
+                      a(href='/creditsaleslist' style=' text-decoration: none; color:#07026d;')
+                        | Credit Sales Record
+              .col-md-4(style='margin:auto;padding:auto;')
+                .card
+                  .card-header(style='border-radius: 30px;')
+                    | PRICES
+                  ul.list-group.list-group-flush
+                    li.list-group-item
+                      a(href='/prices' style=' text-decoration: none; color:#07026d;') Price Records
+footer.page-footer.font-small.blue.pt-4
+  .container-fluid.text-center.text-md-left
+    .row
+      .col-md-2.mt-md-0.mt-3
+        div
+          img.card-img-top(src='/Img/logo5.jpg' style='width:50px; height:50px; border-radius: 10px;' alt='Me In Class on Day on3')
+      .col-md-10.mt-md-0.mt-3.footer-copyright.text-center.py-3.textcontent
+        | &copy; 2022 Copyright:
+        | Karibu Groceries LTD
+script(src='js/sales.js')
+// jQuery CDN - Slim version (=without AJAX)
+script(src='https://code.jquery.com/jquery-3.3.1.slim.min.js' integrity='sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo' crossorigin='anonymous')
+// Popper.JS
+script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js' integrity='sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ' crossorigin='anonymous')
+// Bootstrap JS
+//
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"
+  integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
+  crossorigin="anonymous"></script>
+script(src='/css/bootstrap/js/bootstrap.bundle.min.js')
+script(type='text/javascript').
+  $(document).ready(function () {
+  $('#sidebarCollapse').on('click', function () {
+  $('#sidebar').toggleClass('active');
+  });
+  });

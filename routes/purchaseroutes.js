@@ -6,7 +6,15 @@ const Purchase = require('../models/Purchase');
 const Farm = require('../models/Farm');
 
 router.get('/purchases',(req,res)=>{
-    res.render('purchases')
+    req.session.user = req.user;
+    let user = req.session.user;
+    res.locals.user = user;
+    if(req.session.user.userrole === "Manager" ||
+    req.session.user.userrole === "Director"){
+    res.render('purchases')}
+    else{
+        res.render("home")
+    }
 })
 
 
@@ -24,7 +32,15 @@ router.post('/purchases', async(req,res)=>{
 })
 
 router.get('/farm',(req,res)=>{
-    res.render('farm')
+    req.session.user = req.user;
+    let user = req.session.user;
+    res.locals.user = user;
+    if(req.session.user.userrole === "Manager" ||
+    req.session.user.userrole === "Director"){
+    res.render('farm')}
+    else{
+        res.render('home') 
+    }
 })
 
 router.post('/farm', async(req,res)=>{

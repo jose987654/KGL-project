@@ -5,11 +5,18 @@ const Purchase = require("../models/Purchase");
 const Farm = require("../models/Farm");
 
 router.get("/purchaselist", async (req, res) => {
-  
+  req.session.user = req.user;
+    let user = req.session.user;
+    res.locals.user = user;  
     try {
+      if(req.session.user.userrole === "Manager" ||
+    req.session.user.userrole === "Director"){
       const purchase = await Purchase.find();
       res.render("purchasesrecord", { users:purchase});
-    } catch (err) {
+    } 
+  else{res.render("home")}
+}
+  catch (err) {
       console.log(err);
       res.send("failed to get product data");
     }
@@ -17,6 +24,9 @@ router.get("/purchaselist", async (req, res) => {
 });
 
 router.get("/purchaselist/update", async (req, res) => {
+  req.session.user = req.user;
+    let user = req.session.user;
+    res.locals.user = user;
   try {
     const purchase = await Purchase.find();
     res.render("purchasesrecordupdate", { users: purchase });
@@ -37,6 +47,9 @@ router.post("/purchaselist/delete", async (req, res) => {
 
 
 router.get('/purchaselist/edit/:id', async (req, res)=>{
+  req.session.user = req.user;
+    let user = req.session.user;
+    res.locals.user = user;
   try{
     const purchase = await Purchase.findOne({ _id:req.params.id});
     res.render('editpurchases', {user:purchase});
@@ -60,11 +73,18 @@ router.post('/purchaselist/edit', async (req, res)=>{
 
 // farm records 
 router.get("/farmlist", async (req, res) => {
+  req.session.user = req.user;
+    let user = req.session.user;
+    res.locals.user = user;
   
   try {
+    if(req.session.user.userrole === "Manager" ||
+    req.session.user.userrole === "Director"){
     const farm = await Farm.find();
     res.render("farmrecord", { users:farm});
-  } catch (err) {
+  }
+  else{res.render("home")}
+} catch (err) {
     console.log(err);
     res.send("failed to get product data");
   }
@@ -72,6 +92,9 @@ router.get("/farmlist", async (req, res) => {
 });
 
 router.get("/farmlist/update", async (req, res) => {
+  req.session.user = req.user;
+    let user = req.session.user;
+    res.locals.user = user;
 try {
   const farm = await Farm.find();
   res.render("farmrecordupdate", { users: farm });
@@ -92,6 +115,7 @@ try {
 
 
 router.get('/farmlist/edit/:id', async (req, res)=>{
+ 
 try{
   const farm = await Farm.findOne({ _id:req.params.id});
   res.render('editfarm', {user:farm});

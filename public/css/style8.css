@@ -298,9 +298,6 @@ a.article:hover {
   font-size: 20px;
   font-family: "Times New Roman", Times, serif;
 }
-.tx{
-  color: #ffffff;
-}
 
 ul {
   list-style: none;
@@ -413,7 +410,7 @@ button {
 .custom{
   justify-content: center;
   display: block;
-  color: rgb(255, 255, 255);
+  color: #fff;
   background:#07026d;
   font-size: 1em;
   font-weight: bold;
@@ -429,9 +426,7 @@ button {
   background: #0ada0a;
   box-shadow: 10px 25px 55px rgba(0, 0, 0, 0.644);
 }
-.cst{
-  color:#ffffff;
-}
+
 
 
 /* table {

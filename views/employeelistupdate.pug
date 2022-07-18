@@ -6,11 +6,10 @@ head
   title Karibu Groceries Ltd/purchases
   // Bootstrap CSS CDN
   link(href='/css/bootstrap/css/bootstrap.min.css' rel='stylesheet')
-  //
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"
-    integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
-    Our Custom CSS
-  link(rel='stylesheet' href='/css/style5.css')
+  
+  //link (rel='stylesheet' href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous")
+  //Our Custom CSS
+  link(rel='stylesheet' href='/css/style8.css')
   // Font Awesome JS
   script(defer='' src='https://use.fontawesome.com/releases/v5.0.13/js/solid.js' integrity='sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ' crossorigin='anonymous')
   script(defer='' src='https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js' integrity='sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY' crossorigin='anonymous')
@@ -36,8 +35,8 @@ head
               a(href='/purchases') Purchase Form
             li            
               a(href='/purchaselist') Purchase Record           
-      li.active     
-        a.dropdown-toggle(href='#saleSubmenu' data-toggle='collapse' aria-expanded='false' style='color:#181553')
+      li    
+        a.dropdown-toggle(href='#saleSubmenu' data-toggle='collapse' aria-expanded='false' )
           i.fas.fa-copy
           |                           Sales
         ul#saleSubmenu.collapse.list-unstyled
@@ -62,16 +61,16 @@ head
             li
               a(href='/farmlist') Farm Record          
       li
-        a(href='/prices')
+        a(href='/prices' )
           i.fas.fa-briefcase
           |                         Prices      
-      li     
-        a.dropdown-toggle(href='#accountSubmenu' data-toggle='collapse' aria-expanded='false' )
+      li.active     
+        a.dropdown-toggle(href='#accountSubmenu' data-toggle='collapse' aria-expanded='false' style='color:#181553' )
           i.fas.fa-user
           |                           Account
         ul#accountSubmenu.collapse.list-unstyled
-          li
-            a(href='/account') Account
+          li.active
+            a(href='/account' style='color:#181553') Account
           li
             if user.userrole == "Manager" || user.userrole == "Director" 
               a(href='/register') Register
@@ -79,8 +78,8 @@ head
             if user.userrole == "Manager" || user.userrole == "Director"
               a(href='/employeelist') Employees
     ul.list-unstyled.CTAs      
-   
-  // Page Content
+  
+  //content
   #content
     nav.navbar.navbar-expand-lg.navbar-light(style='background:#efeef0')
       .container-fluid.row
@@ -91,71 +90,70 @@ head
             button.btn.btn-dark.d-inline-block.d-lg-none.ml-auto(type='button' data-toggle='collapse' data-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation')
               i.fas.fa-align-justify
           .col-md-10
-            h2(style='margin-left:15px;margin-top: 20px; color:#181553;') Karibu Groceries Ltd, Sales Records
+            h2(style='margin-left:15px;margin-top: 20px; color:#181553;') Karibu Groceries Ltd, Employee Records
         #navbarSupportedContent.collapse.navbar-collapse.col-md-1
           ul.nav.navbar-nav.ml-auto
             li.nav-item.active
               button.btn.btn-outline-primary
-                a.nav-link(href='/logout' style='color:#181553;  ') LogOut
+                a.nav-link(href='/logout' style='color:#181553;') LogOut
     #blog-container.container-fluid
       .row
         .col-md-12
           .main.custom1
             h2.txt1(style='font-size:45px;text-decoration: underline;')
-              | Update Customer Sales Records
+              | Employee Records Update
             .table-responsive(style='padding:20px;')
               table.table.table-bordered.table-hover.table-secondary
                 thead
-                  tr
-                    th Branch
-                    th Customer                   
-                    th Product                   
-                    th Qty,tonnes
-                    th Sale
-                    th Total (shs)
-                    th Delete
-                    th Edit
+                    tr
+                      th Branch                                       
+                      th Firstname                  
+                      th Secondname 
+                      th User role
+                      th Email
+                      th Delete 
+                      th Edit                
                 tbody(style='overflow-y: scroll;')
                 if users.length
-                  each user in users
-                    tr
-                      td #{user.branch}
-                      td #{user.customername}                      
-                      td #{user.pdct}                                             
-                      td #{user.quantity}
-                      td #{user.sale_type}
-                      td #{user.total} 
-                      td
-                        form.delete(method="post" action='/saleslist/delete')
+                each user in users
+                  tr
+                    td #{user.branch}                      
+                    td #{user.firstname}                                             
+                    td #{user.secondname}
+                    td #{user.userrole}
+                    td #{user.email}
+                    td
+                      if user.userrole == "Manager" || user.userrole == "Director" || user.userrole == "Sales_agent"
+                        form.delete(method="post" action='/employeelist/delete')
                           input(type="hidden", placeholder="", name="id", value=user._id)
-                          button(type="submit") Delete 
-                      td
-                        form(action="/saleslist/edit/"+user._id)
+                          button(type="submit") Delete   
+                    td
+                      if user.userrole == "Manager" || user.userrole == "Director" || user.userrole == "Sales_agent"
+                        form(action="/employeelist/edit/"+user._id)
                           input(type="hidden")
-                          button(type="submit") Edit
+                          button(type="submit") Edit                   
             .col.col-md-12              
-              a.btn.custom( href="/saleslist" style='width: 40%;margin-top: 0px;height:50px;margin-left:350px;' type='submit')
-                | Sales Records                                                                                                                            
+              a.btn.custom( href="/employeelist" style='width: 40%;margin-top: 0px;height:50px;margin-left:350px;' type='submit')
+                | Employee
+                | Records
+              br
+              br                                                                                                                                                                              
 footer.page-footer.font-small.blue.pt-4
   .container-fluid.text-center.text-md-left
     .row
       .col-md-2.mt-md-0.mt-3
         div
-          img.card-img-top(src='./Img/logo5.jpg' style='width:50px; height:50px; border-radius: 10px;' alt='Me In Class on Day on3')
+          img.card-img-top(src='/Img/logo5.jpg' style='width:50px; height:50px; border-radius: 10px;' alt='Me In Class on Day on3')
       .col-md-10.mt-md-0.mt-3.footer-copyright.text-center.py-3.textcontent
         | &copy; 2022 Copyright:
         | Karibu Groceries LTD
-script(src='js/sales.js')
-// jQuery CDN - Slim version (=without AJAX)
+
 script(src='https://code.jquery.com/jquery-3.3.1.slim.min.js' integrity='sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo' crossorigin='anonymous')
 // Popper.JS
 script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js' integrity='sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ' crossorigin='anonymous')
 // Bootstrap JS
-//
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"
-  integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
-  crossorigin="anonymous"></script>
-script(src='css/bootstrap/js/bootstrap.bundle.min.js')
+script(src='https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js' integrity='sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm' crossorigin='anonymous')
+script(src='/js/sales.js')
 script(type='text/javascript').
   $(document).ready(function () {
   $('#sidebarCollapse').on('click', function () {
