@@ -103,14 +103,16 @@ head
           .main.custom1
             h2.txt1(style='font-size:45px;text-decoration: underline;')
               | Supplier Purchases Record
-            .table-responsive(style='padding:20px;')
+            .table-responsive(style='padding:5px;')
               table.table.table-bordered.table-hover.table-secondary
                 thead
                   tr
                     th Branch
                     th Supplier                   
                     th Product                   
-                    th Qty,tonnes                    
+                    th Qty,tonnes 
+                    th Unit Price 
+                    th Sell Price                   
                     th Total(shs)  
                                      
                 tbody(style='overflow-y: scroll;')
@@ -120,7 +122,9 @@ head
                       td #{user.branch}
                       td #{user.customername}                      
                       td #{user.pdct}                                             
-                      td #{user.quantity}                      
+                      td #{user.quantity} 
+                      td #{user.unitprice} 
+                      td #{user.saleprice}                   
                       td #{user.total} 
                      
               .col.col-md-12              

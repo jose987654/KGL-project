@@ -162,14 +162,12 @@ head
                       label.form-label Total Amount (shs):
                       input#txtresult(type='Float' name='total' placeholder='*Amount(shs).' )
                     .align
-                      label.form-label  Purchase Type:
-                      select(name='sale_type' onblur='sals()')
-                        option(value='Default')
-                          | Purchase type.
-                        option(value='Cash') Cash
-                        option(value='Credit') Credit
-                      .invalid-feedback
-                        | Please enter a Purchase type
+                        label.form-label
+                          | Price to be sold
+                          | (shs):
+                        input#unitprice(type='Number' name='saleprice' placeholder='*Unit Price /kg (shs).' )
+                        .invalid-feedback
+                          | Please enter a valid unit price.
                     .align
                       label.form-label Comments:
                       textarea#comments(type='text' name='comments' placeholder='*Comments on Purchase.' rows='5' cols='33')
