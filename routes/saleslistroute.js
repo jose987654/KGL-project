@@ -71,10 +71,11 @@ router.get("/saleslist/update", async (req, res) => {
   req.session.user = req.user;
     let user = req.session.user;
     res.locals.user = user;
-  try {
+  try {if(req.session.user.userrole === "Manager" ||
+  req.session.user.userrole === "Director"){
     const sale = await Sale.find();
     res.render("salesrecordupdate", { users: sale });
-  } catch (err) {
+  }} catch (err) {
     console.log(err);
     res.send("failed to get product data");
   }
@@ -84,10 +85,11 @@ router.post("/saleslist/delete", async (req, res) => {
   req.session.user = req.user;
     let user = req.session.user;
     res.locals.user = user;
-  try {
+  try {if(req.session.user.userrole === "Manager" ||
+  req.session.user.userrole === "Director"){
     await Sale.deleteOne({ _id: req.body.id });
     res.redirect("back");
-  } catch (err) {
+  }} catch (err) {
     res.status(400).send("Unable to delete item in the database");
   }
 });
@@ -97,10 +99,11 @@ router.get('/saleslist/edit/:id', async (req, res)=>{
   req.session.user = req.user;
     let user = req.session.user;
     res.locals.user = user;
-  try{
+  try{if(req.session.user.userrole === "Manager" ||
+  req.session.user.userrole === "Director"){
     const sale = await Sale.findOne({ _id:req.params.id});
     res.render('editsales', {user:sale});
-    } 
+    }} 
   catch (err) {
     res.status(400).send("Unable to delete item in the database");
   }   
@@ -151,10 +154,11 @@ router.get("/creditsaleslist/update", async (req, res) => {
   req.session.user = req.user;
     let user = req.session.user;
     res.locals.user = user;
-  try {
+  try {if(req.session.user.userrole === "Manager" ||
+  req.session.user.userrole === "Director"){
     const creditsale = await Creditsale.find();
     res.render("creditrecordupdate", { users: creditsale });
-  } catch (err) {
+  }} catch (err) {
     console.log(err);
     res.send("failed to get product data");
   }
@@ -174,10 +178,11 @@ router.get('/creditsaleslist/edit/:id', async (req, res)=>{
   req.session.user = req.user;
     let user = req.session.user;
     res.locals.user = user;
-  try{
+  try{if(req.session.user.userrole === "Manager" ||
+  req.session.user.userrole === "Director"){
     const creditsale = await Creditsale.findOne({ _id:req.params.id});
     res.render('editcreditsales', {user:creditsale});
-    } 
+    } }
   catch (err) {
     res.status(400).send("Unable to delete item in the database");
   }   
@@ -231,10 +236,11 @@ router.get("/prices", async (req, res) => {
   let user = req.session.user;
   res.locals.user = user;
   try {
-    
+    if(req.session.user.userrole === "Manager" ||
+    req.session.user.userrole === "Director"){
     const price = await Price.find();
     res.render("pricelist", { users:price });
-  } catch (err) {
+  } }catch (err) {
     console.log(err);
     res.send("failed to get product data");
   }
