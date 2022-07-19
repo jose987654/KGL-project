@@ -25,16 +25,15 @@ head
         a(href='/home')
           i.fas.fa-home
           |                         Home 
-      li
-        if user.userrole == "Manager" || user.userrole == "Director"     
-          a.dropdown-toggle(href='#purchaseSubmenu' data-toggle='collapse' aria-expanded='false' )
-            i.fas.fa-copy
-            |                           Purchases
-          ul#purchaseSubmenu.collapse.list-unstyled
-            li
-              a(href='/purchases') Purchase Form
-            li            
-              a(href='/purchaselist') Purchase Record           
+      li  
+        a.dropdown-toggle(href='#purchaseSubmenu' data-toggle='collapse' aria-expanded='false' )
+          i.fas.fa-copy
+          |                           Purchases
+        ul#purchaseSubmenu.collapse.list-unstyled
+          li
+            a(href='/purchases') Purchase Form
+          li            
+            a(href='/purchaselist') Purchase Record           
       li.active    
         a.dropdown-toggle(href='#saleSubmenu' data-toggle='collapse' aria-expanded='false' style='color:#181553')
           i.fas.fa-copy
@@ -45,13 +44,13 @@ head
           li               
             a(href='/creditsales') Credit Sales Form 
           li
-            if user.userrole == "Manager" || user.userrole == "Director" 
+            
               a(href='/saleslist') Sales Record
           li
-            if user.userrole == "Manager" || user.userrole == "Director"
+            
               a(href='/creditsaleslist') Credit Record
       li
-        if user.userrole == "Manager" || user.userrole == "Director"
+        
           a.dropdown-toggle(href='#farmSubmenu' data-toggle='collapse' aria-expanded='false' )
             i.fas.fa-copy
             |                           Farm
@@ -72,10 +71,10 @@ head
           li
             a(href='/account') Account
           li
-            if user.userrole == "Manager" || user.userrole == "Director" 
+             
               a(href='/register') Register
           li
-            if user.userrole == "Manager" || user.userrole == "Director"
+          
               a(href='/employeelist') Employees
     ul.list-unstyled.CTAs      
   
