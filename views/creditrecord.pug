@@ -101,6 +101,8 @@ head
           .main.custom1
             h2.txt1(style='font-size:45px;text-decoration: underline;')
               | Customer Credit Sales Records
+            if user.userrole == "Director"
+              h2.txt1(style='font-size:30px;text-decoration: none;') Total Credit Sales : #{total.creditsells} Ugx 
             .table-responsive(style='padding:20px;')
               table.table.table-bordered.table-hover.table-secondary
                 thead
@@ -121,6 +123,14 @@ head
                       td #{user.quantity}
                       td #{user.total}
                       td #{user.comments}
+                tr 
+                  td 
+                  td
+                  td 
+                  td Credit Sales
+                  td #{total.creditsells}
+                  td 
+                  
             .col.col-md-12              
               a.btn.custom( href="/creditsaleslist/update" style='width: 40%;margin-top: 0px;height:50px;margin-left:350px;' type='submit')
                 | Update

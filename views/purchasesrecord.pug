@@ -110,7 +110,7 @@ head
                     th Branch
                     th Supplier                   
                     th Product                   
-                    th Qty,tonnes 
+                    th Qty in tonnes 
                     th Unit Price 
                     th Sell Price                   
                     th Total(shs)  
@@ -125,7 +125,14 @@ head
                       td #{user.quantity} 
                       td #{user.unitprice} 
                       td #{user.saleprice}                   
-                      td #{user.total} 
+                      td #{user.total}
+                    tr 
+                  td 
+                  td 
+                  td 
+                  td 
+                  td Total Sales
+                  td #{total.totalsells} 
                      
               .col.col-md-12              
                 a.btn.custom( href="/purchaselist/update" style='width: 40%;margin-top: 0px;height:50px;margin-left:350px;' type='submit')
