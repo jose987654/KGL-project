@@ -111,8 +111,8 @@ head
                       th Secondname 
                       th User role
                       th Email
-                      th Delete 
-                      th Edit                
+                      th Edit
+                      th Delete                
                 tbody(style='overflow-y: scroll;')
                 if users.length
                 each user in users
@@ -124,14 +124,15 @@ head
                     td #{user.email}
                     td
                       if user.userrole == "Manager" || user.userrole == "Director" || user.userrole == "Sales_agent"
+                        form(action="/employeelist/edit/"+user._id)
+                          input(type="hidden")
+                          button(type="submit") Edit 
+                    td
+                      if user.userrole == "Manager" || user.userrole == "Director" || user.userrole == "Sales_agent"
                         form.delete(method="post" action='/employeelist/delete')
                           input(type="hidden", placeholder="", name="id", value=user._id)
                           button(type="submit") Delete   
-                    td
-                      if user.userrole == "Manager" || user.userrole == "Director" || user.userrole == "Sales_agent"
-                        form(action="/employeelist/edit/"+user._id)
-                          input(type="hidden")
-                          button(type="submit") Edit                   
+                                      
             .col.col-md-12              
               a.btn.custom( href="/employeelist" style='width: 40%;margin-top: 0px;height:50px;margin-left:350px;' type='submit')
                 | Employee

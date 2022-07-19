@@ -113,8 +113,8 @@ head
                     th Qty,tonnes
                     th Sale
                     th Total (shs)
-                    th Delete
                     th Edit
+                    th Delete
                 tbody(style='overflow-y: scroll;')
                 if users.length
                   each user in users
@@ -126,13 +126,14 @@ head
                       td #{user.sale_type}
                       td #{user.total} 
                       td
-                        form.delete(method="post" action='/saleslist/delete')
-                          input(type="hidden", placeholder="", name="id", value=user._id)
-                          button(type="submit") Delete 
-                      td
                         form(action="/saleslist/edit/"+user._id)
                           input(type="hidden")
                           button(type="submit") Edit
+                      td
+                        form.delete(method="post" action='/saleslist/delete')
+                          input(type="hidden", placeholder="", name="id", value=user._id)
+                          button(type="submit") Delete 
+                      
             .col.col-md-12              
               a.btn.custom( href="/saleslist" style='width: 40%;margin-top: 0px;height:50px;margin-left:350px;' type='submit')
                 | Sales Records                                                                                                                            

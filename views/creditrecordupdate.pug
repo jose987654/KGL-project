@@ -114,8 +114,8 @@ head
                     th Sale
                     th Total (shs)
                     th Comments
-                    th Delete
                     th Edit
+                    th Delete
                 tbody(style='overflow-y: scroll;')
                 if users.length
                   each user in users
@@ -128,13 +128,14 @@ head
                       td #{user.total} 
                       td  #{user.comments}
                       td
-                        form.delete(method="post" action='/creditsaleslist/delete')
-                          input(type="hidden", placeholder="", name="id", value=user._id)
-                          button(type="submit") Delete 
-                      td
                         form(action="/creditsaleslist/edit/"+user._id)
                           input(type="hidden")
                           button(type="submit") Edit
+                      td
+                        form.delete(method="post" action='/creditsaleslist/delete')
+                          input(type="hidden", placeholder="", name="id", value=user._id)
+                          button(type="submit") Delete 
+                      
             .col.col-md-12              
               a.btn.custom( href="/creditsaleslist" style='width: 40%;margin-top: 0px;height:50px;margin-left:350px;' type='submit')
                 | Credit Records                                                                                                                            
