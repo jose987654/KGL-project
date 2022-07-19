@@ -55,6 +55,8 @@ head
             h2.txt1(style='font-size:45px;text-decoration: underline;') Please Select Task .
             .row
               .col-md-4(style='margin:auto;padding:auto;')
+                if user.userrole == "Director" 
+                  h2.txt1(style='font-size:30px;text-decoration:underline;') Purchases : #{purchase.totalpurchases} Ugx 
                 .card
                   .card-header(style='border-radius: 30px; font-size:30px')
                     | PURCHASES
@@ -66,6 +68,8 @@ head
                     li.list-group-item
                       a(href='/farmlist' style=' text-decoration: none; color:#07026d;')  Farm Records
               .col-md-4(style='margin:auto;padding:auto;')
+                if user.userrole == "Director" 
+                  h2.txt1(style='font-size:30px;text-decoration:underline;') Sales : #{sale.totalsells}  Ugx
                 .card
                   .card-header(style='border-radius: 30px;font-size:30px')
                     | SALES
@@ -85,6 +89,8 @@ head
                       a(href='/creditsaleslist' style=' text-decoration: none; color:#07026d;')
                         | Credit Sales Record
               .col-md-4(style='margin:auto;padding:auto;')
+                if user.userrole == "Director" 
+                  h2.txt1(style='font-size:30px;text-decoration:underline;')  Credit Sales : #{credit.creditsells} Ugx   
                 .card
                   .card-header(style='border-radius: 30px;font-size:30px')
                     | PRICES

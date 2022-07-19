@@ -2,14 +2,37 @@ const express = require('express');
 const passport = require('passport');
 const router = express.Router();
 const mongoose = require('mongoose');
-// const Signup = require('../models/Signup');
 
-router.get('/home',(req,res)=>{
+const Purchase = require("../models/Purchase");
+const Sale = require("../models/Sale");
+const Creditsale = require('../models/Creditsale');
+
+router.get('/home',async (req,res)=>{
   req.session.user = req.user;
     let user = req.session.user;
     res.locals.user = user;
-  res.render('home')
-})
+    try{
+      
+    let totalSales = await Sale.aggregate([
+      {'$group': {_id:'$all',
+      totalsells : {$sum:'$total'}}}  
+])
+    let creditSales = await Creditsale.aggregate([
+      {'$group': {_id:'$all',
+      creditsells : {$sum:'$total'}     
+    }}  
+])
+    let purchases = await Purchase.aggregate([
+      {'$group': {_id:'$all',
+      totalpurchases : {$sum:'$total'}
+    }}  
+])
+  res.render('home', {sale:totalSales[0], credit:creditSales[0],purchase:purchases[0]} )
+}
+catch (err) {
+  console.log(err);
+  res.send("failed to get product data");
+}})
 
 router.get('/login',(req,res)=>{
     res.render('index')

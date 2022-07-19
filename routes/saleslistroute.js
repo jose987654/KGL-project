@@ -6,12 +6,6 @@ const Signup = require('../models/Signup');
 const Creditsale = require('../models/Creditsale');
 const Price = require('../models/Price');
 
-const config = require("../config/database");
-require("dotenv").config();
-mongoose.connect(config.database,{ useNewUrlParser: true });
-const db = mongoose.connection;
-
-
 
 router.get("/saleslist", async (req, res) => {
   req.session.user = req.user;
