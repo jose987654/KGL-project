@@ -236,11 +236,10 @@ router.get("/prices", async (req, res) => {
   let user = req.session.user;
   res.locals.user = user;
   try {
-    if(req.session.user.userrole === "Manager" ||
-    req.session.user.userrole === "Director"){
+    
     const price = await Price.find();
     res.render("pricelist", { users:price });
-  } }catch (err) {
+   }catch (err) {
     console.log(err);
     res.send("failed to get product data");
   }
