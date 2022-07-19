@@ -123,12 +123,12 @@ head
                           option(value='Beans') Beans
                           option(value='Maize') Maize
                           option(value='Cow_peas') Cow Peas
-                          option(value='Beans') Beans
-                          option(value='Maize') Maize
+                          option(value='Soy_Beans') Soy Beans
+                         
                           option(value='Others') Others
                       li
                         label(for='start') Purchase Date:
-                        input(type='date' name='date' value='' min='1960-01-01' required='' max='2100-12-31' onblur='dte()')
+                        input(type='datetime-local' name='date' value='' min='1960-01-01' required='' max='2100-12-31' onblur='dte()')
                       li.align
                         label Qty, Tonnes(1000kg):
                         input#qty(type='Float' name='quantity' placeholder='*Quantity in Tonnes.(1000kgs)' required='' onblur='add1()' oninput='add_number()')

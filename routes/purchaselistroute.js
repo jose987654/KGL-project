@@ -12,7 +12,19 @@ router.get("/purchaselist", async (req, res) => {
       if(req.session.user.userrole === "Manager" ||
     req.session.user.userrole === "Director"){
       const purchase = await Purchase.find();
-      res.render("purchasesrecord", { users:purchase});
+
+      let purchases = await Purchase.aggregate([
+        {'$group': {_id:'$all',
+        totalpurchases : {$sum:'$total'},
+        // totalTonnage : {$sum:'$tonnage'}
+      }}  
+      ])
+      res.render('purchasesrecord', {
+        users:purchase,
+          total:purchases[0]
+      } )
+
+      
     } 
   else{res.render("home")}
 }

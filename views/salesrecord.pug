@@ -103,7 +103,7 @@ head
             h2.txt1(style='font-size:45px;text-decoration: underline;')
               | Customer Sales Records
             if user.userrole == "Director"
-              h2.txt1(style='font-size:30px;text-decoration: none;') Total Sales : #{total.totalsells} Ugx 
+              h2.txt1(style='font-size:30px;text-decoration:underline;') Total Sales : #{total.totalsells} Ugx 
             .table-responsive(style='padding:20px;')
               table#table.table.table-bordered.table-hover.table-secondary
                 thead

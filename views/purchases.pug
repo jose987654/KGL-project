@@ -134,12 +134,12 @@ head
                         option(value='Beans') Beans
                         option(value='Maize') Maize
                         option(value='Cow_Peas') Cow Peas
-                        option(value='Beans') Beans
-                        option(value='Maize') Maize
+                        option(value='Soy_Beans') Soy Beans
+                       
                         option(value='Others') Others
                     div
                       label.form-label(for='start') Purchase Date:
-                      input(type='date' name='date' value='' min='1960-01-01' max='2100-12-31' onblur='dte()')
+                      input(type='datetime-local' name='date' value='' min='1960-01-01' max='2100-12-31' onblur='dte()')
                       .invalid-feedback
                         | Please enter a valid date.
                   .col.col-md-6
