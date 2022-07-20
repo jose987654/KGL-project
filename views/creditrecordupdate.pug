@@ -125,7 +125,7 @@ head
                       td #{user.pdct}                                             
                       td #{user.quantity}
                       td #{user.sale_type}
-                      td #{user.total} 
+                      td #{new Intl.NumberFormat().format(user.total)} 
                       td  #{user.comments}
                       td
                         form(action="/creditsaleslist/edit/"+user._id)

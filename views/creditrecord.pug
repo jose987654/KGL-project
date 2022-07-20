@@ -102,7 +102,7 @@ head
             h2.txt1(style='font-size:45px;text-decoration: underline;')
               | Customer Credit Sales Records
             if user.userrole == "Director"
-              h2.txt1(style='font-size:30px;text-decoration: underline;') Total Credit Sales : #{total.creditsells} Ugx 
+              h2.txt1(style='font-size:30px;text-decoration: underline;') Total Credit Sales : #{new Intl.NumberFormat().format(total.creditsells)} Ugx 
             .table-responsive(style='padding:20px;')
               table.table.table-bordered.table-hover.table-secondary
                 thead
@@ -121,14 +121,14 @@ head
                       td #{user.customername}                      
                       td #{user.pdct}                                             
                       td #{user.quantity}
-                      td #{user.total}
+                      td #{new Intl.NumberFormat().format(user.total)}
                       td #{user.comments}
                 tr 
                   td 
                   td
                   td 
                   td Credit Sales
-                  td #{total.creditsells}
+                  td #{new Intl.NumberFormat().format(total.creditsells)}
                   td 
                   
             .col.col-md-12              

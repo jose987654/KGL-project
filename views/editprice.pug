@@ -111,21 +111,19 @@ head
                       li.align
                         label KGL Branch:
                         select(name='userole' )
-                          option(value=user.userole)
-                            | KGL Branch
-                          option(value='Maganjo') MAGANJO Branch
-                          option(value='Matugga') MATUGGA Branch
+                          
+                          option(value='Maganjo' selected=user.branch==="Maganjo") MAGANJO Branch
+                          option(value='Matugga' selected=user.branch==="Matugga") MATUGGA Branch
                       li.align
                         label Agricultural Product:
                         select(name='pdct' )
-                          option(value=user.pdct)
-                            | Product Name
-                          option(value='Beans') Beans
-                          option(value='Maize') Maize
-                          option(value='Cow_peas') Cow Peas
-                          option(value='Soy_Beans') Soy Beans
+                          
+                          option(value='Beans' selected=user.pdct==="Beans") Beans
+                          option(value='Maize' selected=user.pdct==="Maize") Maize
+                          option(value='Cowpeas' selected=user.pdct==="Cowpeas") Cow Peas
+                          option(value='SoyBeans' selected=user.pdct==="SoyBeans") Soy Beans
                       
-                          option(value='Others') Others
+                          option(value='Gnuts' selected=user.pdct==="Gnuts") Others
                       li.align
                         label Price (shs):
                         input#qty(type='Float' name='quantity' placeholder='*Price per Kg' value=user.quantity)

@@ -15,17 +15,24 @@ router.get("/saleslist", async (req, res) => {
   try {
     if(req.session.user.userrole === "Manager" ||
     req.session.user.userrole === "Director"){
-    const sale = await Sale.find();
-
+      let selectedproduce;
+      if(req.query.searchproduce){
+        selectedproduce=req.query.searchproduce}
+        const sales = await Sale.find({pdct:selectedproduce});
+      
+   
+     
   let totalSales = await Sale.aggregate([
-    {'$group': {_id:'$all',
+    {$match:{pdct:selectedproduce}},
+    {$group: {_id:'$pdct',
     totalsells : {$sum:'$total'},
-    // totalTonnage : {$sum:'$tonnage'}
+    totalqty : {$sum:'$quantity'}
   }}  
   ])
   res.render('salesrecord', {
-    users:sale,
-      total:totalSales[0]
+    users:sales,
+      total:totalSales[0],
+      defaultproduce:selectedproduce
   } )
     
 }

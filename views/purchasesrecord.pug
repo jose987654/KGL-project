@@ -104,7 +104,7 @@ head
             h2.txt1(style='font-size:45px;text-decoration: underline;')
               | Supplier Purchases Record
             if user.userrole == "Director"
-              h2.txt1(style='font-size:30px;text-decoration: underline;') Total Purchases : #{total.totalpurchases} Ugx 
+              h2.txt1(style='font-size:30px;text-decoration: underline;') Total Purchases : #{new Intl.NumberFormat().format(total.totalpurchases)} Ugx 
             .table-responsive(style='padding:5px;')
               table.table.table-bordered.table-hover.table-secondary
                 thead
@@ -125,9 +125,9 @@ head
                       td #{user.customername}                      
                       td #{user.pdct}                                             
                       td #{user.quantity} 
-                      td #{user.unitprice} 
-                      td #{user.saleprice}                   
-                      td #{user.total}
+                      td #{new Intl.NumberFormat().format(user.unitprice)} 
+                      td #{new Intl.NumberFormat().format(user.saleprice)}                   
+                      td #{new Intl.NumberFormat().format(user.total)}
                 tr 
                   td 
                   td 
@@ -135,7 +135,7 @@ head
                   td 
                   td
                   td Total Purchases
-                  td #{total.totalpurchases} 
+                  td #{new Intl.NumberFormat().format(total.totalpurchases)} 
                      
               .col.col-md-12              
                 a.btn.custom( href="/purchaselist/update" style='width: 40%;margin-top: 0px;height:50px;margin-left:350px;' type='submit')

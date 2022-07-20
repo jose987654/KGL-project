@@ -111,10 +111,8 @@ head
                     .align
                       label.form-label KGL Branch:
                       select(name='branch' )
-                        option(value=user.branch)
-                          | KGL Branch
-                        option(value='Maganjo') MAGANJO Branch
-                        option(value='Matugga') MATUGGA Branch
+                        option(value='Maganjo' selected=user.branch==="Maganjo") MAGANJO Branch
+                        option(value='Matugga' selected=user.branch==="Matugga") MATUGGA Branch
                     .align
                       label.form-label Customer Name:
                       input(type='text' name='customername' placeholder='*Customer Name ' value=user.customername)
@@ -128,14 +126,11 @@ head
                     .align
                       label.form-label Product:
                       select(name='pdct' )
-                        option(value=user.pdct)
-                          | Agricultural Product
-                        option(value='Beans') Beans
-                        option(value='Maize') Maize
-                        option(value='Cow_Peas') Cow Peas
-                        option(value='Soy_Beans') Soy Beans
-                       
-                        option(value='Others') Others
+                        option(value='Beans' selected=user.pdct==="Beans") Beans
+                        option(value='Maize' selected=user.pdct==="Maize") Maize
+                        option(value='CowPeas' selected=user.pdct==="CcowPeas") Cow Peas
+                        option(value='SoyBeans' selected=user.pdct==="SoyBeans") Soy Beans
+                        option(value='Gnuts' selected=user.pdct==="Gnuts") Gnuts
                     div
                       label.form-label(for='start') Purchase Date:
                       input(type='datetime-local' name='date' min='1960-01-01' max='2100-12-31' value=user.date)

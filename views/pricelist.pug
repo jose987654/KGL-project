@@ -116,7 +116,7 @@ head
                     tr
                       td #{user.userole}                      
                       td #{user.pdct}                                             
-                      td #{user.quantity}
+                      td #{new Intl.NumberFormat().format(user.quantity)}
                       td #{user.comments}
             if user.userrole == "Manager" || user.userrole == "Director"
               .col.col-md-12  
