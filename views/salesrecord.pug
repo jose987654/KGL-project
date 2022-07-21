@@ -103,34 +103,34 @@ head
             h2.txt1(style='font-size:45px;text-decoration: underline;')
               | Customer Sales Records
             if user.userrole == "Director"
-              h2.txt1(style='font-size:30px;text-decoration:underline;') Total Sales : #{total.totalsells} Ugx 
+              h2.txt1(style='font-size:30px;text-decoration:underline;') Total Sales : #{new Intl.NumberFormat().format(total.totalsells)} Ugx 
             .table-responsive(style='padding:20px;')
               table#table.table.table-bordered.table-hover.table-secondary
                 thead
                   tr
                     th Branch 
-                    th Customer                   
-                    th Product                   
+                    th Customer 
+                    th Agent                  
+                    th Product                 
                     th Qty in tonnes
-                    th Sale
                     th Total (shs)                    
                 tbody(style='overflow-y: scroll;')
                 if users.length
                   each user in users
                     tr
                       td #{user.branch}
-                      td #{user.customername}                      
-                      td #{user.pdct}                                             
+                      td #{user.customername}
+                      td #{user.agent}                      
+                      td #{user.pdct}                                 
                       td #{user.quantity}
-                      td #{user.sale_type}
-                      td #{user.total}
+                      td #{new Intl.NumberFormat().format(user.total)}
                 tr 
                   td 
                   td 
                   td 
                   td 
                   td Total Sales
-                  td #{total.totalsells}
+                  td #{new Intl.NumberFormat().format(total.totalsells)}
             .col.col-md-12                          
               a.btn.custom( href="/saleslist/update" style='width: 40%;margin-top: 0px;height:50px;margin-left:350px;' type='submit')
                 | Update

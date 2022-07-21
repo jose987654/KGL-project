@@ -158,14 +158,9 @@ head
                       label.form-label Total Amount (shs):
                       input#txtresult(type='Float' name='total' placeholder='*Amount(shs).' value=user.total)
                     .align
-                      label.form-label  Sale Type:
-                      select(name='sale_type' )
-                        option(value=user.sale_type)
-                          | Sale type.
-                        option(value='Cash') Cash
-                        
-                      .invalid-feedback
-                        | Please enter a sale type
+                      label.form-label Agent:
+                      input(type='text' name='agent' readonly placeholder='Agent name' value=user.agent )
+                    
                     .align
                       label.form-label Comments:
                       textarea#comments(type='text' name='comments' placeholder='*Comments on Sale.' rows='5' cols='33' value=user.comments)

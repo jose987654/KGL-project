@@ -99,7 +99,7 @@ function add_number() {
   var first_number = parseFloat(str1.replace(/,/g, ""));
   var second_number = parseFloat(str2.replace(/,/g, ""));
   if (isNaN(second_number)) second_number = 0;
-  var result = first_number * second_number *1000;
+  var result = Math.round(first_number * second_number *1000);
  // var Result = result.toLocaleString();
 
   document.getElementById("txtresult").value = result;

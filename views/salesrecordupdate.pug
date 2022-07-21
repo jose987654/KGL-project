@@ -111,7 +111,7 @@ head
                     th Customer                   
                     th Product                   
                     th Qty,tonnes
-                    th Sale
+                    th Agent
                     th Total (shs)
                     th Edit
                     th Delete
@@ -123,7 +123,7 @@ head
                       td #{user.customername}                      
                       td #{user.pdct}                                             
                       td #{user.quantity}
-                      td #{user.sale_type}
+                      td #{user.agent}
                       td #{user.total} 
                       td
                         form(action="/saleslist/edit/"+user._id)
