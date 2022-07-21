@@ -109,14 +109,14 @@ head
                   .col.col-md-6
                     .align
                       label.form-label KGL Branch:
-                      select(name='branch' onblur='branch()')
+                      select(name='branch' onblur='brnch()')
                         option(value='Default')
                           | KGL Branch
                         option(value='Maganjo') MAGANJO Branch
                         option(value='Matugga') MATUGGA Branch
                     .align
                       label.form-label Customer Name:
-                      input(type='text' name='customername' placeholder='*Customer Name ' required='' size='32' onblur='cname()')
+                      input(type='text' name='customername' placeholder='*Customer Name ' required='' size='32' onblur='cname(1,17)')
                       .invalid-feedback
                         | Enter a valid Customer name.
                     .align
@@ -140,6 +140,11 @@ head
                       input(type='datetime-local' name='date' value='' min='1960-01-01' max='2100-12-31' onblur='dte()')
                       .invalid-feedback
                         | Please enter a valid date.
+                    div
+                      label.form-label National ID Number.
+                      input(type='text' name='nin' placeholder='* National Id Number (NIN)' required='' size='12' onblur='userval2(1,17)')
+                      .invalid-feedback(style='border: 0px; padding: 0px; font-size: 15px')
+                        | Valid NIN is required.
                   .col.col-md-6
                     div
                       .align
@@ -160,12 +165,8 @@ head
                       label.form-label Total Amount (shs):
                       input#txtresult(type='Float' name='total' placeholder='*Amount(shs).' )
                     .align
-                      label.form-label  Sale Type:
-                      select(name='sale_type' onblur='sales()')
-                        option(value='Credit')
-                          | Credit                                              
-                      .invalid-feedback
-                        | Please enter a sale type
+                      label.form-label Sales Agent:
+                      input(type='text' name='agent' readonly placeholder='Agent name' value=user.firstname+ user.secondname )                   
                     .align
                       label.form-label Comments:
                       textarea#comments(type='text' name='comments' placeholder='*Comments on Sale.' rows='5' cols='33')

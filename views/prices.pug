@@ -109,12 +109,8 @@ head
                   .col.col-md-10
                     ul
                       li.align
-                        label KGL Branch:
-                        select(name='userole' onblur='rol()' required='')
-                          option(value='Default')
-                            | KGL Branch
-                          option(value='Maganjo') MAGANJO Branch
-                          option(value='Matugga') MATUGGA Branch
+                        label Supplier Name:
+                        input(type='text' name='supplier' placeholder='*Supplier name' required='' onblur='add22()' )
                       li.align
                         label Agricultural Product:
                         select(name='pdct' onblur='role1()' required='')
@@ -128,7 +124,7 @@ head
                           option(value='Gnuts') Gnuts
                       li.align
                         label Price (shs):
-                        input#qty(type='Float' name='quantity' placeholder='*Price /Kg for Agricultural Product' required='' onblur='add1()' oninput='add_number()')
+                        input#qty(type='Float' name='quantity' placeholder='*Price /Kg for Agricultural Product' required='' onblur='add1()' )
                       li.align
                         label Comments:
                         textarea#comments(type='text' name='comments' placeholder='*Comments on Price.' rows='5' cols='33')
@@ -139,7 +135,7 @@ footer.page-footer.font-small.blue.pt-4
     .row
       .col-md-2.mt-md-0.mt-3
         div
-          img.card-img-top(src='./Img/logo5.jpg' style='width:50px; height:50px; border-radius: 10px;' alt='Me In Class on Day on3')
+          img.card-img-top(src='/Img/logo5.jpg' style='width:50px; height:50px; border-radius: 10px;' alt='Me In Class on Day on3')
       .col-md-10.mt-md-0.mt-3.footer-copyright.text-center.py-3.textcontent
         | &copy; 2022 Copyright:
         | Karibu Groceries LTD

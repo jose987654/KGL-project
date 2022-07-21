@@ -18,6 +18,9 @@ const creditsaleSchema =new mongoose.Schema ({
     date:{
         type:Date,        
     },
+    nin:{
+        type:String,        
+    },
     unitprice:{
         type:Number,      
     },
@@ -27,7 +30,7 @@ const creditsaleSchema =new mongoose.Schema ({
     total:{
         type:Number,      
     },
-    sale_type:{
+    agent:{
         type:String,        
     },
     comments:{

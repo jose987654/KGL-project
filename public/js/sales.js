@@ -83,10 +83,10 @@ const cname = (min, max) => {
   const usd = USD.value.length;
   if (usd == 0 || usd < min || usd >= max) {
     // UID.focus();
-    UID.style.border = "3px solid red";
+    USD.style.border = "3px solid red";
     return true;
   } else {
-    UID.style.border = "";
+    USD.style.border = "";
   }
 };
 
@@ -124,6 +124,19 @@ const dte = () => {
     return true;
   }
 };
+
+const userval2 = (min, max) => {
+  const usd = document.registration.nin;
+  const uidlen = usd.value.length;
+  if (uidlen == 0 || uidlen < min || uidlen >= max) {
+    // usd.focus();
+    usd.style.border = "3px solid red";
+    return true;
+  } else {
+    usd.style.border = "";
+  }
+};
+
 
 const add2 = () => {
   let telno = document.registration.unitprice;

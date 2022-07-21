@@ -6,11 +6,10 @@ head
   title Karibu Groceries Ltd/purchases
   // Bootstrap CSS CDN
   link(href='/css/bootstrap/css/bootstrap.min.css' rel='stylesheet')
-  //
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"
-    integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
-    Our Custom CSS
-  link(rel='stylesheet' href='css/style5.css')
+  
+  //link (rel='stylesheet' href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous")
+  //Our Custom CSS
+  link(rel='stylesheet' href='/css/style5.css')
   // Font Awesome JS
   script(defer='' src='https://use.fontawesome.com/releases/v5.0.13/js/solid.js' integrity='sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ' crossorigin='anonymous')
   script(defer='' src='https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js' integrity='sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY' crossorigin='anonymous')
@@ -26,9 +25,9 @@ head
         a(href='/home')
           i.fas.fa-home
           |                         Home 
-      li.active
+      li
         if user.userrole == "Manager" || user.userrole == "Director"     
-          a.dropdown-toggle(href='#purchaseSubmenu' data-toggle='collapse' aria-expanded='false' style='color:#181553')
+          a.dropdown-toggle(href='#purchaseSubmenu' data-toggle='collapse' aria-expanded='false' )
             i.fas.fa-copy
             |                           Purchases
           ul#purchaseSubmenu.collapse.list-unstyled
@@ -36,8 +35,8 @@ head
               a(href='/purchases') Purchase Form
             li            
               a(href='/purchaselist') Purchase Record           
-      li     
-        a.dropdown-toggle(href='#saleSubmenu' data-toggle='collapse' aria-expanded='false' )
+      li.active     
+        a.dropdown-toggle(href='#saleSubmenu' data-toggle='collapse' aria-expanded='false' style='color:#181553')
           i.fas.fa-copy
           |                           Sales
         ul#saleSubmenu.collapse.list-unstyled
@@ -80,7 +79,7 @@ head
               a(href='/employeelist') Employees
     ul.list-unstyled.CTAs      
   
-  // Page Content
+  //content
   #content
     nav.navbar.navbar-expand-lg.navbar-light(style='background:#efeef0')
       .container-fluid.row
@@ -91,58 +90,88 @@ head
             button.btn.btn-dark.d-inline-block.d-lg-none.ml-auto(type='button' data-toggle='collapse' data-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation')
               i.fas.fa-align-justify
           .col-md-10
-            h2(style='margin-left:15px;margin-top: 20px; color:#181553;') Karibu Groceries Ltd, Purchase Records
+            h2(style='margin-left:15px;margin-top: 20px; color:#181553;') Karibu Groceries Ltd, Sales Records
         #navbarSupportedContent.collapse.navbar-collapse.col-md-1
           ul.nav.navbar-nav.ml-auto
             li.nav-item.active
               button.btn.btn-outline-primary
-                a.nav-link(href='/logout' style='color:#181553;  ') LogOut
+                a.nav-link(href='/logout' style='color:#181553;') LogOut
     #blog-container.container-fluid
       .row
         .col-md-12
           .main.custom1
             h2.txt1(style='font-size:45px;text-decoration: underline;')
-              | Supplier Purchases Record
-            if users.length
-              if user.userrole == "Director"
-                h2.txt1(style='font-size:30px;text-decoration: underline;') Total Purchases : #{new Intl.NumberFormat().format(total.totalpurchases)} Ugx 
-            else 
-              h2.txt1(style='font-size:30px;text-decoration: underline;') No Purchases
-            .table-responsive(style='padding:5px;')
-              table.table.table-bordered.table-hover.table-secondary
+              | Customer Sales Records
+            if user.userrole == "Director"
+              //-  h2.txt1(style='font-size:30px;text-decoration:underline;') Total Sales : #{total.totalsells} Ugx 
+            .table-responsive(style='padding:20px;')
+              table#table.table.table-bordered.table-hover.table-secondary
                 thead
                   tr
-                    th Branch
-                    th Supplier                   
-                    th Product 
-                    th Manager                  
-                    th Qty in tonnes 
-                    th Unit Price                    
-                    th Total(shs)  
-                                     
+                    th Branch 
+                    th Customer                   
+                    th Product                   
+                    th Qty in tonnes
+                    th Sale
+                    th Total (shs)                    
                 tbody(style='overflow-y: scroll;')
                 if users.length
                   each user in users
                     tr
                       td #{user.branch}
                       td #{user.customername}                      
-                      td #{user.pdct}
-                      td #{user.agent}                                             
-                      td #{user.quantity} 
-                      td #{new Intl.NumberFormat().format(user.unitprice)}                   
-                      td #{new Intl.NumberFormat().format(user.total)}
+                      td #{user.pdct}                                             
+                      td #{user.quantity}
+                      td #{user.sale_type}
+                      td #{user.total}
                 tr 
                   td 
                   td 
                   td 
                   td 
-                  td Total Purchases
-                  td #{new Intl.NumberFormat().format(total.totalpurchases)} 
-                     
-              .col.col-md-12              
-                a.btn.custom( href="/purchaselist/update" style='width: 40%;margin-top: 0px;height:50px;margin-left:350px;' type='submit')
-                  | Update
-                  | Records                                                                                                                                             
+                  td Total Sales
+                  //-  td #{total.totalsells}
+            .col.col-md-12                          
+              a.btn.custom( href="/saleslist/update" style='width: 40%;margin-top: 0px;height:50px;margin-left:350px;' type='submit')
+                | Update
+                | Records 
+            .form-row 
+              .col.form-group.col-md-12 
+                br
+                form.search(action="/saleslist")
+                  .form-row 
+                    .col-md-8
+                      select.form-control(type='text' name="searchproduce")
+                        option(value='Default')
+                            | Agricultural Product
+                        option(value='Beans') Beans
+                        option(value='Maize') Maize
+                        option(value='Cow_Peas') Cow Peas
+                        option(value='Soy_Beans') Soy Beans
+                        option(value='Others') Others
+                    .col-md-4
+                      input.btn.btn-dark.btn-block(type='submit')
+                br
+                table.table.table-bordered 
+                  thead  
+                    tr 
+                      th produce name
+                      th Amount Paid
+                      th Tonnage Kgs
+                  tbody 
+                  if users.length
+                    each user in users
+                      tr 
+                        td #{user.pdct}
+                        td #{user.total}
+                        td #{user.quantity}
+                    tr 
+                      th Totals
+                      td #{total.totalsells}
+                      td #{total.totalqty}
+                  else 
+                    p No record captured yet in the system for that produce
+
 footer.page-footer.font-small.blue.pt-4
   .container-fluid.text-center.text-md-left
     .row
@@ -152,6 +181,7 @@ footer.page-footer.font-small.blue.pt-4
       .col-md-10.mt-md-0.mt-3.footer-copyright.text-center.py-3.textcontent
         | &copy; 2022 Copyright:
         | Karibu Groceries LTD
+
 script(src='https://code.jquery.com/jquery-3.3.1.slim.min.js' integrity='sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo' crossorigin='anonymous')
 // Popper.JS
 script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js' integrity='sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ' crossorigin='anonymous')

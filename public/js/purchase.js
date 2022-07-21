@@ -190,4 +190,17 @@ const add1 = () => {
   }
 };
 
+const add22 = () => {
+  let teln = document.registration.supplier;
+  // let number = /^[0-9]+$/;
+  if (teln.value == "") {
+    teln.style.border = "3px solid red";
+    return true;
+  } else {
+    teln.style.border = "";
+    // telno.innerHTML = " select a branch";
+    // telno.focus();
+  }
+};
+
 

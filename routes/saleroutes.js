@@ -5,18 +5,19 @@ const mongoose = require('mongoose');
 const router = express.Router();
 
 const Sale = require('../models/Sale');
-const Signup = require('../models/Signup');
+
 const Creditsale = require('../models/Creditsale');
 const Price = require('../models/Price');
 
+ 
 
-
-router.get('/sales',(req,res)=>{
+router.get('/sales',async(req,res)=>{
     req.session.user = req.user;
     let user = req.session.user;
     res.locals.user = user;
+    
    
-    res.render('salesinput',{title:"KGL SALES"})
+    res.render('salesinput')
 })
 
 

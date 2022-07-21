@@ -54,15 +54,15 @@ passport.serializeUser(Signup.serializeUser());
 passport.deserializeUser(Signup.deserializeUser());
 
 
-// const loginchecker = function(req, res, next){
-//     if(req.path != '/login' && req.path != '/' && !req.session.user){
-//       res.redirect ('/')
-//     }
-//     next()
-//   }
+const loginchecker = function(req, res, next){
+    if(req.path != '/login' && req.path != '/' && !req.session.user){
+      res.redirect ('/')
+    }
+    next()
+  }
   
-// app.use(loginchecker)
-// // routes
+app.use(loginchecker)
+// routes
 
 
 

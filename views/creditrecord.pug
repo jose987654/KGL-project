@@ -108,9 +108,10 @@ head
                 thead
                   tr
                     th Branch
-                    th Customer                   
+                    th Customer                  
                     th Product                   
-                    th Qty,tonnes                    
+                    th Qty,tonnes
+                    th Salesagent                    
                     th Total (shs) 
                     th Comments                  
                 tbody(style='overflow-y: scroll;')
@@ -118,16 +119,18 @@ head
                   each user in users
                     tr
                       td #{user.branch}
-                      td #{user.customername}                      
+                      td #{user.customername}               
                       td #{user.pdct}                                             
                       td #{user.quantity}
+                      td #{user.agent}
                       td #{new Intl.NumberFormat().format(user.total)}
                       td #{user.comments}
                 tr 
                   td 
                   td
                   td 
-                  td Credit Sales
+                  td
+                  td Total sales
                   td #{new Intl.NumberFormat().format(total.creditsells)}
                   td 
                   

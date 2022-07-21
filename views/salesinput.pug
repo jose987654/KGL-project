@@ -108,7 +108,7 @@ head
                   .col.col-md-6
                     .align
                       label.form-label KGL Branch:
-                      select(name='branch' onblur='branch()')
+                      select(name='branch' onblur='brnch()')
                         option(value='Default')
                           | KGL Branch
                         option(value='Maganjo') MAGANJO Branch
@@ -159,12 +159,9 @@ head
                       label.form-label Total Amount (shs):
                       input#txtresult(type='Float' name='total' placeholder='*Amount(shs).' )
                     .align
-                      label.form-label  Sale Type:
-                      select(name='sale_type' onblur='sales()')
-                        option(value='Cash')
-                          | Cash                                     
-                      .invalid-feedback
-                        | Please enter a sale type
+                      label.form-label Sales Agent:
+                      input(type='text' name='agent' readonly placeholder='Agent name' value=user.firstname+ user.secondname )
+                    
                     .align
                       label.form-label Comments:
                       textarea#comments(type='text' name='comments' placeholder='*Comments on Sale.' rows='5' cols='33')

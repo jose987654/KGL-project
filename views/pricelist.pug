@@ -105,16 +105,14 @@ head
             .table-responsive(style='padding:20px;')
               table.table.table-bordered.table-hover.table-secondary
                 thead
-                  tr
-                    th Branch                                       
-                    th Product                  
+                  tr                                       
+                    th Product Name                
                     th Price (shs) 
                     th Comments                  
                 tbody(style='overflow-y: scroll;')
                 if users.length
                   each user in users
-                    tr
-                      td #{user.userole}                      
+                    tr                     
                       td #{user.pdct}                                             
                       td #{new Intl.NumberFormat().format(user.quantity)}
                       td #{user.comments}

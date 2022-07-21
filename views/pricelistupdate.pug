@@ -106,9 +106,9 @@ head
               table.table.table-bordered.table-hover.table-secondary
                 thead
                   tr
-                    th Branch                                       
+                    th Supplier                                       
                     th Product                  
-                    th Price (shs) 
+                    th Sale Price(shs) 
                     th Comments 
                     th Edit 
                     th Delete                
@@ -116,7 +116,7 @@ head
                 if users.length
                   each user in users
                     tr
-                      td #{user.userole}                      
+                      td #{user.supplier}                      
                       td #{user.pdct}                                             
                       td #{user.quantity}
                       td #{user.comments}

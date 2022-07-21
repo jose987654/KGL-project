@@ -27,8 +27,8 @@ const purchaseSchema =new mongoose.Schema ({
     total:{
         type:Number,      
     },
-    saleprice:{
-        type:Number,      
+    agent:{
+        type:String,
     },
     comments:{
         type:String,

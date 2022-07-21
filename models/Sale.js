@@ -27,7 +27,7 @@ const saleSchema =new mongoose.Schema ({
     total:{
         type:Number,      
     },
-    sale_type:{
+    agent:{
         type:String,        
     },
     comments:{

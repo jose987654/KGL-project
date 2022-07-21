@@ -111,36 +111,36 @@ head
                     ul
                       li.align
                         label First Name:
-                        input#fname(type='text' name='firstname' value=user.firstname)
+                        input#fname(type='text' readonly name='firstname' value=user.firstname)
                       li.align
                         label Second Name:
-                        input#sname(type='text' name='secondname' value=user.secondname)
+                        input#sname(type='text' readonly name='secondname' value=user.secondname)
                       li.align
                         label Gender:
-                        input(type='text' name='gender' value=user.gender)
+                        input(type='text' readonly name='gender' value=user.gender)
                       li.align
                         label National ID Number:
-                        input#nin(type='text' name='nin' value=user.nin)
+                        input#nin(type='text' readonly name='nin' value=user.nin)
                       li.align
                         label E-mail:
-                        input(type='email' name='email' value=user.email)
+                        input(type='email' readonly name='email' value=user.email)
                       li.align
                         label User role:
-                        input#usrole(type='text' name='userrole' value=user.userrole)
+                        input#usrole(type='text' readonly name='userrole' value=user.userrole)
                   .col.col-md-6
                     ul
                       li.align
                         label Username
-                        input(type='text' name='username' value=user.username)
+                        input(type='text' readonly name='username' value=user.username)
                       li.align
                         label Tel.
-                        input(type='text' value=user.telno name='telno')
+                        input(type='text' readonly value=user.telno name='telno')
                       li.align
                         label Branch
-                        input(type='text'  name='branch' value=user.branch)
+                        input(type='text' readonly  name='branch' value=user.branch)
                       li.align
                         label Password
-                        input(type='password' value=user.password name='password')           
+                        input(type='password' readonly value=user.password name='password')           
 footer.page-footer.font-small.blue.pt-4
   .container-fluid.text-center.text-md-left
     .row

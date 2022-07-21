@@ -103,7 +103,7 @@ head
             h2.txt1(style='font-size:45px;text-decoration: underline;')
               | Customer Sales Records
             if user.userrole == "Director"
-              //-  h2.txt1(style='font-size:30px;text-decoration:underline;') Total Sales : #{total.totalsells} Ugx 
+              h2.txt1(style='font-size:30px;text-decoration:underline;') Total Sales : #{total.totalsells} Ugx 
             .table-responsive(style='padding:20px;')
               table#table.table.table-bordered.table-hover.table-secondary
                 thead
@@ -130,47 +130,47 @@ head
                   td 
                   td 
                   td Total Sales
-                  //-  td #{total.totalsells}
+                  td #{total.totalsells}
             .col.col-md-12                          
               a.btn.custom( href="/saleslist/update" style='width: 40%;margin-top: 0px;height:50px;margin-left:350px;' type='submit')
                 | Update
                 | Records 
-            .form-row 
-              .col.form-group.col-md-12 
-                br
-                form.search(action="/saleslist")
-                  .form-row 
-                    .col-md-8
-                      select.form-control(type='text' name="searchproduce")
-                        option(value='Default')
-                            | Agricultural Product
-                        option(value='Beans') Beans
-                        option(value='Maize') Maize
-                        option(value='Cow_Peas') Cow Peas
-                        option(value='Soy_Beans') Soy Beans
-                        option(value='Others') Others
-                    .col-md-4
-                      input.btn.btn-dark.btn-block(type='submit')
-                br
-                table.table.table-bordered 
-                  thead  
-                    tr 
-                      th produce name
-                      th Amount Paid
-                      th Tonnage Kgs
-                  tbody 
-                  if users.length
-                    each user in users
-                      tr 
-                        td #{user.pdct}
-                        td #{user.total}
-                        td #{user.quantity}
-                    tr 
-                      th Totals
-                      td #{total.totalsells}
-                      td #{total.totalqty}
-                  else 
-                    p No record captured yet in the system for that produce
+            //- .form-row 
+            //-   .col.form-group.col-md-12 
+            //-     br
+            //-     form.search(action="/saleslist")
+            //-       .form-row 
+            //-         .col-md-8
+            //-           select.form-control(type='text' name="searchproduce")
+            //-             option(value='Default')
+            //-                 | Agricultural Product
+            //-             option(value='Beans') Beans
+            //-             option(value='Maize') Maize
+            //-             option(value='Cow_Peas') Cow Peas
+            //-             option(value='Soy_Beans') Soy Beans
+            //-             option(value='Others') Others
+            //-         .col-md-4
+            //-           input.btn.btn-dark.btn-block(type='submit')
+            //-     br
+            //-     table.table.table-bordered 
+            //-       thead  
+            //-         tr 
+            //-           th produce name
+            //-           th Amount Paid
+            //-           th Tonnage Kgs
+            //-       tbody 
+            //-       if users.length
+            //-         each user in users
+            //-           tr 
+            //-             td #{user.pdct}
+            //-             td #{user.total}
+            //-             td #{user.quantity}
+            //-         tr 
+            //-           th Totals
+            //-           td #{total.totalsells}
+            //-           td #{total.totalqty}
+            //-       else 
+            //-         p No record captured yet in the system for that produce
 
 footer.page-footer.font-small.blue.pt-4
   .container-fluid.text-center.text-md-left

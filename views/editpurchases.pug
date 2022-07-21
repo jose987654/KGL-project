@@ -160,15 +160,11 @@ head
                       label.form-label Total Amount (shs):
                       input#txtresult(type='Float' name='total' placeholder='*Amount(shs).' value=user.total)
                     .align
-                        label.form-label
-                          | Price to be sold
-                          | (shs):
-                        input#unitprice(type='Number' name='saleprice' placeholder='*Unit Price /kg (shs).' value=user.saleprice)
-                        .invalid-feedback
-                          | Please enter a valid unit price.
+                      label.form-label Manager:
+                      input(type='text' name='agent' readonly placeholder='Agent name' value=user.agent )
                     .align
                       label.form-label Comments:
-                      textarea#comments(type='text' name='comments' placeholder='*Comments on Purchase.' rows='5' cols='33' value=user.comments)
+                      input#comments(type='text' name='comments' placeholder='*Comments on Purchase.' rows='5' cols='33' value=user.comments)
                       .invalid-feedback
                         | Please enter a valid comment
                   .col.col-md-12
