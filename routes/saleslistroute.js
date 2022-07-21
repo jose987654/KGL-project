@@ -7,67 +7,6 @@ const Creditsale = require('../models/Creditsale');
 const Price = require('../models/Price');
 
 
-router.get("/saleslist", async (req, res) => {
-  req.session.user = req.user;
-    let user = req.session.user;
-    res.locals.user = user;
-
-  try {
-    if(req.session.user.userrole === "Manager" ||
-    req.session.user.userrole === "Director"){
-      let selectedproduce;
-      if(req.query.searchproduce){
-        selectedproduce=req.query.searchproduce}
-        const sales = await Sale.find({pdct:selectedproduce});
-      
-   
-     
-  let totalSales = await Sale.aggregate([
-    {$match:{pdct:selectedproduce}},
-    {$group: {_id:'$pdct',
-    totalsells : {$sum:'$total'},
-    totalqty : {$sum:'$quantity'}
-  }}  
-  ])
-  res.render('salesrecord', {
-    users:sales,
-      total:totalSales[0],
-      defaultproduce:selectedproduce
-  } )
-    
-}
-    else{
-      res.redirect("/home")
-    }
-  } catch (err) {
-    console.log(err);
-    res.send("failed to get product data");
-  }
-});
-
-router.get("/saleslist2", async (req, res) => {
-  try {
-        const sale = await Sale.find();
-    const total = await Sale.aggregate([{
-      $group: {
-         _id: '',
-         "total": { $sum: '$total' }
-      }
-      }, {
-         $project: {
-            _id: 0,
-            "TotalAmount": '$total'
-         }
-   }]);
-   res.status(200).json({sale,total})
-   
-  
-  } catch (err) {
-    console.log(err);
-    res.send("failed to get product data");
-  }
-});
-
 router.get("/saleslist/update", async (req, res) => {
   req.session.user = req.user;
     let user = req.session.user;
@@ -77,6 +16,30 @@ router.get("/saleslist/update", async (req, res) => {
     const sale = await Sale.find();
     res.render("salesrecordupdate", { users: sale });
   }} catch (err) {
+    console.log(err);
+    res.send("failed to get product data");
+  }
+});
+
+
+router.get("/saleslist", async (req, res) => {
+  req.session.user = req.user;
+    let user = req.session.user;
+    res.locals.user = user;
+  try {
+    if(req.session.user.userrole === "Manager" ||
+    req.session.user.userrole === "Director"){
+     const sales = await Sale.find();   
+  let totalSales = await Sale.aggregate([
+    {$group: {_id:'$all',
+    totalsells : {$sum:'$total'}}}])
+  res.render('salesrecord', {
+    users:sales,total:totalSales[0]
+  } )  
+}  else{
+      res.redirect("/home")
+    }
+  } catch (err) {
     console.log(err);
     res.send("failed to get product data");
   }
@@ -320,7 +283,67 @@ router.post('/prices/edit', async (req, res)=>{
   //  }]);
   //  res.locals.total=total[0].TotalAmount;
 
+  // router.get("/saleslist2", async (req, res) => {
+  //   try {
+  //         const sale = await Sale.find();
+  //     const total = await Sale.aggregate([{
+  //       $group: {
+  //          _id: '',
+  //          "total": { $sum: '$total' }
+  //       }
+  //       }, {
+  //          $project: {
+  //             _id: 0,
+  //             "TotalAmount": '$total'
+  //          }
+  //    }]);
+  //    res.status(200).json({sale,total})
+     
+    
+  //   } catch (err) {
+  //     console.log(err);
+  //     res.send("failed to get product data");
+  //   }
+  // });
 
+  // router.get("/saleslist2", async (req, res) => {
+  //   req.session.user = req.user;
+  //     let user = req.session.user;
+  //     res.locals.user = user;
+  
+  //   try {
+  //     if(req.session.user.userrole === "Manager" ||
+  //     req.session.user.userrole === "Director"){
+  //       let selectedproduce;
+  //       if(req.query.searchproduce){
+  //         selectedproduce=req.query.searchproduce}
+  //         const sales = await Sale.find({pdct:selectedproduce});
+        
+     
+       
+  //   let totalSales = await Sale.aggregate([
+  //     {$match:{pdct:selectedproduce}},
+  //     {$group: {_id:'$pdct',
+  //     totalsells : {$sum:'$total'},
+  //     totalqty : {$sum:'$quantity'}
+  //   }}  
+  //   ])
+  //   res.render('salesrecord', {
+  //     users:sales,
+  //       total:totalSales[0],
+  //       defaultproduce:selectedproduce
+  //   } )
+      
+  // }
+  //     else{
+  //       res.redirect("/home")
+  //     }
+  //   } catch (err) {
+  //     console.log(err);
+  //     res.send("failed to get product data");
+  //   }
+  // });
+  
 
 
 module.exports = router;
