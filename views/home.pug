@@ -55,8 +55,11 @@ head
             h2.txt1(style='font-size:45px;text-decoration: underline;') Please Select Task .
             .row
               .col-md-4(style='margin:auto;padding:auto;')
-                if user.userrole == "Director" 
-                  h2.txt1(style='font-size:30px;text-decoration:underline;') Purchases : #{new Intl.NumberFormat().format(purchase.totalpurchases)} Ugx 
+                if buys.length
+                  if user.userrole == "Director" 
+                    h2.txt1(style='font-size:30px;text-decoration:underline;') Purchases : #{new Intl.NumberFormat().format(purchase.totalpurchases)} Ugx 
+                else 
+                  h2.txt1(style='font-size:30px;text-decoration: underline;') No Purchase Records
                 .card
                   .card-header(style='border-radius: 30px; font-size:30px')
                     | PURCHASES
@@ -68,8 +71,11 @@ head
                     li.list-group-item
                       a(href='/farmlist' style=' text-decoration: none; color:#07026d;')  Farm Records
               .col-md-4(style='margin:auto;padding:auto;')
-                if user.userrole == "Director" 
-                  h2.txt1(style='font-size:30px;text-decoration:underline;') Sales : #{new Intl.NumberFormat().format(sale.totalsells)}  Ugx
+                if sells.length
+                  if user.userrole == "Director" 
+                    h2.txt1(style='font-size:30px;text-decoration:underline;') Sales : #{new Intl.NumberFormat().format(sale.totalsells)}  Ugx
+                else 
+                  h2.txt1(style='font-size:30px;text-decoration: underline;') No Sales Records
                 .card
                   .card-header(style='border-radius: 30px;font-size:30px')
                     | SALES
@@ -89,8 +95,11 @@ head
                       a(href='/creditsaleslist' style=' text-decoration: none; color:#07026d;')
                         | Credit Sales Record
               .col-md-4(style='margin:auto;padding:auto;')
-                if user.userrole == "Director" 
-                  h2.txt1(style='font-size:30px;text-decoration:underline;')  Credit Sales:#{new Intl.NumberFormat().format(credit.creditsells)}Ugx   
+                if credits.length
+                  if user.userrole == "Director" 
+                    h2.txt1(style='font-size:30px;text-decoration:underline;')  Credit Sales:#{new Intl.NumberFormat().format(credit.creditsells)}Ugx   
+                else 
+                  h2.txt1(style='font-size:30px;text-decoration: underline;') No Credit Sales
                 .card
                   .card-header(style='border-radius: 30px;font-size:30px')
                     | PRICES
