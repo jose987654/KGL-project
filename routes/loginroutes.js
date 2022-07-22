@@ -12,22 +12,25 @@ router.get('/home',async (req,res)=>{
     let user = req.session.user;
     res.locals.user = user;
     try{
-      
+     
+    const sell = await Sale.find();   
     let totalSales = await Sale.aggregate([
       {'$group': {_id:'$all',
       totalsells : {$sum:'$total'}}}  
-])
+]) 
+    const credit = await Creditsale.find();
     let creditSales = await Creditsale.aggregate([
       {'$group': {_id:'$all',
       creditsells : {$sum:'$total'}     
     }}  
 ])
+    const purchase = await Purchase.find();
     let purchases = await Purchase.aggregate([
       {'$group': {_id:'$all',
       totalpurchases : {$sum:'$total'}
     }}  
 ])
-  res.render('home', {sale:totalSales[0], credit:creditSales[0],purchase:purchases[0]} )
+  res.render('home', { buys:purchase, credits:credit, sells:sell, sale:totalSales[0], credit:creditSales[0],purchase:purchases[0]} )
 }
 catch (err) {
   console.log(err);
@@ -45,9 +48,9 @@ router.post('/login', passport.authenticate('local',
         req.session.user = req.user;
         let user = req.session.user;
         res.locals.user = user;
-               //redirect user to car registration page after logging in. 
+               
         res.redirect("/home")
-        //  res.render('salesinput');
+        
 })
 
 router.get('/logout', (req, res) => {

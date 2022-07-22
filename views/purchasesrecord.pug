@@ -104,7 +104,7 @@ head
             h2.txt1(style='font-size:45px;text-decoration: underline;')
               | Supplier Purchases Record
             if users.length
-              if user.userrole == "Director"
+              if user.userrole == "Manager" || user.userrole == "Director"
                 h2.txt1(style='font-size:30px;text-decoration: underline;') Total Purchases : #{new Intl.NumberFormat().format(total.totalpurchases)} Ugx 
             else 
               h2.txt1(style='font-size:30px;text-decoration: underline;') No Purchases
@@ -116,10 +116,9 @@ head
                     th Supplier                   
                     th Product 
                     th Manager                  
-                    th Qty in tonnes 
-                    th Unit Price                    
-                    th Total(shs)  
-                                     
+                    th Qty in tonnes(Kgs)
+                    th Unit Price(shs)                    
+                    th Total(shs)                 
                 tbody(style='overflow-y: scroll;')
                 if users.length
                   each user in users
@@ -131,15 +130,15 @@ head
                       td #{user.quantity} 
                       td #{new Intl.NumberFormat().format(user.unitprice)}                   
                       td #{new Intl.NumberFormat().format(user.total)}
-                tr 
-                  td 
-                  td 
-                  td
-                  td 
-                  td 
-                  td Totals
-                  td #{new Intl.NumberFormat().format(total.totalpurchases)} 
-                     
+                  tr 
+                    td 
+                    td 
+                    td
+                    td 
+                    td 
+                    td Totals
+                    td #{new Intl.NumberFormat().format(total.totalpurchases)} 
+                      
               .col.col-md-12              
                 a.btn.custom( href="/purchaselist/update" style='width: 40%;margin-top: 0px;height:50px;margin-left:350px;' type='submit')
                   | Update

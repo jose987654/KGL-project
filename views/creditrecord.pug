@@ -101,8 +101,11 @@ head
           .main.custom1
             h2.txt1(style='font-size:45px;text-decoration: underline;')
               | Customer Credit Sales Records
-            if user.userrole == "Director"
-              h2.txt1(style='font-size:30px;text-decoration: underline;') Total Credit Sales : #{new Intl.NumberFormat().format(total.creditsells)} Ugx 
+            if users.length
+              if user.userrole == "Manager" || user.userrole == "Director"
+                h2.txt1(style='font-size:30px;text-decoration:underline;') Total Credit Sales : #{new Intl.NumberFormat().format(total.creditsells)} Ugx 
+            else 
+              h2.txt1(style='font-size:30px;text-decoration: underline;') No Purchase records
             .table-responsive(style='padding:20px;')
               table.table.table-bordered.table-hover.table-secondary
                 thead
@@ -125,15 +128,14 @@ head
                       td #{user.agent}
                       td #{new Intl.NumberFormat().format(user.total)}
                       td #{user.comments}
-                tr 
-                  td 
-                  td
-                  td 
-                  td
-                  td Total sales
-                  td #{new Intl.NumberFormat().format(total.creditsells)}
-                  td 
-                  
+                  tr 
+                    td 
+                    td
+                    td 
+                    td
+                    td Total sales
+                    td #{new Intl.NumberFormat().format(total.creditsells)}
+                    td     
             .col.col-md-12              
               a.btn.custom( href="/creditsaleslist/update" style='width: 40%;margin-top: 0px;height:50px;margin-left:350px;' type='submit')
                 | Update

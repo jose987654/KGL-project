@@ -102,8 +102,11 @@ head
           .main.custom1
             h2.txt1(style='font-size:45px;text-decoration: underline;')
               | Customer Sales Records
-            if user.userrole == "Director"
-              h2.txt1(style='font-size:30px;text-decoration:underline;') Total Sales : #{new Intl.NumberFormat().format(total.totalsells)} Ugx 
+            if users.length
+              if user.userrole == "Manager" || user.userrole == "Director"
+                h2.txt1(style='font-size:30px;text-decoration:underline;') Total Sales : #{new Intl.NumberFormat().format(total.totalsells)} Ugx 
+            else 
+              h2.txt1(style='font-size:30px;text-decoration: underline;') No Purchase records
             .table-responsive(style='padding:20px;')
               table#table.table.table-bordered.table-hover.table-secondary
                 thead
@@ -124,13 +127,13 @@ head
                       td #{user.pdct}                                 
                       td #{user.quantity}
                       td #{new Intl.NumberFormat().format(user.total)}
-                tr 
-                  td 
-                  td 
-                  td 
-                  td 
-                  td Total Sales
-                  td #{new Intl.NumberFormat().format(total.totalsells)}
+                  tr 
+                    td 
+                    td 
+                    td 
+                    td 
+                    td Total Sales
+                    td #{new Intl.NumberFormat().format(total.totalsells)}
             .col.col-md-12                          
               a.btn.custom( href="/saleslist/update" style='width: 40%;margin-top: 0px;height:50px;margin-left:350px;' type='submit')
                 | Update
