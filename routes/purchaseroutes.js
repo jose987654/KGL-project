@@ -22,7 +22,7 @@ router.post('/purchases', async(req,res)=>{
     //console.log(req.body)    
         const purchase = new Purchase(req.body);
         await purchase.save()
-        res.redirect('/purchases')
+        res.redirect('/purchaselist')
         console.log(req.body)
     
     // catch(err){
