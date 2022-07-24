@@ -31,7 +31,7 @@ let validation2 = () =>{
   let date = document.registration.date;
   let unitprice = document.registration.unitprice;
   let quantity = document.registration.quantity;
- 
+  let nin = document.registration.nin;
 //if statements
  //fullname validation
 // branch validation
@@ -56,6 +56,14 @@ if(telno.value.length < 10 ){
 }
 else{
   telno.style.border = '';
+}
+// telno validation 
+if(nin.value.length < 10 ){
+  nin.style.border = '2px solid red';
+  return false;
+}
+else{
+  nin.style.border = '';
 }
 //validating pdct
 if(pdct.value == 'Default'){

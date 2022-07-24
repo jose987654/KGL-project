@@ -104,47 +104,38 @@ head
             h2.txt1(style='font-size:45px;text-decoration: underline;')
               | Customer Credit Sales Form.
             .signup
-              form.needs-validation(name='registration' novalidate='' action="/creditsales" method="POST")
-                .row(onsubmit='')
+              form.needs-validation(name='registration' novalidate='' action="/creditsales" method="POST" onsubmit="return validation2();")
+                .row
                   .col.col-md-6
                     .align
                       label.form-label KGL Branch:
-                      select(name='branch' onblur='brnch()')
+                      select#branch(name='branch' onblur='brnch()')
                         option(value='Default')
                           | KGL Branch
                         option(value='Maganjo') MAGANJO Branch
                         option(value='Matugga') MATUGGA Branch
                     .align
                       label.form-label Customer Name:
-                      input(type='text' name='customername' placeholder='*Customer Name ' required='' size='32' onblur='cname(1,17)')
-                      .invalid-feedback
-                        | Enter a valid Customer name.
+                      input#name(type='text' name='customername' placeholder='*Customer Name ' required='' size='32' onblur='cname(1,17)')
                     .align
                       label.form-label Phone Contact:
-                      input(type='text' name='telno' placeholder='* Telephone no.' required='' onblur='tel()')
-                      .invalid-feedback
-                        | Please enter a valid telephone number.
+                      input#tel(type='text' name='telno' placeholder='* Telephone no.' required='' onblur='tel()')
                     .align
                       label.form-label Product:
-                      select(name='pdct' onblur='pdt()')
+                      select#pdct(name='pdct' onblur='pdt()')
                         option(value='Default')
                           | Agricultural Product
                         option(value='Beans') Beans
                         option(value='Maize') Maize
                         option(value='Cowpeas') Cow Peas
-                        option(value='SoyBeans') Soy Beans
-                    
+                        option(value='SoyBeans') Soy Beans                    
                         option(value='Gnuts') Gnuts
-                    div
+                    .align
                       label.form-label(for='start') Purchase Date:
-                      input(type='datetime-local' name='date' value='' min='1960-01-01' max='2100-12-31' onblur='dte()')
-                      .invalid-feedback
-                        | Please enter a valid date.
-                    div
+                      input#date(type='datetime-local' name='date' value='' min='1960-01-01' max='2100-12-31' onblur='dte()')
+                    .align
                       label.form-label National ID Number.
-                      input(type='text' name='nin' placeholder='* National Id Number (NIN)' required='' size='12' onblur='userval2(1,17)')
-                      .invalid-feedback(style='border: 0px; padding: 0px; font-size: 15px')
-                        | Valid NIN is required.
+                      input#nin(type='text' name='nin' placeholder='* National Id Number (NIN)' required='' size='12' onblur='userval2(1,17)')
                   .col.col-md-6
                     div
                       .align
@@ -152,21 +143,17 @@ head
                           | Unit price
                           | (shs):
                         input#unitprice(type='Number' name='unitprice' placeholder='*Unit Price /kg (shs).' required='' size='12' onblur='add2()' oninput='add_number()')
-                        .invalid-feedback
-                          | Please enter a valid unit price.
                     .align
                       label.form-label
                         | Qty,
                         | Tonnes(1000kg):
                       input#qty(type='Float' name='quantity' placeholder='*Qty in Tonnes.' required='' oninput='add_number()' onblur='add1()')
-                      .invalid-feedback
-                        | Please enter a Quantity in tonnnes.
                     .align
                       label.form-label Total Amount (shs):
-                      input#txtresult(type='Float' name='total' placeholder='*Amount(shs).' )
+                      input#total(type='Float' name='total' placeholder='*Amount(shs).' )
                     .align
                       label.form-label Sales Agent:
-                      input(type='text' name='agent' readonly placeholder='Agent name' value=user.firstname+ user.secondname )                   
+                      input#agent(type='text' name='agent' readonly placeholder='Agent name' value=user.firstname+ user.secondname )                   
                     .align
                       label.form-label Comments:
                       textarea#comments(type='text' name='comments' placeholder='*Comments on Sale.' rows='5' cols='33')
