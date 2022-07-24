@@ -154,10 +154,10 @@ head
                         | Please enter a Quantity in tonnnes.
                     .align
                       label.form-label Total Amount (shs):
-                      input#txtresult(type='Float' name='total' placeholder='*Amount(shs).' value=user.total)
+                      input#total(type='Float' name='total' placeholder='*Amount(shs).' value=user.total)
                     .align
                       label.form-label  Agent name:
-                      input#txtresult(type='text' name='agent'  value=user.agent)
+                      input(type='text' name='agent'  value=user.agent)
                     .align
                       label.form-label Comments:
                       input#comments(type='text' name='comments' placeholder='*Comments on Sale.' rows='5' cols='33' value=user.comments)

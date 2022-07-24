@@ -54,22 +54,25 @@ head
               | Welcome: #{user.firstname} #{user.secondname} , #{user.userrole} , #{user.branch} Branch
             h2.txt1(style='font-size:45px;text-decoration: underline;') Please Select Task .
             .row
-              .col-md-4(style='margin:auto;padding:auto;')
-                if user.userrole == "Director" 
-                  if buys.length
-                    h2.txt1(style='font-size:30px;text-decoration:underline;') Purchases : #{new Intl.NumberFormat().format(purchase.totalpurchases)} Ugx 
-                  else 
-                    h2.txt1(style='font-size:30px;text-decoration: underline;') No Purchase Records
-                .card
-                  .card-header(style='border-radius: 30px; font-size:30px')
-                    | PURCHASES
-                  ul.list-group.list-group-flush(style='border-radius: 30px;')
-                    li.list-group-item
-                      a(href='/purchases' style=' text-decoration: none; color:#07026d;') Purchase forms
-                    li.list-group-item
-                      a(href='/purchaselist' style=' text-decoration: none; color:#07026d;')  Purchase Records
-                    li.list-group-item
-                      a(href='/farmlist' style=' text-decoration: none; color:#07026d;')  Farm Records
+              if user.userrole == "Director" || user.userrole == "Manager"
+                .col-md-4(style='margin:auto;padding:auto;')
+                  if user.userrole == "Director" 
+                    if buys.length
+                      h2.txt1(style='font-size:30px;text-decoration:underline;') Purchases : #{new Intl.NumberFormat().format(purchase.totalpurchases)} Ugx 
+                    else 
+                      h2.txt1(style='font-size:30px;text-decoration: underline;') No Purchase Records
+                  .card
+                    .card-header(style='border-radius: 30px; font-size:30px')
+                      | PURCHASES
+                    ul.list-group.list-group-flush(style='border-radius: 30px;')
+                      li.list-group-item
+                        a(href='/purchases' style=' text-decoration: none; color:#07026d;') Purchase Form
+                      li.list-group-item
+                        a(href='/purchaselist' style=' text-decoration: none; color:#07026d;')  Purchase Records
+                      li.list-group-item
+                        a(href='/farm' style=' text-decoration: none; color:#07026d;')  Farm Form
+                      li.list-group-item
+                        a(href='/farmlist' style=' text-decoration: none; color:#07026d;')  Farm Records
               .col-md-4(style='margin:auto;padding:auto;')
                 if user.userrole == "Director" 
                   if sells.length
@@ -88,12 +91,13 @@ head
                       a(href='/creditsales' style=' text-decoration: none; color:#07026d;')
                         | Credit
                         | Sales Form
-                    li.list-group-item
-                      a(href='/saleslist' style=' text-decoration: none; color:#07026d;')
-                        | Sales Record
-                    li.list-group-item
-                      a(href='/creditsaleslist' style=' text-decoration: none; color:#07026d;')
-                        | Credit Sales Record
+                    if user.userrole == "Director" || user.userrole == "Manager"
+                      li.list-group-item
+                        a(href='/saleslist' style=' text-decoration: none; color:#07026d;')
+                          | Sales Record
+                      li.list-group-item
+                        a(href='/creditsaleslist' style=' text-decoration: none; color:#07026d;')
+                          | Credit Sales Record             
               .col-md-4(style='margin:auto;padding:auto;')
                 if user.userrole == "Director" 
                   if credits.length
@@ -106,6 +110,9 @@ head
                   ul.list-group.list-group-flush(style='border-radius: 30px;')
                     li.list-group-item
                       a(href='/prices' style=' text-decoration: none; color:#07026d;') Price Records
+                    if user.userrole == "Director" || user.userrole == "Manager"
+                      li.list-group-item
+                        a(href='/pricelist' style=' text-decoration: none; color:#07026d;') Price Form
 footer.page-footer.font-small.blue.pt-4
   .container-fluid.text-center.text-md-left
     .row
