@@ -91,6 +91,74 @@ const tel = () => {
   });
 })();
 
+let validation2 = () =>{
+  let branch = document.registration.branch;
+  let customername = document.registration.customername;
+  let telno = document.registration.telno;
+  let pdct = document.registration.pdct;
+  let date = document.registration.date;
+  let unitprice = document.registration.unitprice;
+  let quantity = document.registration.quantity;
+  let nin = document.registration.nin;
+//if statements
+ //fullname validation
+// branch validation
+if(branch.value == "Default"){
+  branch.style.border = '2px solid red';
+  return false;
+} else{
+  branch.style.border = ''; 
+}
+// name validation 
+if(customername.value.length < 1 ){
+  customername.style.border = '2px solid red';
+  return false;
+}
+else{
+  customername.style.border = '';
+}
+// telno validation 
+if(telno.value.length < 10 ){
+  telno.style.border = '2px solid red';
+  return false;
+}
+else{
+  telno.style.border = '';
+}
+// telno validation 
+//validating pdct
+if(pdct.value == 'Default'){
+  pdct.style.border = '2px solid red';  
+  return false;
+} else{
+  pdct.style.border = '';
+}
+//validating residence.
+if(date.value == ''){
+  date.style.border = '2px solid red ';
+  return false;
+} else{
+  date.style.border = '';  
+}
+//validating national id number.
+if(unitprice.value.length<3){
+  unitprice.style.border = '2px solid red'; 
+  return false;
+} 
+else{
+  unitprice.style.border = '';
+}
+//validating workers' id.
+if(quantity.value.length<1){
+  quantity.style.border = '2px solid red'; 
+  return false;
+} 
+else{
+  quantity.style.border = '';
+}
+return true
+} 
+
 var text1 = document.getElementById("unitprice");
 var text2 = document.getElementById("qty");
 function add_number() {

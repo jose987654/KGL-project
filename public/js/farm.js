@@ -1,6 +1,75 @@
+var text1 = document.getElementById("unitprice");
+var text2 = document.getElementById("qty");
+
+function add_number() {
+  const str1 = text1.value;
+  const str2 = text2.value;
+  var first_number = parseFloat(str1.replace(/,/g, ""));
+  var second_number = parseFloat(str2.replace(/,/g, ""));
+  if (isNaN(second_number)) second_number = 0;
+  var result = first_number * second_number;
+  //var Result = result.toLocaleString();
+  document.getElementById("txtresult").value = result;
+  return result;
+}
+
+// const Firstfn = () => {
+//   const uid = document.registration.fname.focus();
+//   return true;
+// };
+
+const rol = () => {
+  let usrole = document.registration.userole;
+  if (usrole.value == "Default") {
+    usrole.style.border = "3px solid red";
+  } else {
+    usrole.style.border = "";
+    return true;
+  }
+};
+
+const role1 = () => {
+  let usrole = document.registration.pdct;
+  if (usrole.value == "Default") {
+    usrole.style.border = "3px solid red";
+  } else {
+    usrole.style.border = "";
+    return true;
+  }
+};
+
+const usernam = () => {
+  const usr = document.registration.coname;
+  let letters = /^[A-Za-z]+$/;
+  if (usr.value.match(letters)) {
+    usr.style.border = "";
+    return true;
+  } else {
+    usr.style.border = "3px solid red";
+    //alert("username must have alphabet only");
+    // usr.focus();
+  }
+};
+
+const tel = () => {
+  let telno = document.registration.telno;
+  let numbers = /^[0-9]+$/;
+  if (telno.value.match(numbers) && telno.value.length == 10) {
+    telno.style.border = "";
+    return true;
+  } else {
+    telno.style.border = "3px solid red";
+    // telno.innerHTML = " select a branch";
+    // telno.focus();
+  }
+};
+
+
+
+
 // Example starter JavaScript for disabling form submissions if there are invalid fields
 (() => {
-  "use strict";  
+  "use strict";
 
   // Fetch all the forms we want to apply custom Bootstrap validation styles to
   const forms = document.querySelectorAll(".needs-validation");
@@ -22,14 +91,10 @@
   });
 })();
 
-//validating sales page
 let validation2 = () =>{
-  let branch = document.registration.branch;
-  let customername = document.registration.customername;
-  let telno = document.registration.telno;
+  let branch = document.registration.userole;
   let pdct = document.registration.pdct;
   let date = document.registration.date;
-  let unitprice = document.registration.unitprice;
   let quantity = document.registration.quantity;
   
 //if statements
@@ -41,23 +106,8 @@ if(branch.value == "Default"){
 } else{
   branch.style.border = ''; 
 }
-// name validation 
-if(customername.value.length < 1 ){
-  customername.style.border = '2px solid red';
-  return false;
-}
-else{
-  customername.style.border = '';
-}
-// telno validation 
-if(telno.value.length < 10 ){
-  telno.style.border = '2px solid red';
-  return false;
-}
-else{
-  telno.style.border = '';
-}
 
+// telno validation 
 //validating pdct
 if(pdct.value == 'Default'){
   pdct.style.border = '2px solid red';  
@@ -72,14 +122,7 @@ if(date.value == ''){
 } else{
   date.style.border = '';  
 }
-//validating national id number.
-if(unitprice.value.length<3){
-  unitprice.style.border = '2px solid red'; 
-  return false;
-} 
-else{
-  unitprice.style.border = '';
-}
+
 //validating workers' id.
 if(quantity.value.length<1){
   quantity.style.border = '2px solid red'; 
@@ -99,9 +142,10 @@ function add_number() {
   var first_number = parseFloat(str1.replace(/,/g, ""));
   var second_number = parseFloat(str2.replace(/,/g, ""));
   if (isNaN(second_number)) second_number = 0;
-  var result = Math.round(first_number * second_number*1000);
+  var result = Math.round(first_number * second_number *1000);
  // var Result = result.toLocaleString();
-  document.getElementById("total").value = result;
+
+  document.getElementById("txtresult").value = result;
   return result;
 }
 
@@ -110,18 +154,18 @@ const Firstfn = () => {
   return true;
 };
 
-const brnch = () => {
-  let usrole1 = document.registration.branch;
-  if (usrole1.value == "Default") {
-    usrole1.style.border = "3px solid red";
+const branch = () => {
+  let usrole = document.registration.brnch;
+  if (usrole.value == "Default") {
+    usrole.style.border = "3px solid red";
   } else {
-    usrole1.style.border = "";
+    usrole.style.border = "";
     return true;
   }
 };
 
-const sals = () => {
-  let urole = document.registration.sale_type;
+const sales = () => {
+  let urole = document.registration.sale;
   if (urole.value == "Default") {
     urole.style.border = "3px solid red";
   } else {
@@ -130,43 +174,20 @@ const sals = () => {
   }
 };
 
-// const cname = () => {
-//   const usr = document.registration.customername;
-//   let letters = /^[A-Za-z]+$/;
-//   if (usr.value.match(letters)) {
-//     usr.style.border = "";
-//     return true;
-//   } else {
-//     usr.style.border = "3px solid red";
-//     //alert("username must have alphabet only");
-//     // usr.focus();
-//   }
-// };
-
-const cname = (min, max) => {
-  const USD = document.registration.customername;
-  const usd = USD.value.length;
-  if (usd == 0 || usd < min || usd >= max) {
-    // UID.focus();
-    USD.style.border = "3px solid red";
+const cname = () => {
+  const usr = document.registration.fname;
+  let letters = /^[A-Za-z]+$/;
+  if (usr.value.match(letters)) {
+    usr.style.border = "";
     return true;
   } else {
-    USD.style.border = "";
+    usr.style.border = "3px solid red";
+    //alert("username must have alphabet only");
+    // usr.focus();
   }
 };
 
-const tel = () => {
-  let telno = document.registration.telno;
-  let numbers = /^[0-9]+$/;
-  if (telno.value.match(numbers) && telno.value.length == 10) {
-    telno.style.border = "";
-    return true;
-  } else {
-    telno.style.border = "3px solid red";
-    // telno.innerHTML = " select a branch";
-    // telno.focus();
-  }
-};
+
 
 const pdt = () => {
   let usrole = document.registration.pdct;
@@ -177,7 +198,6 @@ const pdt = () => {
     return true;
   }
 };
-
 const dte = () => {
   let usrole = document.registration.date;
   if (usrole.value == "") {
@@ -185,18 +205,6 @@ const dte = () => {
   } else {
     usrole.style.border = "";
     return true;
-  }
-};
-
-const userval2 = (min, max) => {
-  const usd = document.registration.nin;
-  const uidlen = usd.value.length;
-  if (uidlen == 0 || uidlen < min || uidlen >= max) {
-    // usd.focus();
-    usd.style.border = "3px solid red";
-    return true;
-  } else {
-    usd.style.border = "";
   }
 };
 
@@ -208,27 +216,34 @@ const add2 = () => {
     return true;
   } else {
     telno.style.border = "";
-  
     // telno.innerHTML = " select a branch";
     // telno.focus();
   }
 };
-
 const add1 = () => {
   let teln = document.registration.quantity;
   // let number = /^[0-9]+$/;
   if (teln.value == "") {
-  // if (teln.value.match(number) && teln.value.length != 0) {
-    // teln.style.border = "";
     teln.style.border = "3px solid red";
     return true;
   } else {
     teln.style.border = "";
-    // teln.style.border = "3px solid red";
     // telno.innerHTML = " select a branch";
     // telno.focus();
   }
 };
 
+const add22 = () => {
+  let teln = document.registration.supplier;
+  // let number = /^[0-9]+$/;
+  if (teln.value == "") {
+    teln.style.border = "3px solid red";
+    return true;
+  } else {
+    teln.style.border = "";
+    // telno.innerHTML = " select a branch";
+    // telno.focus();
+  }
+};
 
 

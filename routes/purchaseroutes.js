@@ -47,7 +47,7 @@ router.post('/farm', async(req,res)=>{
     //console.log(req.body)    
         const farm = new Farm(req.body);
         await farm.save()
-        res.redirect('/farm')
+        res.redirect('/farmlist')
         console.log(req.body)
     
     // catch(err){
