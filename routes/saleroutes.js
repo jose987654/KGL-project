@@ -26,8 +26,12 @@ router.post('/sales', async(req,res)=>{
     try{
         const sale = new Sale(req.body);
         await sale.save()
-        res.redirect('/sales')
         console.log(req.body)
+        if(req.session.user.userrole === "Manager" ||
+    req.session.user.userrole === "Director"){
+        res.redirect('/saleslist')}
+        else{res.redirect('/sales')}
+        
     }
     catch(err){
         res.render('salesinput')
@@ -47,8 +51,13 @@ router.post('/creditsales', async(req,res)=>{
     try{
         const creditsale = new Creditsale(req.body);
         await creditsale.save()
-        res.redirect('/creditsales')
+        
         console.log(req.body)
+        if(req.session.user.userrole === "Manager" ||
+    req.session.user.userrole === "Director"){
+        res.redirect('/creditsales')
+    }
+    else{res.redirect('/creditsaleslist')}
     }
     catch(err){
         res.render('creditsales')
