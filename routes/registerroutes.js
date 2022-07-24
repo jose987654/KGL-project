@@ -15,6 +15,7 @@ router.get('/account',(req,res)=>{
     let user = req.session.user;
     res.locals.user = user;
     res.render('accounts')
+    
 })
 
 router.post('/register', async(req, res) => {

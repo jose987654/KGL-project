@@ -98,35 +98,25 @@ head
         .main.custom1
           h2.txt1(style='text-decoration:underline') Sign up Page
           .signup
-            form.needs-validation(name='registration' novalidate='' action="/register" method="POST")
+            form.needs-validation(name='registration' novalidate='' action="/register" method="POST" onsubmit="return validation2();")
               .row(onsubmit='')
                 .col.col-md-6(style='margin-right: 0px; border-right: 0px')
                   div
                     .align
                       label.form-label First Name
                       input(type='text' name='firstname' placeholder='* First Name ' required='' size='22' onblur='userval(1,22)')
-                      .invalid-feedback(style='border: 0px; padding: 0px; font-size: 15px')
-                        | Valid name is required.
                     .align
                       label.form-label Second/Name
-                      input(type='text' name='secondname' placeholder='* Second Name' required='' size='22' onblur='userval1(1,22)')
-                      .invalid-feedback(style='border: 0px; padding: 0px; font-size: 15px')
-                        | Valid name is required.
+                      input(type='text' name='secondname' placeholder='* Second Name' required='' size='22' onblur='userval1(1,22)')              
                     .align
                       label.form-label Gender
-                      input#gndr(type='text' name='gender' placeholder='*Male / Female' required='' size='7' onblur='userval5(3,8)')
-                      .invalid-feedback(style='border: 0px; padding: 0px; font-size: 15px')
-                        | Valid Gender is required.
+                      input#gndr(type='text' name='gender' placeholder='*Male / Female' required='' size='7' onblur='userval5(3,8)')                      
                     .align
                       label.form-label NIN
-                      input#nin(type='text' name='nin' placeholder='* National Id Number (NIN)' required='' size='12' onblur='userval2(1,17)')
-                      .invalid-feedback(style='border: 0px; padding: 0px; font-size: 15px')
-                        | Valid NIN is required.
+                      input#nin(type='text' name='nin' placeholder='* National Id Number (NIN)' required='' size='12' onblur='userval2(1,17)')                     
                     .align
                       label.form-label E-mail
-                      input#email(type='email' name='email' placeholder='* Email-address' required='' onblur='val_email()')
-                      .invalid-feedback(oninvalid='')
-                        | Valid email is required.
+                      input#email(type='email' name='email' placeholder='* Email-address' required='' onblur='val_email()')                     
                     .align
                       label.form-label(style='padding-left: 10px') User role
                       select(name='userrole' onblur='rol()')
@@ -137,15 +127,11 @@ head
                 .col.col-md-6
                   div
                     .align
-                      label.form-label Username
-                      input(type='text' name='username' required='' placeholder='* User name' size='22' onblur='userval4(5,22)')
-                      .invalid-feedback(style='border: 0px; padding: 0px; font-size: 15px')
-                        | Valid username is required.
+                      label.form-label User name
+                      input(type='text' name='username' required='' placeholder='*Username ' size='' onblur='userval4(5,22)')                    
                     .align
                       label.form-label Telephone no:
-                      input(type='text' name='telno' placeholder='* Telephone no.' required='' onblur='tel()')
-                      .invalid-feedback(style='border: 0px; padding: 0px; font-size: 15px')
-                        | Valid Telephone is required.
+                      input(type='text' name='telno' placeholder='* Telephone no.' required='' onblur='tel()')                    
                     .align
                       label.form-label Branch
                       select(name='branch' onblur='sbranch()' required='')
@@ -156,17 +142,13 @@ head
                         option(value='N/A') Not Applicable
                     .align
                       label.form-label Password
-                      input(type='password' required='' placeholder='* Password' name='password' size='12' onblur='userpass(6,20)')
-                      .invalid-feedback(style='border: 0px; padding: 0px; font-size: 15px')
-                        | Valid password is required.
+                      input(type='password' required='' placeholder='* Password' name='password' size='12' onblur='userpass(6,20)')                      
                     .align
                       label.form-label Confirm Password*
                       input(type='password' required='' placeholder='* Confirm Password' name='password1' size='12' onblur='userpass1(6,20),passvalid()')
-                      .invalid-feedback(style='border: 0px; padding: 0px; font-size: 15px')
-                        | Valid Password is required.
                 .col.col-md-12
                   button.custom.txt2(style='width: 40%; height: 50px;margin-left:300px;' type='submit' )
-                    a.txt2.tx(href='#') SignUp 
+                    a.txt2.tx SignUp 
                   h5.txt2(style=' color:#181553;')
                     | * By clicking on Signup you agree to the terms and
                     | conditions *

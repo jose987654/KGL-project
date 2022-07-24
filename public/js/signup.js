@@ -26,6 +26,115 @@
 //   return true;
 // };
 
+
+let validation2 = () =>{
+  let branch = document.registration.branch;
+  let firstname = document.registration.firstname;
+  let secondname = document.registration.secondname;
+  let gender = document.registration.gender;
+  let nin = document.registration.nin;
+  let email = document.registration.email;
+  let userrole = document.registration.userrole;
+  let username = document.registration.username;
+  let telno = document.registration.telno;
+  let password = document.registration.password;
+  let password1 = document.registration.password1;
+  
+  
+//if statements
+ //fullname validation
+// branch validation
+if(branch.value == "Default"){
+  branch.style.border = '2px solid red';
+  return false;
+} else{
+  branch.style.border = ''; 
+}
+// name validation 
+if(firstname.value.length < 1 ){
+  firstname.style.border = '2px solid red';
+  return false;
+}
+else{
+  firstname.style.border = '';
+}
+
+if(secondname.value.length < 1 ){
+  secondname.style.border = '2px solid red';
+  return false;
+}
+else{
+  secondname.style.border = '';
+}
+
+if(gender.value.length < 1 ){
+  gender.style.border = '2px solid red';
+  return false;
+}
+else{
+  gender.style.border = '';
+}
+
+if(nin.value.length < 10 ){
+  nin.style.border = '2px solid red';
+  return false;
+}
+else{
+  nin.style.border = '';
+}
+
+if(email.value.length < 1 ){
+  email.style.border = '2px solid red';
+  return false;
+}
+else{
+  email.style.border = '';
+}
+
+if(userrole.value == "Default"){
+  userrole.style.border = '2px solid red';
+  return false;
+} else{
+  userrole.style.border = ''; 
+}
+
+if(username.value.length < 1 ){
+  username.style.border = '2px solid red';
+  return false;
+}
+else{
+  username.style.border = '';
+}
+// telno validation 
+if(telno.value.length < 10 ){
+  telno.style.border = '2px solid red';
+  return false;
+}
+else{
+  telno.style.border = '';
+}
+
+//validating national id number.
+if(password.value.length<3){
+  password.style.border = '2px solid red'; 
+  return false;
+} 
+else{
+  password.style.border = '';
+}
+//validating workers' id.
+if(password1.value.length<1){
+  password1.style.border = '2px solid red'; 
+  return false;
+} 
+else{
+  password1.style.border = '';
+}
+return true
+} 
+
+
+
 const UID = document.registration.firstname;
 const userval = (min, max) => {
   const uidlen = UID.value.length;
@@ -34,7 +143,7 @@ const userval = (min, max) => {
     UID.style.border = "3px solid red";
     return true;
   } else {
-    UID.style.border = "3px solid green";
+    UID.style.border = "";
   }
 };
 
@@ -46,7 +155,7 @@ const userval1 = (min, max) => {
     usd.style.border = "3px solid red";
     return true;
   } else {
-    usd.style.border = "3px solid green";
+    usd.style.border = "";
   }
 };
 
@@ -67,7 +176,7 @@ let val_email = () => {
   ) {
     bizEmail.style.border = "3px solid red";
   } else {
-    bizEmail.style.border = "3px solid green";
+    bizEmail.style.border = "";
   }
 };
 
@@ -79,19 +188,19 @@ const userval2 = (min, max) => {
     usd.style.border = "3px solid red";
     return true;
   } else {
-    usd.style.border = "3px solid green";
+    usd.style.border = "";
   }
 };
 
 const userval4 = (min, max) => {
-  const ema = document.registration.username;
-  const uidlen = ema.value.length;
+  const user1 = document.registration.username;
+  const uidlen = user1.value.length;
   if (uidlen == 0 || uidlen < min || uidlen >= max) {
     //ema.focus();
-    ema.style.border = "3px solid red";
+    user1.style.border = "3px solid red";
     return true;
   } else {
-    ema.style.border = "3px solid green";
+    user1.style.border = "";
   }
 };
 
@@ -103,7 +212,7 @@ const userval5 = (min, max) => {
     ema.style.border = "3px solid red";
     return true;
   } else {
-    ema.style.border = "3px solid green";
+    ema.style.border = "";
   }
 };
 
@@ -114,7 +223,7 @@ const userpass = (min, max) => {
     password.style.border = "3px solid red";
     return true;
   } else {
-    password.style.border = "3px solid green";
+    password.style.border = "";
   }
 };
 
@@ -125,7 +234,7 @@ const userpass1 = (min, max) => {
     passwrd.style.border = "3px solid red";
     return true;
   } else {
-    passwrd.style.border = "3px solid green";
+    passwrd.style.border = "";
   }
 };
 const passvalid = () => {
@@ -143,7 +252,7 @@ const passvalid = () => {
 
     return true;
   } else {
-    passwrd.style.border = "3px solid green";
+    passwrd.style.border = "";
   }
 };
 
@@ -151,7 +260,7 @@ const usernam = () => {
   const usr = document.registration.usname;
   let letters = /^[A-Za-z]+$/;
   if (usr.value.match(letters)) {
-    usr.style.border = "3px solid green";
+    usr.style.border = "";
     return true;
   } else {
     usr.style.border = "3px solid red";
@@ -172,7 +281,7 @@ const tel = () => {
   let telno = document.registration.telno;
   let numbers = /^[0-9]+$/;
   if (telno.value.match(numbers) && telno.value.length == 10) {
-    telno.style.border = "3px solid green";
+    telno.style.border = "";
     // telno.focus();
     return true;
   } else {
@@ -187,7 +296,7 @@ const rol = () => {
   if (usrole.value == "Default") {
     usrole.style.border = "3px solid red";
   } else {
-    usrole.style.border = "3px solid green";
+    usrole.style.border = "";
     return true;
   }
 };
@@ -197,7 +306,7 @@ const sbranch = () => {
   if (ubranch.value == "Default") {
     ubranch.style.border = "3px solid red";
   } else {
-    ubranch.style.border = "3px solid green";
+    ubranch.style.border = "";
     return true;
   }
 };
@@ -209,6 +318,6 @@ const try1 = (min, max) => {
     UID.style.border = "3px solid red";
     return true;
   } else {
-    UID.style.border = "3px solid green";
+    UID.style.border = "";
   }
 };
