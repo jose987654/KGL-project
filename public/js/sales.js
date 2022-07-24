@@ -1,10 +1,6 @@
 // Example starter JavaScript for disabling form submissions if there are invalid fields
 (() => {
-  "use strict";
-
-
-
-  
+  "use strict";  
 
   // Fetch all the forms we want to apply custom Bootstrap validation styles to
   const forms = document.querySelectorAll(".needs-validation");
@@ -26,6 +22,74 @@
   });
 })();
 
+//validating sales page
+let validation2 = () =>{
+  let branch = document.registration.branch;
+  let customername = document.registration.customername;
+  let telno = document.registration.telno;
+  let pdct = document.registration.pdct;
+  let date = document.registration.date;
+  let unitprice = document.registration.unitprice;
+  let quantity = document.registration.quantity;
+ 
+//if statements
+ //fullname validation
+// branch validation
+if(branch.value == "Default"){
+  branch.style.border = '2px solid red';
+  return false;
+} else{
+  branch.style.border = ''; 
+}
+// name validation 
+if(customername.value.length < 1 ){
+  customername.style.border = '2px solid red';
+  return false;
+}
+else{
+  customername.style.border = '';
+}
+// telno validation 
+if(telno.value.length < 10 ){
+  telno.style.border = '2px solid red';
+  return false;
+}
+else{
+  telno.style.border = '';
+}
+//validating pdct
+if(pdct.value == 'Default'){
+  pdct.style.border = '2px solid red';  
+  return false;
+} else{
+  pdct.style.border = '';
+}
+//validating residence.
+if(date.value == ''){
+  date.style.border = '2px solid red ';
+  return false;
+} else{
+  date.style.border = '';  
+}
+//validating national id number.
+if(unitprice.value.length<3){
+  unitprice.style.border = '2px solid red'; 
+  return false;
+} 
+else{
+  unitprice.style.border = '';
+}
+//validating workers' id.
+if(quantity.value.length<1){
+  quantity.style.border = '2px solid red'; 
+  return false;
+} 
+else{
+  quantity.style.border = '';
+}
+return true
+} 
+
 var text1 = document.getElementById("unitprice");
 var text2 = document.getElementById("qty");
 function add_number() {
@@ -36,7 +100,7 @@ function add_number() {
   if (isNaN(second_number)) second_number = 0;
   var result = Math.round(first_number * second_number*1000);
  // var Result = result.toLocaleString();
-  document.getElementById("txtresult").value = result;
+  document.getElementById("total").value = result;
   return result;
 }
 
@@ -90,9 +154,6 @@ const cname = (min, max) => {
   }
 };
 
-
-
-
 const tel = () => {
   let telno = document.registration.telno;
   let numbers = /^[0-9]+$/;
@@ -115,6 +176,7 @@ const pdt = () => {
     return true;
   }
 };
+
 const dte = () => {
   let usrole = document.registration.date;
   if (usrole.value == "") {
@@ -137,7 +199,6 @@ const userval2 = (min, max) => {
   }
 };
 
-
 const add2 = () => {
   let telno = document.registration.unitprice;
   // let numbers = /^[0-9]+$/;
@@ -151,6 +212,7 @@ const add2 = () => {
     // telno.focus();
   }
 };
+
 const add1 = () => {
   let teln = document.registration.quantity;
   // let number = /^[0-9]+$/;
@@ -166,5 +228,6 @@ const add1 = () => {
     // telno.focus();
   }
 };
+
 
 
