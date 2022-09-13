@@ -55,9 +55,9 @@ router.post('/creditsales', async(req,res)=>{
         console.log(req.body)
         if(req.session.user.userrole === "Manager" ||
     req.session.user.userrole === "Director"){
-        res.redirect('/creditsales')
+        res.redirect('/creditsaleslist')
     }
-    else{res.redirect('/creditsaleslist')}
+    else{res.redirect('/creditsales')}
     }
     catch(err){
         res.render('creditsales')

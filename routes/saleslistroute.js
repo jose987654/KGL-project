@@ -89,7 +89,7 @@ router.post('/saleslist/edit', async (req, res)=>{
 // credit sales information
 router.get("/creditsaleslist", async (req, res) => {
   req.session.user = req.user;
-  let user = req.session.user;
+  let user = req.session.user; 
   res.locals.user = user;
   try {
     if(req.session.user.userrole === "Manager" ||
