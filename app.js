@@ -12,8 +12,10 @@ const app = express();
 const passport = require("passport");
 const Signup = require("./models/Signup");
 
-// setting up mongoose
+//configs
 require("dotenv").config({ path: "./config/config.env" });
+// setting up mongoose
+
 //connect mongoose
 mongoose.connect(process.env.DATABASE, { useNewUrlParser: true });
 const db = mongoose.connection;
@@ -50,14 +52,14 @@ passport.use(Signup.createStrategy());
 passport.serializeUser(Signup.serializeUser());
 passport.deserializeUser(Signup.deserializeUser());
 
-const loginchecker = function(req, res, next){
-    if(req.path != '/login' && req.path != '/' && !req.session.user){
-      res.redirect ('/')
-    }
-    next()
+const loginchecker = function (req, res, next) {
+  if (req.path != "/login" && req.path != "/" && !req.session.user) {
+    res.redirect("/");
   }
+  next();
+};
 
-app.use(loginchecker)
+app.use(loginchecker);
 // routes
 
 app.use("/", registerroutes);
