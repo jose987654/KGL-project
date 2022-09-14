@@ -3,11 +3,11 @@
   "version": "1.0.0",
   "main": "index.js",
   
-  "scripts": 
+  "scripts": {
     
     "dev": "nodemon app.js",
     "start": "node app",
-    "test": "mocha",
+    "test": "mocha"
    
     
 
