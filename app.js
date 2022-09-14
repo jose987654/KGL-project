@@ -1,6 +1,7 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const path = require("path");
+const logger = require("./utils/logger");
 const registerroutes = require("./routes/registerroutes");
 const loginroutes = require("./routes/loginroutes");
 const purchasesroutes = require("./routes/purchaseroutes");
@@ -71,8 +72,12 @@ app.use("/", purchaselistroute);
 // handling non existing routes
 app.get("*", (req, res) => {
   res.status(404).send("OOPS! WRONG ADDRESS");
+  logger.error('Page not found')
 });
 
 // server
 const port = process.env.PORT || 3000;
-app.listen(port, () => console.log(`server listening on port ${port}`));
+app.listen(port, () => {
+  console.log(`server listening on port ${port}`);
+  logger.info(`Server started and running on port : ${port}`);
+});
