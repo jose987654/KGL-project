@@ -2,13 +2,15 @@
   "name": "final-project-ciu",
   "version": "1.0.0",
   "main": "index.js",
-  "directories": {
-    "tests": "test"
-  },
-  "scripts": {
-    "test": "mocha",
+  
+  "scripts": 
+    
     "dev": "nodemon app.js",
-    "start:prod": "node app.js"
+    "start": "node app",
+    "test": "mocha",
+   
+    
+
   },
   "keywords": [],
   "author": "",

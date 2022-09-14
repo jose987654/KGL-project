@@ -1,7 +1,6 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const path = require("path");
-const config = require("./config/database");
 const registerroutes = require("./routes/registerroutes");
 const loginroutes = require("./routes/loginroutes");
 const purchasesroutes = require("./routes/purchaseroutes");
@@ -13,8 +12,10 @@ const app = express();
 const passport = require("passport");
 const Signup = require("./models/Signup");
 
-// setting up mongoose
+//configs
 require("dotenv").config({ path: "./config/config.env" });
+// setting up mongoose
+
 //connect mongoose
 mongoose.connect(process.env.DATABASE, { useNewUrlParser: true });
 const db = mongoose.connection;
@@ -30,10 +31,10 @@ db.on("error", function (err) {
 
 //express sesssion
 const expressSession = require("express-session")({
-  secret: "secret",
+  secret: process.env.SESSION_SECRET,
   resave: false,
   saveUninitialized: false,
-  //cookie:{ maxAge:60*60*1000},
+  cookie: { maxAge: 60 * 60 * 1000 },
 });
 
 // views settings or configurations
@@ -51,14 +52,14 @@ passport.use(Signup.createStrategy());
 passport.serializeUser(Signup.serializeUser());
 passport.deserializeUser(Signup.deserializeUser());
 
-// const loginchecker = function(req, res, next){
-//     if(req.path != '/login' && req.path != '/' && !req.session.user){
-//       res.redirect ('/')
-//     }
-//     next()
-//   }
+const loginchecker = function (req, res, next) {
+  if (req.path != "/login" && req.path != "/" && !req.session.user) {
+    res.redirect("/");
+  }
+  next();
+};
 
-// app.use(loginchecker)
+app.use(loginchecker);
 // routes
 
 app.use("/", registerroutes);
@@ -73,5 +74,5 @@ app.get("*", (req, res) => {
 });
 
 // server
-const port = process.env.PORT || 3002;
+const port = process.env.PORT || 3000;
 app.listen(port, () => console.log(`server listening on port ${port}`));
