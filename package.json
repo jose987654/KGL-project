@@ -2,13 +2,11 @@
   "name": "final-project-ciu",
   "version": "1.0.0",
   "main": "index.js",
-  "directories": {
-    "tests": "test"
-  },
+  
   "scripts": {
-    "test": "jest",
-    "start": "nodemon app.js",
-    "start:prod": "node app.js"
+    
+    "dev": "nodemon app.js",
+    "start": "node app.js"
   },
   "keywords": [],
   "author": "",
