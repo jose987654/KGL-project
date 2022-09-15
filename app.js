@@ -2,6 +2,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const path = require("path");
 const logger = require("./utils/logger");
+const morgan = require("morgan");
 const registerroutes = require("./routes/registerroutes");
 const loginroutes = require("./routes/loginroutes");
 const purchasesroutes = require("./routes/purchaseroutes");
@@ -47,6 +48,10 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, "public")));
 app.use(expressSession);
 
+if (process.env.NODE_ENV === "development") {
+  app.use(morgan("dev"));
+}
+
 app.use(passport.initialize());
 app.use(passport.session());
 passport.use(Signup.createStrategy());
@@ -57,6 +62,8 @@ const loginchecker = function (req, res, next) {
   if (req.path != "/login" && req.path != "/" && !req.session.user) {
     res.redirect("/");
   }
+  console.log(req);
+  logger.info(`${req.method}  ${req.url} code ${req.statusCode}`);
   next();
 };
 
@@ -72,7 +79,7 @@ app.use("/", purchaselistroute);
 // handling non existing routes
 app.get("*", (req, res) => {
   res.status(404).send("OOPS! WRONG ADDRESS");
-  logger.error('Page not found')
+  logger.error("Page not found");
 });
 
 // server
