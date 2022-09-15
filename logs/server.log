@@ -1,15 +1,64 @@
-info: Sep-14-2022 22:41:47: 	Server started and running on 5000
-info: Sep-14-2022 22:41:50: 	Server started and running on port5000
-info: Sep-14-2022 22:41:52: 	Server started and running on port : 5000
-info: Sep-14-2022 22:42:32: 	Server started and running on port : 5000
-info: Sep-14-2022 22:42:35: 	Server started and running on port : 5000
-info: Sep-14-2022 22:43:23: 	Server started and running on port : 5000
-info: Sep-14-2022 22:43:48: 	Server started and running on port : 5000
-info: Sep-14-2022 22:43:49: 	Server started and running on port : 5000
-info: Sep-14-2022 22:44:05: 	Server started and running on port : 5000
-info: Sep-14-2022 22:44:07: 	Server started and running on port : 5000
-info: Sep-14-2022 22:44:13: 	Server started and running on port : 5000
-info: Sep-14-2022 22:44:18: 	Server started and running on port : 5000
-info: Sep-14-2022 22:44:21: 	Server started and running on port : 5000
-info: Sep-14-2022 22:44:23: 	Server started and running on port : 5000
-error: Sep-14-2022 22:44:54: 	Page not found
+info: Sep-15-2022 07:40:22: 	Server started and running on port : 5000
+info: Sep-15-2022 07:40:23: 	Server started and running on port : 5000
+error: Sep-15-2022 07:40:27: 	Page not found
+info: Sep-15-2022 10:22:51: 	Server started and running on port : 5000
+info: Sep-15-2022 10:32:41: 	Server started and running on port : 5000
+info: Sep-15-2022 10:32:49: 	Server started and running on port : 5000
+info: Sep-15-2022 10:33:17: 	/login
+info: Sep-15-2022 10:33:21: 	/favicon.ico
+info: Sep-15-2022 10:33:21: 	/
+error: Sep-15-2022 10:33:21: 	Page not found
+info: Sep-15-2022 10:33:27: 	/login
+info: Sep-15-2022 10:33:27: 	/login
+info: Sep-15-2022 10:33:28: 	/home
+info: Sep-15-2022 10:34:23: 	Server started and running on port : 5000
+info: Sep-15-2022 10:34:26: 	Server started and running on port : 5000
+info: Sep-15-2022 10:34:28: 	Server started and running on port : 5000
+info: Sep-15-2022 10:34:32: 	Server started and running on port : 5000
+info: Sep-15-2022 10:34:40: 	/employeelist
+{"date":"Thu Sep 15 2022 10:34:40 GMT+0300 (East Africa Time)","error":{"code":"ERR_HTTP_HEADERS_SENT"},"exception":true,"level":"error","message":"uncaughtException: Cannot set headers after they are sent to the client\nError [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client\n    at new NodeError (node:internal/errors:387:5)\n    at ServerResponse.setHeader (node:_http_outgoing:603:11)\n    at ServerResponse.header (/home/gabriel/Desktop/KGL-project/node_modules/express/lib/response.js:794:10)\n    at ServerResponse.send (/home/gabriel/Desktop/KGL-project/node_modules/express/lib/response.js:174:12)\n    at /home/gabriel/Desktop/KGL-project/routes/registerroutes.js:52:11\n    at Layer.handle [as handle_request] (/home/gabriel/Desktop/KGL-project/node_modules/express/lib/router/layer.js:95:5)\n    at next (/home/gabriel/Desktop/KGL-project/node_modules/express/lib/router/route.js:144:13)\n    at Route.dispatch (/home/gabriel/Desktop/KGL-project/node_modules/express/lib/router/route.js:114:3)\n    at Layer.handle [as handle_request] (/home/gabriel/Desktop/KGL-project/node_modules/express/lib/router/layer.js:95:5)\n    at /home/gabriel/Desktop/KGL-project/node_modules/express/lib/router/index.js:284:15","os":{"loadavg":[1.83,1.95,1.54],"uptime":18257.33},"process":{"argv":["/usr/local/bin/node","/home/gabriel/Desktop/KGL-project/app.js"],"cwd":"/home/gabriel/Desktop/KGL-project","execPath":"/usr/local/bin/node","gid":1000,"memoryUsage":{"arrayBuffers":36125597,"external":37082090,"heapTotal":27185152,"heapUsed":25666816,"rss":71004160},"pid":29790,"uid":1000,"version":"v16.17.0"},"stack":"Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client\n    at new NodeError (node:internal/errors:387:5)\n    at ServerResponse.setHeader (node:_http_outgoing:603:11)\n    at ServerResponse.header (/home/gabriel/Desktop/KGL-project/node_modules/express/lib/response.js:794:10)\n    at ServerResponse.send (/home/gabriel/Desktop/KGL-project/node_modules/express/lib/response.js:174:12)\n    at /home/gabriel/Desktop/KGL-project/routes/registerroutes.js:52:11\n    at Layer.handle [as handle_request] (/home/gabriel/Desktop/KGL-project/node_modules/express/lib/router/layer.js:95:5)\n    at next (/home/gabriel/Desktop/KGL-project/node_modules/express/lib/router/route.js:144:13)\n    at Route.dispatch (/home/gabriel/Desktop/KGL-project/node_modules/express/lib/router/route.js:114:3)\n    at Layer.handle [as handle_request] (/home/gabriel/Desktop/KGL-project/node_modules/express/lib/router/layer.js:95:5)\n    at /home/gabriel/Desktop/KGL-project/node_modules/express/lib/router/index.js:284:15","trace":[{"column":5,"file":"node:internal/errors","function":"new NodeError","line":387,"method":null,"native":false},{"column":11,"file":"node:_http_outgoing","function":"ServerResponse.setHeader","line":603,"method":"setHeader","native":false},{"column":10,"file":"/home/gabriel/Desktop/KGL-project/node_modules/express/lib/response.js","function":"ServerResponse.header","line":794,"method":"header","native":false},{"column":12,"file":"/home/gabriel/Desktop/KGL-project/node_modules/express/lib/response.js","function":"ServerResponse.send","line":174,"method":"send","native":false},{"column":11,"file":"/home/gabriel/Desktop/KGL-project/routes/registerroutes.js","function":null,"line":52,"method":null,"native":false},{"column":5,"file":"/home/gabriel/Desktop/KGL-project/node_modules/express/lib/router/layer.js","function":"Layer.handle [as handle_request]","line":95,"method":"handle [as handle_request]","native":false},{"column":13,"file":"/home/gabriel/Desktop/KGL-project/node_modules/express/lib/router/route.js","function":"next","line":144,"method":null,"native":false},{"column":3,"file":"/home/gabriel/Desktop/KGL-project/node_modules/express/lib/router/route.js","function":"Route.dispatch","line":114,"method":"dispatch","native":false},{"column":5,"file":"/home/gabriel/Desktop/KGL-project/node_modules/express/lib/router/layer.js","function":"Layer.handle [as handle_request]","line":95,"method":"handle [as handle_request]","native":false},{"column":15,"file":"/home/gabriel/Desktop/KGL-project/node_modules/express/lib/router/index.js","function":null,"line":284,"method":null,"native":false}]}
+info: Sep-15-2022 10:34:40: 	/
+error: Sep-15-2022 10:34:40: 	Page not found
+info: Sep-15-2022 10:39:31: 	Server started and running on port : 5000
+info: Sep-15-2022 10:39:33: 	Server started and running on port : 5000
+info: Sep-15-2022 10:39:38: 	Server started and running on port : 5000
+info: Sep-15-2022 10:39:48: 	Server started and running on port : 5000
+info: Sep-15-2022 10:39:50: 	Server started and running on port : 5000
+info: Sep-15-2022 10:39:52: 	Server started and running on port : 5000
+info: Sep-15-2022 10:39:54: 	Server started and running on port : 5000
+info: Sep-15-2022 10:40:02: 	Server started and running on port : 5000
+info: Sep-15-2022 10:40:04: 	Server started and running on port : 5000
+info: Sep-15-2022 10:40:06: 	Server started and running on port : 5000
+info: Sep-15-2022 10:40:10: 	Server started and running on port : 5000
+info: Sep-15-2022 10:40:14: 	Server started and running on port : 5000
+info: Sep-15-2022 10:40:23: 	Server started and running on port : 5000
+info: Sep-15-2022 10:40:24: 	Server started and running on port : 5000
+info: Sep-15-2022 10:40:27: 	Server started and running on port : 5000
+info: Sep-15-2022 10:40:29: 	Server started and running on port : 5000
+info: Sep-15-2022 10:40:30: 	Server started and running on port : 5000
+info: Sep-15-2022 10:40:33: 	Server started and running on port : 5000
+info: Sep-15-2022 10:40:37: 	Server started and running on port : 5000
+info: Sep-15-2022 10:40:39: 	Server started and running on port : 5000
+info: Sep-15-2022 10:40:42: 	Server started and running on port : 5000
+info: Sep-15-2022 10:40:47: 	Server started and running on port : 5000
+info: Sep-15-2022 10:41:08: 	Server started and running on port : 5000
+info: Sep-15-2022 10:41:27: 	GET request / code null
+error: Sep-15-2022 10:41:27: 	Page not found
+info: Sep-15-2022 10:41:32: 	GET request /login code null
+info: Sep-15-2022 10:41:41: 	POST request /login code null
+info: Sep-15-2022 10:41:42: 	GET request /home code null
+info: Sep-15-2022 10:41:47: 	GET request /employeelist code null
+info: Sep-15-2022 10:41:53: 	GET request /purchases code null
+info: Sep-15-2022 10:43:12: 	Server started and running on port : 5000
+info: Sep-15-2022 10:43:36: 	Server started and running on port : 5000
+info: Sep-15-2022 10:43:38: 	Server started and running on port : 5000
+info: Sep-15-2022 10:43:55: 	GET  /home code null
+info: Sep-15-2022 10:43:55: 	GET  / code null
+error: Sep-15-2022 10:43:55: 	Page not found
+info: Sep-15-2022 10:43:55: 	GET  /home code null
+info: Sep-15-2022 10:43:55: 	GET  / code null
+error: Sep-15-2022 10:43:55: 	Page not found
+info: Sep-15-2022 10:44:03: 	GET  /login code null
+info: Sep-15-2022 10:44:10: 	POST  /login code null
+info: Sep-15-2022 10:44:11: 	GET  /home code null
+info: Sep-15-2022 10:44:15: 	GET  /employeelist code null
