@@ -43,6 +43,7 @@ const expressSession = require("express-session")({
 app.set("view engine", "pug");
 app.set("views", "./views");
 
+
 // middle ware
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, "public")));
@@ -58,12 +59,14 @@ passport.use(Signup.createStrategy());
 passport.serializeUser(Signup.serializeUser());
 passport.deserializeUser(Signup.deserializeUser());
 
+
 const loginchecker = function (req, res, next) {
   if (req.path != "/login" && req.path != "/" && !req.session.user) {
+    logger.error("unauthorized access attempted....");
     res.redirect("/");
   }
-  console.log(req);
-  logger.info(`${req.method}  ${req.url} code ${req.statusCode}`);
+
+  logger.info(`${req.method}  ${req.url} statusCode ${req.statusCode}`);
   next();
 };
 

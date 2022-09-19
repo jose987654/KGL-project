@@ -1,10 +1,10 @@
 {
   "name": "final-project-ciu",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "dev": "nodemon app.js",
-    "start": "node app",
+    "start": "node app.js",
     "test": "mocha"
   },
   "keywords": [],
@@ -30,5 +30,8 @@
     "mocha": "^10.0.0",
     "nodemon": "^2.0.19"
   },
-  "description": ""
+  "description": "",
+  "engines": {
+    "node": "16.x"
+  }
 }
