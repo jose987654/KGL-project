@@ -1,0 +1,80 @@
+doctype html
+head
+  meta(charset='utf-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1')
+  link(href='/css/bootstrap/css/bootstrap.css' rel='stylesheet')
+  link(href='/css/blog.css' rel='stylesheet' type='text/css')
+  link(href='https://fonts.googleapis.com/css2?family=Jost:wght@500&display=swap' rel='stylesheet')
+  title  Karibu Groceries LTD.
+.wrapper
+  nav.navbar.navbar-expand-lg.navbar-dark.text-warning
+    .container-fluid
+      li.nav-item
+        img(src='/Img/logo7.jpg' style='width:60px; height:60px; border-radius: 3px; background-color: #ddd;')
+      br
+      br
+      br
+      button.navbar-toggler(type='button' data-bs-toggle='collapse' data-bs-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation')
+        span.navbar-toggler-icon
+      #navbarSupportedContent.collapse.navbar-collapse
+        ul.navbar-nav.me-auto.mb-2.mb-lg-0
+          li.nav-item
+            p.nav-link.active.nav1(aria-current='page') Karibu Groceries Limited .
+  // Page Content
+  #blog-container.container-fluid
+    .row
+      .col-md-4.mt-md-0.mt-4
+        h1.txt1.text-warning.bg-secondary(style=' margin-left: 30px; ')
+          | Karibu Groceries Limited
+        h3.txt2(style=' margin-left: 30px; ')
+          | &quot;FEEDING THE NATION.&quot;
+        div
+          img.card-img-top.d-none.d-md-block(src='/Img/logo7.jpg' style='width:auto; height:auto; 	\
+          box-shadow: 5px 20px 50px #000;border-radius: 30px; margin-left: 100px;margin-top: 40px;' alt='Me In Class on Day on3')
+      .col.col-md-5
+        .main(style=' background-color: #07026d')
+          // <input type="checkbox" id="chk" aria-hidden="true">
+          .signup.mb-7
+            form(action='/login' method='POST')
+              h1 WELCOME TO KARIBU GROCERIES LTD
+              a.custom.btn-warning(href='/login' style='width: 70%;\
+              height:50px;' type='submit') Login
+          //
+            <div class=" login">
+            <form>
+            <label for="chk" aria-hidden="true">Sign up</label>
+            <ul>
+            <h5> Please continue to the sign Up page by clicking the button below .
+            </h5>
+            <P>* Terms and Conditions Apply *</P>
+            </ul>
+            <button class="custom" style="width: 60%;
+            height:50px;"><a href="signup.html" style="text-decoration: none; color: azure;">Sign up</a></button>
+            </form>
+            </div>
+      //- .col-md-3.mt-md-0.mt-3
+      //-   .row(style='padding-right:40px')
+      //-     #image-slider.container-fluid.d-none.d-md-block.col.col-md-12.casol(style='margin-top:50px ;margin-right:auto;padding-left:0px;')
+      //-       #carouselExampleCaptions1.carousel.slide(data-bs-ride='carousel')
+      //-         .carousel-indicators
+      //-           button.active(type='button' data-bs-target='#carouselExampleCaptions' data-bs-slide-to='0' aria-current='true' aria-label='Slide 0')
+      //-           button(type='button' data-bs-target='#carouselExampleCaptions' data-bs-slide-to='1' aria-label='Slide 1')
+      //-           button(type='button' data-bs-target='#carouselExampleCaptions' data-bs-slide-to='2' aria-label='Slide 2')
+      //-           button(type='button' data-bs-target='#carouselExampleCaptions' data-bs-slide-to='3' aria-label='Slide 3')
+      //-         .carousel-inner
+      //-           .carousel-item.active
+      //-             img.customheight(src='/Img/beans2.jpg' alt='...')
+      //-           .carousel-item
+      //-             img.customheight(src='/Img/beans1.jpg' alt='...')
+      //-           .carousel-item
+      //-             img.customheight(src='/Img/beans4.jpg' alt='...')
+      //-           .carousel-item
+      //-             img.customheight(src='/Img/gnuts2.jpg' alt='...')
+      //-         button.carousel-control-prev(type='button' data-bs-target='#carouselExampleCaptions1' data-bs-slide='prev')
+      //-           span.carousel-control-prev-icon(aria-hidden='true')
+      //-           span.visually-hidden Previous
+      //-         button.carousel-control-next(type='button' data-bs-target='#carouselExampleCaptions1' data-bs-slide='next')
+      //-           span.carousel-control-next-icon(aria-hidden='true')
+      //-           span.visually-hidden Next
+
+script(src='/css/bootstrap/js/bootstrap.bundle.js')
